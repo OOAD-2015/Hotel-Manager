@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hotelmanager" Class="HotelManagerDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TONEY_LEE\SQLEXPRESS;Initial Catalog=Hotelmanager;Integrated Security=True" SettingsObjectName="DataAccessLayer.Properties.Settings" SettingsPropertyName="HotelmanagerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BILLDETAIL" Member="BILLDETAILs">
+    <Type Name="BILLDETAIL">
+      <Column Name="BillID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="BillDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StaffID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ORDER_BILLDETAIL" Member="ORDER" ThisKey="OrderID" OtherKey="OrderID" Type="ORDER" IsForeignKey="true" />
+      <Association Name="STAFF_BILLDETAIL" Member="STAFF" ThisKey="StaffID" OtherKey="StaffID" Type="STAFF" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UNIT" Member="UNITs">
+    <Type Name="UNIT">
+      <Column Name="UnitID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UnitName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UNIT_SERVICE" Member="SERVICEs" ThisKey="UnitID" OtherKey="UnitID" Type="SERVICE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONDITIONS" Member="CONDITIONs">
+    <Type Name="CONDITION">
+      <Column Name="ConditionsID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ConditionsName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ActionName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ActionValue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeByTheHour" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HourMin" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HourMax" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HourLate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="CONDITION_PRICELISTDETAIL" Member="PRICELISTDETAILs" ThisKey="ConditionsID" OtherKey="ConditionID" Type="PRICELISTDETAIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER" Member="CUSTOMERs">
+    <Type Name="CUSTOMER">
+      <Column Name="CustomerID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IDNumber" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[ORDER]" Member="ORDERs">
+    <Type Name="ORDER">
+      <Column Name="OrderID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="StaffID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Estimate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deposit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ORDER_BILLDETAIL" Member="BILLDETAILs" ThisKey="OrderID" OtherKey="OrderID" Type="BILLDETAIL" />
+      <Association Name="ORDER_ORDERDETAIL" Member="ORDERDETAILs" ThisKey="OrderID" OtherKey="OrderID" Type="ORDERDETAIL" />
+      <Association Name="STAFF_ORDER" Member="STAFF" ThisKey="StaffID" OtherKey="StaffID" Type="STAFF" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDERDETAIL" Member="ORDERDETAILs">
+    <Type Name="ORDERDETAIL">
+      <Column Name="OrderDetailID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RoomID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estimate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OrderStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ORDERDETAIL_SERVICEDETAIL" Member="SERVICEDETAILs" ThisKey="OrderDetailID" OtherKey="OrderDetailID" Type="SERVICEDETAIL" />
+      <Association Name="ORDER_ORDERDETAIL" Member="ORDER" ThisKey="OrderID" OtherKey="OrderID" Type="ORDER" IsForeignKey="true" />
+      <Association Name="ROOM_ORDERDETAIL" Member="ROOM" ThisKey="RoomID" OtherKey="RoomID" Type="ROOM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRICELIST" Member="PRICELISTs">
+    <Type Name="PRICELIST">
+      <Column Name="PriceListID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PriceListName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PriceListDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StaffID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="PRICELIST_PRICELISTDETAIL" Member="PRICELISTDETAILs" ThisKey="PriceListID" OtherKey="PriceListID" Type="PRICELISTDETAIL" />
+      <Association Name="STAFF_PRICELIST" Member="STAFF" ThisKey="StaffID" OtherKey="StaffID" Type="STAFF" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRICELISTDETAIL" Member="PRICELISTDETAILs">
+    <Type Name="PRICELISTDETAIL">
+      <Column Name="PriceListID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoomTypeID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ConditionID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CONDITION_PRICELISTDETAIL" Member="CONDITION" ThisKey="ConditionID" OtherKey="ConditionsID" Type="CONDITION" IsForeignKey="true" />
+      <Association Name="PRICELIST_PRICELISTDETAIL" Member="PRICELIST" ThisKey="PriceListID" OtherKey="PriceListID" Type="PRICELIST" IsForeignKey="true" />
+      <Association Name="ROOMTYPE_PRICELISTDETAIL" Member="ROOMTYPE" ThisKey="RoomTypeID" OtherKey="RoomTypeID" Type="ROOMTYPE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROOM" Member="ROOMs">
+    <Type Name="ROOM">
+      <Column Name="RoomID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoomName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoomTypeID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NumberOfBeds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="ROOM_ORDERDETAIL" Member="ORDERDETAILs" ThisKey="RoomID" OtherKey="RoomID" Type="ORDERDETAIL" />
+      <Association Name="ROOMTYPE_ROOM" Member="ROOMTYPE" ThisKey="RoomTypeID" OtherKey="RoomTypeID" Type="ROOMTYPE" IsForeignKey="true" />
+      <Association Name="STATUS_ROOM" Member="STATUS" ThisKey="StatusID" OtherKey="StatusID" Type="STATUS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROOMTYPE" Member="ROOMTYPEs">
+    <Type Name="ROOMTYPE">
+      <Column Name="RoomTypeID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoomTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ROOMTYPE_PRICELISTDETAIL" Member="PRICELISTDETAILs" ThisKey="RoomTypeID" OtherKey="RoomTypeID" Type="PRICELISTDETAIL" />
+      <Association Name="ROOMTYPE_ROOM" Member="ROOMs" ThisKey="RoomTypeID" OtherKey="RoomTypeID" Type="ROOM" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[RULE]" Member="RULEs">
+    <Type Name="RULE">
+      <Column Name="StaffAgeMin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StaffAgeMax" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SERVICEDETAIL" Member="SERVICEDETAILs">
+    <Type Name="SERVICEDETAIL">
+      <Column Name="SevicesDetailID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderDetailID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ServicesID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Monetized" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ORDERDETAIL_SERVICEDETAIL" Member="ORDERDETAIL" ThisKey="OrderDetailID" OtherKey="OrderDetailID" Type="ORDERDETAIL" IsForeignKey="true" />
+      <Association Name="SERVICE_SERVICEDETAIL" Member="SERVICE" ThisKey="ServicesID" OtherKey="ServicesID" Type="SERVICE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SERVICES" Member="SERVICEs">
+    <Type Name="SERVICE">
+      <Column Name="ServicesTypeID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ServicesID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ServicesName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UnitID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SERVICE_SERVICEDETAIL" Member="SERVICEDETAILs" ThisKey="ServicesID" OtherKey="ServicesID" Type="SERVICEDETAIL" />
+      <Association Name="UNIT_SERVICE" Member="UNIT" ThisKey="UnitID" OtherKey="UnitID" Type="UNIT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SERVICESTYPE" Member="SERVICESTYPEs">
+    <Type Name="SERVICESTYPE">
+      <Column Name="ServicesTypeID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ServicesTypeName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STAFF" Member="STAFFs">
+    <Type Name="STAFF">
+      <Column Name="StaffID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StaffName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="STAFF_BILLDETAIL" Member="BILLDETAILs" ThisKey="StaffID" OtherKey="StaffID" Type="BILLDETAIL" />
+      <Association Name="STAFF_ORDER" Member="ORDERs" ThisKey="StaffID" OtherKey="StaffID" Type="ORDER" />
+      <Association Name="STAFF_PRICELIST" Member="PRICELISTs" ThisKey="StaffID" OtherKey="StaffID" Type="PRICELIST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STATUS" Member="STATUS">
+    <Type Name="STATUS">
+      <Column Name="StatusID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StatusName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="STATUS_ROOM" Member="ROOMs" ThisKey="StatusID" OtherKey="StatusID" Type="ROOM" />
+    </Type>
+  </Table>
+</Database>
