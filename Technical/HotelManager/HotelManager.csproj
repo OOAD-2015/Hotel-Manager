@@ -72,6 +72,12 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,13 +90,52 @@
     <Compile Include="frmOrder.Designer.cs">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoomType.Designer.cs">
+      <DependentUpon>frmRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServiceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceType.Designer.cs">
+      <DependentUpon>frmServiceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaff.Designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="froRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="froRoom.Designer.cs">
+      <DependentUpon>froRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHomePage.resx">
       <DependentUpon>frmHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoomType.resx">
+      <DependentUpon>frmRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceType.resx">
+      <DependentUpon>frmServiceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="froRoom.resx">
+      <DependentUpon>froRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
