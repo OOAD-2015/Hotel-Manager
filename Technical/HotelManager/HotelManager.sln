@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "..\DataA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "..\BusinessLayer\BusinessLayer.csproj", "{DBCAFE56-9130-4788-9E56-E524AF800F15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransferObject", "..\DataTransferObject\DataTransferObject.csproj", "{3CFB56B9-B622-4381-8556-C004ABB1CE7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DBCAFE56-9130-4788-9E56-E524AF800F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBCAFE56-9130-4788-9E56-E524AF800F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBCAFE56-9130-4788-9E56-E524AF800F15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CFB56B9-B622-4381-8556-C004ABB1CE7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CFB56B9-B622-4381-8556-C004ABB1CE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CFB56B9-B622-4381-8556-C004ABB1CE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CFB56B9-B622-4381-8556-C004ABB1CE7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

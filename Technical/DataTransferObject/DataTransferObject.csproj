@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DBCAFE56-9130-4788-9E56-E524AF800F15}</ProjectGuid>
+    <ProjectGuid>{3CFB56B9-B622-4381-8556-C004ABB1CE7F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusinessLayer</RootNamespace>
-    <AssemblyName>BusinessLayer</AssemblyName>
+    <RootNamespace>DataTransferObject</RootNamespace>
+    <AssemblyName>DataTransferObject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,18 +39,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUSCustomer.cs" />
+    <Compile Include="DataConnection.cs" />
+    <Compile Include="DataExecute.cs" />
+    <Compile Include="DTOBuildDetail.cs" />
+    <Compile Include="DTOConditions.cs" />
+    <Compile Include="DTOCustomer.cs" />
+    <Compile Include="DTOOrder.cs" />
+    <Compile Include="DTOOrderDetail.cs" />
+    <Compile Include="DTOPriceList.cs" />
+    <Compile Include="DTOPriceListDetail.cs" />
+    <Compile Include="DTORoom.cs" />
+    <Compile Include="DTORoomStatus.cs" />
+    <Compile Include="DTORoomType.cs" />
+    <Compile Include="DTORule.cs" />
+    <Compile Include="DTOSercvicesType.cs" />
+    <Compile Include="DTOServiceDetail.cs" />
+    <Compile Include="DTOServices.cs" />
+    <Compile Include="DTOStaff.cs" />
+    <Compile Include="DTOUnit.cs" />
+    <Compile Include="GetSetConnectString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
-      <Project>{7d20d30c-0c73-4353-9e68-0a8cfefdd7b2}</Project>
-      <Name>DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
-      <Project>{3cfb56b9-b622-4381-8556-c004abb1ce7f}</Project>
-      <Name>DataTransferObject</Name>
-    </ProjectReference>
+    <Content Include="Connection.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

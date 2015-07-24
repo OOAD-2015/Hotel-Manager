@@ -17,5 +17,10 @@ namespace HotelManager
         {
             InitializeComponent();
         }
+
+        private void tabCutomerInfo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

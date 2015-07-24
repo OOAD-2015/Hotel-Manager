@@ -8,19 +8,32 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using BusinessLayer;
 
 namespace HotelManager
 {
     public partial class frmCustomer : DevExpress.XtraEditors.XtraForm
     {
+        public BUSCustomer busCustomer;
         public frmCustomer()
         {
             InitializeComponent();
+            this.busCustomer = new BUSCustomer();
+            FillDataToGridview();
         }
 
-        private void labelControl1_Click(object sender, EventArgs e)
+        public void FillDataToGridview()
         {
-
+            DataTable customerData = busCustomer.getAllData();
+            if (customerData != null)
+            {
+                grdListCustomer.DataSource = customerData;
+            }
+            else
+            {
+                XtraMessageBox.Show("Don't contain data");
+            }
         }
+
     }
 }

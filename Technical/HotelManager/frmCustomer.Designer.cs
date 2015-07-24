@@ -33,53 +33,53 @@
             this.labTitle = new DevExpress.XtraEditors.LabelControl();
             this.picTitle = new DevExpress.XtraEditors.PictureEdit();
             this.tabCutomerInfo = new DevExpress.XtraTab.XtraTabControl();
-            this.txtCustomerID = new DevExpress.XtraEditors.TextEdit();
-            this.labCustomerID = new DevExpress.XtraEditors.LabelControl();
             this.tabpCustomerInfo = new DevExpress.XtraTab.XtraTabPage();
-            this.txtCustomerName = new DevExpress.XtraEditors.TextEdit();
-            this.txtGender = new DevExpress.XtraEditors.TextEdit();
-            this.labGender = new DevExpress.XtraEditors.LabelControl();
-            this.dateBirthDate = new DevExpress.XtraEditors.DateEdit();
-            this.labCustomerName = new DevExpress.XtraEditors.LabelControl();
-            this.labBirthDate = new DevExpress.XtraEditors.LabelControl();
-            this.txtPhoneNumber = new DevExpress.XtraEditors.TextEdit();
-            this.labPhoneNumber = new DevExpress.XtraEditors.LabelControl();
-            this.txtNumberID = new DevExpress.XtraEditors.TextEdit();
-            this.labNumberID = new DevExpress.XtraEditors.LabelControl();
-            this.txtAddress = new DevExpress.XtraEditors.TextEdit();
-            this.labAddress = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.grpListCustomer = new DevExpress.XtraEditors.GroupControl();
             this.grdListCustomer = new DevExpress.XtraGrid.GridControl();
             this.grdvListCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdColCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColGender = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColPhoneNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColIDNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtCustomerID = new DevExpress.XtraEditors.TextEdit();
+            this.dateBirthDate = new DevExpress.XtraEditors.DateEdit();
+            this.txtGender = new DevExpress.XtraEditors.TextEdit();
+            this.labNumberID = new DevExpress.XtraEditors.LabelControl();
+            this.txtPhoneNumber = new DevExpress.XtraEditors.TextEdit();
+            this.labAddress = new DevExpress.XtraEditors.LabelControl();
+            this.txtAddress = new DevExpress.XtraEditors.TextEdit();
+            this.labPhoneNumber = new DevExpress.XtraEditors.LabelControl();
+            this.txtNumberID = new DevExpress.XtraEditors.TextEdit();
+            this.labGender = new DevExpress.XtraEditors.LabelControl();
+            this.txtCustomerName = new DevExpress.XtraEditors.TextEdit();
+            this.labBirthDate = new DevExpress.XtraEditors.LabelControl();
+            this.labCustomerID = new DevExpress.XtraEditors.LabelControl();
+            this.labCustomerName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panHeader)).BeginInit();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabCutomerInfo)).BeginInit();
             this.tabCutomerInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).BeginInit();
             this.tabpCustomerInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGender.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumberID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpListCustomer)).BeginInit();
             this.grpListCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGender.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumberID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panHeader
@@ -126,21 +126,6 @@
             this.tabCutomerInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabpCustomerInfo});
             // 
-            // txtCustomerID
-            // 
-            this.txtCustomerID.Location = new System.Drawing.Point(316, 17);
-            this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerID.TabIndex = 0;
-            // 
-            // labCustomerID
-            // 
-            this.labCustomerID.Location = new System.Drawing.Point(216, 20);
-            this.labCustomerID.Name = "labCustomerID";
-            this.labCustomerID.Size = new System.Drawing.Size(72, 13);
-            this.labCustomerID.TabIndex = 1;
-            this.labCustomerID.Text = "Mã khách hàng";
-            // 
             // tabpCustomerInfo
             // 
             this.tabpCustomerInfo.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -150,124 +135,6 @@
             this.tabpCustomerInfo.Name = "tabpCustomerInfo";
             this.tabpCustomerInfo.Size = new System.Drawing.Size(690, 353);
             this.tabpCustomerInfo.Text = "Thông tin khách hàng";
-            // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.Location = new System.Drawing.Point(559, 17);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerName.TabIndex = 0;
-            // 
-            // txtGender
-            // 
-            this.txtGender.Location = new System.Drawing.Point(316, 60);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(100, 20);
-            this.txtGender.TabIndex = 0;
-            // 
-            // labGender
-            // 
-            this.labGender.Location = new System.Drawing.Point(216, 63);
-            this.labGender.Name = "labGender";
-            this.labGender.Size = new System.Drawing.Size(38, 13);
-            this.labGender.TabIndex = 1;
-            this.labGender.Text = "Giới tính";
-            // 
-            // dateBirthDate
-            // 
-            this.dateBirthDate.EditValue = null;
-            this.dateBirthDate.Location = new System.Drawing.Point(559, 63);
-            this.dateBirthDate.Name = "dateBirthDate";
-            this.dateBirthDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBirthDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBirthDate.Size = new System.Drawing.Size(100, 20);
-            this.dateBirthDate.TabIndex = 2;
-            // 
-            // labCustomerName
-            // 
-            this.labCustomerName.Location = new System.Drawing.Point(457, 20);
-            this.labCustomerName.Name = "labCustomerName";
-            this.labCustomerName.Size = new System.Drawing.Size(76, 13);
-            this.labCustomerName.TabIndex = 1;
-            this.labCustomerName.Text = "Tên khách hàng";
-            // 
-            // labBirthDate
-            // 
-            this.labBirthDate.Location = new System.Drawing.Point(457, 63);
-            this.labBirthDate.Name = "labBirthDate";
-            this.labBirthDate.Size = new System.Drawing.Size(47, 13);
-            this.labBirthDate.TabIndex = 1;
-            this.labBirthDate.Text = "Ngày sinh";
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(316, 102);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtPhoneNumber.TabIndex = 0;
-            // 
-            // labPhoneNumber
-            // 
-            this.labPhoneNumber.Location = new System.Drawing.Point(216, 105);
-            this.labPhoneNumber.Name = "labPhoneNumber";
-            this.labPhoneNumber.Size = new System.Drawing.Size(62, 13);
-            this.labPhoneNumber.TabIndex = 1;
-            this.labPhoneNumber.Text = "Số điện thoại";
-            // 
-            // txtNumberID
-            // 
-            this.txtNumberID.Location = new System.Drawing.Point(559, 102);
-            this.txtNumberID.Name = "txtNumberID";
-            this.txtNumberID.Size = new System.Drawing.Size(100, 20);
-            this.txtNumberID.TabIndex = 0;
-            // 
-            // labNumberID
-            // 
-            this.labNumberID.Location = new System.Drawing.Point(457, 105);
-            this.labNumberID.Name = "labNumberID";
-            this.labNumberID.Size = new System.Drawing.Size(29, 13);
-            this.labNumberID.TabIndex = 1;
-            this.labNumberID.Text = "CMND";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(316, 144);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(343, 20);
-            this.txtAddress.TabIndex = 0;
-            // 
-            // labAddress
-            // 
-            this.labAddress.Location = new System.Drawing.Point(216, 147);
-            this.labAddress.Name = "labAddress";
-            this.labAddress.Size = new System.Drawing.Size(32, 13);
-            this.labAddress.TabIndex = 1;
-            this.labAddress.Text = "Địa chỉ";
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.pictureEdit1);
-            this.panelControl1.Controls.Add(this.txtCustomerID);
-            this.panelControl1.Controls.Add(this.dateBirthDate);
-            this.panelControl1.Controls.Add(this.txtGender);
-            this.panelControl1.Controls.Add(this.labNumberID);
-            this.panelControl1.Controls.Add(this.txtPhoneNumber);
-            this.panelControl1.Controls.Add(this.labAddress);
-            this.panelControl1.Controls.Add(this.txtAddress);
-            this.panelControl1.Controls.Add(this.labPhoneNumber);
-            this.panelControl1.Controls.Add(this.txtNumberID);
-            this.panelControl1.Controls.Add(this.labGender);
-            this.panelControl1.Controls.Add(this.txtCustomerName);
-            this.panelControl1.Controls.Add(this.labBirthDate);
-            this.panelControl1.Controls.Add(this.labCustomerID);
-            this.panelControl1.Controls.Add(this.labCustomerName);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(690, 181);
-            this.panelControl1.TabIndex = 3;
             // 
             // grpListCustomer
             // 
@@ -301,15 +168,86 @@
             // grdvListCustomer
             // 
             this.grdvListCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6});
+            this.grdColCustomerID,
+            this.grdColCustomerName,
+            this.grdColGender,
+            this.grdColPhoneNumber,
+            this.grdColIDNumber,
+            this.grdColAddress});
             this.grdvListCustomer.GridControl = this.grdListCustomer;
             this.grdvListCustomer.Name = "grdvListCustomer";
             this.grdvListCustomer.OptionsView.ShowGroupPanel = false;
+            // 
+            // grdColCustomerID
+            // 
+            this.grdColCustomerID.Caption = "Mã khách hàng";
+            this.grdColCustomerID.FieldName = "CustomerID";
+            this.grdColCustomerID.Name = "grdColCustomerID";
+            this.grdColCustomerID.Visible = true;
+            this.grdColCustomerID.VisibleIndex = 0;
+            // 
+            // grdColCustomerName
+            // 
+            this.grdColCustomerName.Caption = "Tên khách hàng";
+            this.grdColCustomerName.FieldName = "CustomerName";
+            this.grdColCustomerName.Name = "grdColCustomerName";
+            this.grdColCustomerName.Visible = true;
+            this.grdColCustomerName.VisibleIndex = 1;
+            // 
+            // grdColGender
+            // 
+            this.grdColGender.Caption = "Giới tính";
+            this.grdColGender.FieldName = "Gender";
+            this.grdColGender.Name = "grdColGender";
+            this.grdColGender.Visible = true;
+            this.grdColGender.VisibleIndex = 2;
+            // 
+            // grdColPhoneNumber
+            // 
+            this.grdColPhoneNumber.Caption = "Số điện thoại";
+            this.grdColPhoneNumber.FieldName = "PhoneNumber";
+            this.grdColPhoneNumber.Name = "grdColPhoneNumber";
+            this.grdColPhoneNumber.Visible = true;
+            this.grdColPhoneNumber.VisibleIndex = 3;
+            // 
+            // grdColIDNumber
+            // 
+            this.grdColIDNumber.Caption = "CMND";
+            this.grdColIDNumber.FieldName = "IDNumber";
+            this.grdColIDNumber.Name = "grdColIDNumber";
+            this.grdColIDNumber.Visible = true;
+            this.grdColIDNumber.VisibleIndex = 4;
+            // 
+            // grdColAddress
+            // 
+            this.grdColAddress.Caption = "Địa chỉ";
+            this.grdColAddress.FieldName = "Address";
+            this.grdColAddress.Name = "grdColAddress";
+            this.grdColAddress.Visible = true;
+            this.grdColAddress.VisibleIndex = 5;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.pictureEdit1);
+            this.panelControl1.Controls.Add(this.txtCustomerID);
+            this.panelControl1.Controls.Add(this.dateBirthDate);
+            this.panelControl1.Controls.Add(this.txtGender);
+            this.panelControl1.Controls.Add(this.labNumberID);
+            this.panelControl1.Controls.Add(this.txtPhoneNumber);
+            this.panelControl1.Controls.Add(this.labAddress);
+            this.panelControl1.Controls.Add(this.txtAddress);
+            this.panelControl1.Controls.Add(this.labPhoneNumber);
+            this.panelControl1.Controls.Add(this.txtNumberID);
+            this.panelControl1.Controls.Add(this.labGender);
+            this.panelControl1.Controls.Add(this.txtCustomerName);
+            this.panelControl1.Controls.Add(this.labBirthDate);
+            this.panelControl1.Controls.Add(this.labCustomerID);
+            this.panelControl1.Controls.Add(this.labCustomerName);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(690, 181);
+            this.panelControl1.TabIndex = 3;
             // 
             // pictureEdit1
             // 
@@ -321,47 +259,115 @@
             this.pictureEdit1.Size = new System.Drawing.Size(142, 140);
             this.pictureEdit1.TabIndex = 3;
             // 
-            // gridColumn1
+            // txtCustomerID
             // 
-            this.gridColumn1.Caption = "Mã khách hàng";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.txtCustomerID.Location = new System.Drawing.Point(316, 17);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomerID.TabIndex = 0;
             // 
-            // gridColumn2
+            // dateBirthDate
             // 
-            this.gridColumn2.Caption = "Tên khách hàng";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.dateBirthDate.EditValue = null;
+            this.dateBirthDate.Location = new System.Drawing.Point(559, 63);
+            this.dateBirthDate.Name = "dateBirthDate";
+            this.dateBirthDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBirthDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBirthDate.Size = new System.Drawing.Size(100, 20);
+            this.dateBirthDate.TabIndex = 2;
             // 
-            // gridColumn3
+            // txtGender
             // 
-            this.gridColumn3.Caption = "Giói tính";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.txtGender.Location = new System.Drawing.Point(316, 60);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(100, 20);
+            this.txtGender.TabIndex = 0;
             // 
-            // gridColumn4
+            // labNumberID
             // 
-            this.gridColumn4.Caption = "Số điện thoại";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.labNumberID.Location = new System.Drawing.Point(457, 105);
+            this.labNumberID.Name = "labNumberID";
+            this.labNumberID.Size = new System.Drawing.Size(29, 13);
+            this.labNumberID.TabIndex = 1;
+            this.labNumberID.Text = "CMND";
             // 
-            // gridColumn5
+            // txtPhoneNumber
             // 
-            this.gridColumn5.Caption = "CMND";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(316, 102);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtPhoneNumber.TabIndex = 0;
             // 
-            // gridColumn6
+            // labAddress
             // 
-            this.gridColumn6.Caption = "Địa chỉ";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.labAddress.Location = new System.Drawing.Point(216, 147);
+            this.labAddress.Name = "labAddress";
+            this.labAddress.Size = new System.Drawing.Size(32, 13);
+            this.labAddress.TabIndex = 1;
+            this.labAddress.Text = "Địa chỉ";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(316, 144);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(343, 20);
+            this.txtAddress.TabIndex = 0;
+            // 
+            // labPhoneNumber
+            // 
+            this.labPhoneNumber.Location = new System.Drawing.Point(216, 105);
+            this.labPhoneNumber.Name = "labPhoneNumber";
+            this.labPhoneNumber.Size = new System.Drawing.Size(62, 13);
+            this.labPhoneNumber.TabIndex = 1;
+            this.labPhoneNumber.Text = "Số điện thoại";
+            // 
+            // txtNumberID
+            // 
+            this.txtNumberID.Location = new System.Drawing.Point(559, 102);
+            this.txtNumberID.Name = "txtNumberID";
+            this.txtNumberID.Size = new System.Drawing.Size(100, 20);
+            this.txtNumberID.TabIndex = 0;
+            // 
+            // labGender
+            // 
+            this.labGender.Location = new System.Drawing.Point(216, 63);
+            this.labGender.Name = "labGender";
+            this.labGender.Size = new System.Drawing.Size(38, 13);
+            this.labGender.TabIndex = 1;
+            this.labGender.Text = "Giới tính";
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.Location = new System.Drawing.Point(559, 17);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomerName.TabIndex = 0;
+            // 
+            // labBirthDate
+            // 
+            this.labBirthDate.Location = new System.Drawing.Point(457, 63);
+            this.labBirthDate.Name = "labBirthDate";
+            this.labBirthDate.Size = new System.Drawing.Size(47, 13);
+            this.labBirthDate.TabIndex = 1;
+            this.labBirthDate.Text = "Ngày sinh";
+            // 
+            // labCustomerID
+            // 
+            this.labCustomerID.Location = new System.Drawing.Point(216, 20);
+            this.labCustomerID.Name = "labCustomerID";
+            this.labCustomerID.Size = new System.Drawing.Size(72, 13);
+            this.labCustomerID.TabIndex = 1;
+            this.labCustomerID.Text = "Mã khách hàng";
+            // 
+            // labCustomerName
+            // 
+            this.labCustomerName.Location = new System.Drawing.Point(457, 20);
+            this.labCustomerName.Name = "labCustomerName";
+            this.labCustomerName.Size = new System.Drawing.Size(76, 13);
+            this.labCustomerName.TabIndex = 1;
+            this.labCustomerName.Text = "Tên khách hàng";
             // 
             // frmCustomer
             // 
@@ -380,23 +386,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabCutomerInfo)).EndInit();
             this.tabCutomerInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).EndInit();
             this.tabpCustomerInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGender.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumberID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpListCustomer)).EndInit();
             this.grpListCustomer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdListCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGender.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumberID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -418,12 +424,12 @@
         private DevExpress.XtraEditors.GroupControl grpListCustomer;
         private DevExpress.XtraGrid.GridControl grdListCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView grdvListCustomer;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColCustomerID;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColCustomerName;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColGender;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColPhoneNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColIDNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColAddress;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.LabelControl labNumberID;

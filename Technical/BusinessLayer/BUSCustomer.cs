@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer;
+using System.Data;
+using DataTransferObject;
 
 namespace BusinessLayer
 {
@@ -15,24 +17,45 @@ namespace BusinessLayer
             this.daoCustomer = new DAOCustomer();
         }
 
-        public void CreateCustomer(CUSTOMER customer)
+        public DataTable getAllData()
         {
-            this.daoCustomer.CreateCustomer(customer);
+            return daoCustomer.getAllData();
+        }
+        public DataTable getCustomerName()
+        {
+            return daoCustomer.getCustomerName();
         }
 
-        public void UpdateCustomer(CUSTOMER customer)
+        public DataTable getCustomerIDByName(string customerName)
         {
-            this.daoCustomer.UpdateCustomer(customer);
+            return daoCustomer.getCustomerIDByName(customerName);
         }
 
-        public void DeleteCustomer(CUSTOMER customer)
+        public int updateData(DTOCustomer _dtoCustomer)
         {
-            this.daoCustomer.DeleteCustomer(customer);
+            if (_dtoCustomer != null)
+            {
+                return daoCustomer.updateData(_dtoCustomer);
+            }
+            return -1;
         }
 
-        public void DeleteCustomer(string customerID)
+        public int deleteData(string customerID)
         {
-            this.daoCustomer.DeleteCustomer(customerID);
+            if (customerID != null)
+            {
+                return daoCustomer.deleteData(customerID);
+            }
+            return -1;
+        }
+
+        public int insertData(DTOCustomer _dtoCustomer)
+        {
+            if (_dtoCustomer != null)
+            {
+                return daoCustomer.insertData(_dtoCustomer);
+            }
+            return -1;
         }
     }
 }

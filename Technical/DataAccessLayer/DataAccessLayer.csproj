@@ -41,12 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAOCustomer.cs" />
-    <Compile Include="DataContextInitializer.cs" />
-    <Compile Include="HotelManagerDB.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HotelManagerDB.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -55,12 +49,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="HotelManagerDB.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>HotelManagerDB.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -70,9 +58,10 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="HotelManagerDB.dbml.layout">
-      <DependentUpon>HotelManagerDB.dbml</DependentUpon>
-    </None>
+    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
+      <Project>{3cfb56b9-b622-4381-8556-c004abb1ce7f}</Project>
+      <Name>DataTransferObject</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
