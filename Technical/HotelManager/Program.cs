@@ -20,7 +20,7 @@ namespace HotelManager
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-            Application.Run(new frmCustomer());
+            Application.Run(new frmLogin());
         }
     }
 }

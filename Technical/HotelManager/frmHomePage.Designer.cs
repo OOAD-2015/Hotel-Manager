@@ -39,6 +39,9 @@
             this.bbtnRoomTypeCategory = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnRoomCategory = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnAreaCategory = new DevExpress.XtraBars.BarButtonItem();
+            this.barSiInfo = new DevExpress.XtraBars.BarStaticItem();
+            this.barhiStatus = new DevExpress.XtraBars.BarStaticItem();
+            this.barHiDateLogin = new DevExpress.XtraBars.BarHeaderItem();
             this.largeimageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.ribpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -65,10 +68,13 @@
             this.bbtnProductCategory,
             this.bbtnRoomTypeCategory,
             this.bbtnRoomCategory,
-            this.bbtnAreaCategory});
+            this.bbtnAreaCategory,
+            this.barSiInfo,
+            this.barhiStatus,
+            this.barHiDateLogin});
             this.ribbon.LargeImages = this.largeimageCollection;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 10;
+            this.ribbon.MaxItemId = 13;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribpSystem,
@@ -135,6 +141,26 @@
             this.bbtnAreaCategory.Id = 7;
             this.bbtnAreaCategory.Name = "bbtnAreaCategory";
             // 
+            // barSiInfo
+            // 
+            this.barSiInfo.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barSiInfo.Caption = "Đăng nhập với quyền: ";
+            this.barSiInfo.Id = 10;
+            this.barSiInfo.Name = "barSiInfo";
+            this.barSiInfo.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barhiStatus
+            // 
+            this.barhiStatus.Caption = "Khách sạn";
+            this.barhiStatus.Id = 11;
+            this.barhiStatus.Name = "barhiStatus";
+            this.barhiStatus.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barHiDateLogin
+            // 
+            this.barHiDateLogin.Id = 12;
+            this.barHiDateLogin.Name = "barHiDateLogin";
+            // 
             // largeimageCollection
             // 
             this.largeimageCollection.ImageSize = new System.Drawing.Size(32, 32);
@@ -191,9 +217,13 @@
             // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.ItemLinks.Add(this.barSiInfo);
+            this.ribbonStatusBar.ItemLinks.Add(this.barhiStatus);
+            this.ribbonStatusBar.ItemLinks.Add(this.barHiDateLogin);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 307);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
+            this.ribbonStatusBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ribbonStatusBar.Size = new System.Drawing.Size(812, 31);
             // 
             // frmHomePage
@@ -207,6 +237,9 @@
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Quản lý khách sạn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHomePage_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHomePage_FormClosed);
+            this.Load += new System.EventHandler(this.frmHomePage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallimageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeimageCollection)).EndInit();
@@ -235,5 +268,8 @@
         private DevExpress.XtraBars.BarButtonItem bbtnRoomCategory;
         private DevExpress.XtraBars.BarButtonItem bbtnAreaCategory;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribgCategory;
+        private DevExpress.XtraBars.BarStaticItem barSiInfo;
+        private DevExpress.XtraBars.BarStaticItem barhiStatus;
+        private DevExpress.XtraBars.BarHeaderItem barHiDateLogin;
     }
 }

@@ -27,7 +27,10 @@ namespace DataTransferObject.Extention
         /// <returns>Neu co chuoi ket noi tra ve true, nguoc lai tra ve false</returns>
         private bool getConnectionString()
         {
-            if (GetSetConnectString.Instance.getConnectString((new Uri("../Connection.xml", UriKind.RelativeOrAbsolute)).LocalPath))
+            String strConnection = System.IO.Path.GetFullPath("Connection.xml");
+            //Uri uriConn = new Uri("../Connection.xml", UriKind.Relative);
+            //string str = uriConn.LocalPath;
+            if (GetSetConnectString.Instance.getConnectString(strConnection))
             {
                 XmlDocument xmlDoc = GetSetConnectString.Instance.m_xmlR;
                 XmlElement xmlEle = xmlDoc.DocumentElement;
