@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUSCustomer.cs" />
+    <Compile Include="BUSRolePermission.cs" />
+    <Compile Include="BUSRule.cs" />
+    <Compile Include="BUSStaff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
