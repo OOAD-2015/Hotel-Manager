@@ -54,7 +54,7 @@
     <Compile Include="DTORoomStatus.cs" />
     <Compile Include="DTORoomType.cs" />
     <Compile Include="DTORule.cs" />
-    <Compile Include="DTOSercvicesType.cs" />
+    <Compile Include="DTOServicesType.cs" />
     <Compile Include="DTOServiceDetail.cs" />
     <Compile Include="DTOServices.cs" />
     <Compile Include="DTOStaff.cs" />
@@ -69,6 +69,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

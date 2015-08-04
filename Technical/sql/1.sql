@@ -124,9 +124,9 @@ CREATE PROCEDURE [dbo].[sp_LookAtStaffByNameDataFromDatabase]
 AS
 	SELECT StaffID, StaffName,
 			CASE Sex
-				 WHEN 0 THEN 'Nữ' 
-				 WHEN 1 THEN 'Nam'
-				 ELSE 'Khác'
+				 WHEN 0 THEN N'Nữ' 
+				 WHEN 1 THEN N'Nam'
+				 ELSE N'Khác'
 			END AS Sex, 
 			DateOfBirth, Address, 
 			PhoneNumber, Email, 
@@ -149,9 +149,9 @@ CREATE PROCEDURE [dbo].[sp_LookAtStaffByIdDataFromDatabase]
 AS
 	SELECT StaffID, StaffName,
 			CASE Sex
-				 WHEN 0 THEN 'Nữ' 
-				 WHEN 1 THEN 'Nam'
-				 ELSE 'Khác'
+				 WHEN 0 THEN N'Nữ' 
+				 WHEN 1 THEN N'Nam'
+				 ELSE N'Khác'
 			END AS Sex, 
 			DateOfBirth, Address, 
 			PhoneNumber, Email, 
@@ -193,7 +193,7 @@ CREATE PROCEDURE [dbo].[sp_EditStaffUpdateNoUsernamePassword]
 	@PositionId nvarchar(10)
 )
 AS
-IF(LOWER(@Gender) = 'nữ')
+IF(LOWER(@Gender) = N'nữ')
 	BEGIN
 		UPDATE STAFF 
 		SET StaffName = @Name,
@@ -208,7 +208,7 @@ IF(LOWER(@Gender) = 'nữ')
 	END
 ELSE
 	BEGIN
-		IF(LOWER(@Gender) = 'nam')
+		IF(LOWER(@Gender) = N'nam')
 			BEGIN
 				UPDATE STAFF 
 				SET StaffName = @Name,
@@ -270,7 +270,7 @@ CREATE PROCEDURE [dbo].[sp_EditStaffUpdate]
 	@Password nvarchar(100)
 )
 AS
-IF(LOWER(@Gender) = 'nữ')
+IF(LOWER(@Gender) = N'nữ')
 	BEGIN
 		UPDATE STAFF 
 		SET StaffName = @Name,
@@ -286,7 +286,7 @@ IF(LOWER(@Gender) = 'nữ')
 	END
 ELSE
 	BEGIN
-		IF(LOWER(@Gender) = 'nam')
+		IF(LOWER(@Gender) = N'nam')
 			BEGIN
 				UPDATE STAFF 
 				SET StaffName = @Name,
@@ -335,14 +335,14 @@ CREATE PROCEDURE [dbo].[sp_AddNewStaffInsert]
 	@Password nvarchar(100)
 )
 AS
-IF(LOWER(@Gender) = 'nữ')
+IF(LOWER(@Gender) = N'nữ')
 	BEGIN
 		INSERT INTO STAFF ([StaffID], [StaffName], [Sex], [DateOfBirth], [Address], [PhoneNumber], [Email], [DateCreated], [RolePermissionID], [UserName], [Password])
 		VALUES(@StaffId,@Name,0, @Birthday, @Address, @Phone, @Email, @DateStart, @PositionId, @UserName, @Password)
 	END
 ELSE
 	BEGIN
-		IF(LOWER(@Gender) = 'nam')
+		IF(LOWER(@Gender) = N'nam')
 			BEGIN
 				INSERT INTO STAFF ([StaffID], [StaffName], [Sex], [DateOfBirth], [Address], [PhoneNumber], [Email], [DateCreated], [RolePermissionID], [UserName], [Password]) 
 				VALUES(@StaffId,@Name,1, @Birthday, @Address, @Phone, @Email, @DateStart, @PositionId, @UserName, @Password)
@@ -365,9 +365,9 @@ CREATE PROCEDURE [dbo].[sp_GetStaffByUserName]
 AS
 	SELECT StaffID, StaffName,
 			CASE Sex
-				 WHEN 0 THEN 'Nữ' 
-				 WHEN 1 THEN 'Nam'
-				 ELSE 'Khác'
+				 WHEN 0 THEN N'Nữ' 
+				 WHEN 1 THEN N'Nam'
+				 ELSE N'Khác'
 			END AS Sex, 
 			DateOfBirth, Address, 
 			PhoneNumber, Email, 
@@ -387,9 +387,9 @@ CREATE PROCEDURE [dbo].[sp_GetStaffById]
 AS
 	SELECT StaffID, StaffName,
 			CASE Sex
-				 WHEN 0 THEN 'Nữ' 
-				 WHEN 1 THEN 'Nam'
-				 ELSE 'Khác'
+				 WHEN 0 THEN N'Nữ' 
+				 WHEN 1 THEN N'Nam'
+				 ELSE N'Khác'
 			END AS Sex, 
 			DateOfBirth, Address, 
 			PhoneNumber, Email, 
@@ -408,7 +408,7 @@ AS
 	SELECT  StaffID, StaffName,
 			CASE Sex
 				 WHEN 0 THEN N'Nữ' 
-				 WHEN 1 THEN 'Nam'
+				 WHEN 1 THEN N'Nam'
 				 ELSE N'Khác'
 			END AS Sex, 
 			DateOfBirth, Address, 

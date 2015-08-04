@@ -10,21 +10,17 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class DAOCustomer
+    public class DAOServicesType
     {
-        public DAOCustomer()
-        {
-
-        }
         /// <summary>
-        /// Phương thức lấy tất cả các Customer từ csdl
+        /// Phương thức lấy tất cả các ServicesType từ csdl
         /// </summary>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public DataTable GetAllCustomer()
+        public DataTable GetAllServicesType()
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_GetAllCustomer");
+                DataExecute.Instance.createSqlCmd("sp_GetAllServicesType");
                 return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
             }
             catch (SqlException)
@@ -35,15 +31,15 @@ namespace DataAccessLayer
 
         }
         /// <summary>
-        /// Phương thức lấy Customer theo id của Customer
+        /// Phương thức lấy ServicesType theo id của ServicesType
         /// </summary>
-        /// <param name="iCustomerId">id của feedback</param>
+        /// <param name="iServicesTypeId">id của feedback</param>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public DataTable GetCustomerById(String strCustomerId)
+        public DataTable GetServicesTypeById(String strServicesTypeId)
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_GetCustomerByID"/*Truyen vao storeprocedure*/, new object[1] { strCustomerId });
+                DataExecute.Instance.createSqlCmd("sp_GetServicesTypeByID"/*Truyen vao storeprocedure*/, new object[1] { strServicesTypeId });
                 return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
             }
             catch (SqlException)
@@ -54,14 +50,14 @@ namespace DataAccessLayer
         }
 
         /// <summary>
-        /// Phương thức thêm mới một Customer vào csdl
+        /// Phương thức thêm mới một ServicesType vào csdl
         /// </summary>
         /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
-        public bool InsertCustomer(DTOCustomer Customer)
+        public bool InsertServicesType(DTOServicesType ServicesType)
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_AddNewCustomerInsert"/*Truyen vao storeprocedure*/, new object[8] { Customer.CustomerID, Customer.Name, Customer.Gender, Customer.Birthday, Customer.Address, Customer.Phone, Customer.Email, Customer.NumberID});
+                DataExecute.Instance.createSqlCmd("sp_AddNewServicesTypeInsert"/*Truyen vao storeprocedure*/, new object[2] { ServicesType.ServicesTypeID, ServicesType.ServicesTypeName });
                 return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
             }
             catch (SqlException)
@@ -72,14 +68,14 @@ namespace DataAccessLayer
 
         }
         /// <summary>
-        /// Phương thức cập nhật một Customer xuống csdl theo id
+        /// Phương thức cập nhật một ServicesType xuống csdl theo id
         /// </summary>
         /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
-        public bool UpdateCustomer(DTOCustomer Customer)
+        public bool UpdateServicesType(DTOServicesType ServicesType)
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_EditCustomerUpdate"/*Truyen vao storeprocedure*/, new object[8] { Customer.CustomerID, Customer.Name, Customer.Gender, Customer.Birthday, Customer.Address, Customer.Phone, Customer.Email, Customer.NumberID });
+                DataExecute.Instance.createSqlCmd("sp_EditServicesTypeUpdate"/*Truyen vao storeprocedure*/, new object[2] { ServicesType.ServicesTypeID, ServicesType.ServicesTypeName});
                 return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
             }
             catch (SqlException)
@@ -90,15 +86,15 @@ namespace DataAccessLayer
 
         }
         /// <summary>
-        /// Phương thức xóa một Customer theo id
+        /// Phương thức xóa một ServicesType theo id
         /// </summary>
-        /// <param name="iCustomerId"></param>
+        /// <param name="iServicesTypeId"></param>
         /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
-        public bool DeleteCustomer(String strCustomerId)
+        public bool DeleteServicesType(String strServicesTypeId)
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_DeleteCustomer"/*Truyen vao storeprocedure*/, new object[1] { strCustomerId });
+                DataExecute.Instance.createSqlCmd("sp_DeleteServicesType"/*Truyen vao storeprocedure*/, new object[1] { strServicesTypeId });
                 return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
             }
             catch (SqlException)
@@ -106,13 +102,14 @@ namespace DataAccessLayer
 
                 throw;
             }
+
         }
 
-        public DataTable LookAtCustomerByNameFromDatabase(String strCustomerName)
+        public DataTable LookAtServicesType(String strServicesTypeName)
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_LookAtCustomerByNameDataFromDatabase"/*Truyen vao storeprocedure*/, new object[1] { strCustomerName });
+                DataExecute.Instance.createSqlCmd("sp_LookAtServicesTypeDataFromDatabase"/*Truyen vao storeprocedure*/, new object[1] { strServicesTypeName });
                 return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
             }
             catch (SqlException)
@@ -120,20 +117,7 @@ namespace DataAccessLayer
 
                 throw;
             }
-        }
 
-        public DataTable LookAtCustomerByIdDataFromDatabase(String strCustomerId)
-        {
-            try
-            {                
-                DataExecute.Instance.createSqlCmd("sp_LookAtCustomerByIdDataFromDatabase"/*Truyen vao storeprocedure*/, new object[1] { strCustomerId });
-                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
-            }
-            catch (SqlException)
-            {
-
-                throw;
-            }
         }
     }
 }

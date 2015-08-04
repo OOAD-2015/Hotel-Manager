@@ -6,56 +6,131 @@ using System.Threading.Tasks;
 using DataAccessLayer;
 using System.Data;
 using DataTransferObject;
+using System.Data.SqlClient;
 
 namespace BusinessLayer
 {
     public class BUSCustomer
     {
-        public DAOCustomer daoCustomer;
+        public DAOCustomer customerDAO;
+
         public BUSCustomer()
         {
-            this.daoCustomer = new DAOCustomer();
+            this.customerDAO = new DAOCustomer();
         }
 
-        public DataTable getAllData()
+        /// <summary>
+        /// Phương thức lấy tất cả các Customer từ csdl
+        /// </summary>
+        /// <returns>true: lấy thành công, false: lấy thất bại</returns>
+        public DataTable GetAllCustomer()
         {
-            return daoCustomer.getAllData();
-        }
-        public DataTable getCustomerName()
-        {
-            return daoCustomer.getCustomerName();
-        }
-
-        public DataTable getCustomerIDByName(string customerName)
-        {
-            return daoCustomer.getCustomerIDByName(customerName);
-        }
-
-        public int updateData(DTOCustomer _dtoCustomer)
-        {
-            if (_dtoCustomer != null)
+            try
             {
-                return daoCustomer.updateData(_dtoCustomer);
+                return customerDAO.GetAllCustomer();
             }
-            return -1;
+            catch (SqlException)
+            {
+
+                throw;
+            }
+
+        }
+        /// <summary>
+        /// Phương thức lấy Customer theo id của Customer
+        /// </summary>
+        /// <param name="iCustomerId">id của feedback</param>
+        /// <returns>true: lấy thành công, false: lấy thất bại</returns>
+        public DataTable GetCustomerById(String strCustomerId)
+        {
+            try
+            {
+                return customerDAO.GetCustomerById(strCustomerId);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+        }
+        /// <summary>
+        /// Phương thức thêm mới một Customer vào csdl
+        /// </summary>
+        /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
+        public bool InsertCustomer(DTOCustomer Customer)
+        {
+            try
+            {
+                return customerDAO.InsertCustomer(Customer);
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+
+        }
+        /// <summary>
+        /// Phương thức cập nhật một Customer xuống csdl theo id
+        /// </summary>
+        /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
+        public bool UpdateCustomer(DTOCustomer Customer)
+        {
+            try
+            {
+                return customerDAO.UpdateCustomer(Customer);
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+
+        }
+        /// <summary>
+        /// Phương thức xóa một Customer theo id
+        /// </summary>
+        /// <param name="iCustomerId"></param>
+        /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
+        public bool DeleteCustomer(String strCustomerId)
+        {
+            try
+            {
+                return customerDAO.DeleteCustomer(strCustomerId);
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
         }
 
-        public int deleteData(string customerID)
+        public DataTable LookAtCustomerByIdDataFromDatabase(String strCustomerId)
         {
-            if (customerID != null)
+            try
             {
-                return daoCustomer.deleteData(customerID);
+                return customerDAO.LookAtCustomerByIdDataFromDatabase(strCustomerId);
             }
-            return -1;
+            catch (SqlException)
+            {
+
+                throw;
+            }
+
         }
 
-        public int insertData(DTOCustomer _dtoCustomer)
+        public DataTable LookAtCustomerByNameDataFromDatabase(String strCustomerName)
         {
-            if (_dtoCustomer != null)
+            try
             {
-                return daoCustomer.insertData(_dtoCustomer);
+                return customerDAO.LookAtCustomerByNameFromDatabase(strCustomerName);
             }
-            return -1;
+            catch (SqlException)
+            {
+
+                throw;
+            }
+
         }
     }
 }

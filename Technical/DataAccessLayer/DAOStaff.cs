@@ -112,7 +112,7 @@ namespace DataAccessLayer
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_EditStaffUpdateNoUsernamePassword", new object[8] { staff.StaffID, staff.Name, staff.Gender, staff.Birthday, staff.Address, staff.Phone, staff.Email, staff.RolePermissionId });
+                DataExecute.Instance.createSqlCmd("sp_EditStaffUpdateNoUsernamePassword", new object[9] { staff.StaffID, staff.Name, staff.Gender, staff.Birthday, staff.Address, staff.Phone, staff.Email, staff.DateCreated, staff.RolePermissionId });
                 return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
             }
             catch (SqlException)

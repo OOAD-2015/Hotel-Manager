@@ -42,6 +42,13 @@ namespace DataTransferObject
         public DTORolePermission()
         { 
         }
+
+        public DTORolePermission(String strRolePermissionID, String strRolePermissionName)
+        {
+            this.rolePermissionID = strRolePermissionID;
+            this.rolePermissionName = strRolePermissionName;
+        }
+
         public DTORolePermission(String strRolePermissionID, String strRolePermissionName, Boolean bSystem, Boolean bChange)
         {
             this.rolePermissionID = strRolePermissionID;

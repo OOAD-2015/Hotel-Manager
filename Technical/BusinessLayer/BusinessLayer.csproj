@@ -41,7 +41,9 @@
   <ItemGroup>
     <Compile Include="BUSCustomer.cs" />
     <Compile Include="BUSRolePermission.cs" />
+    <Compile Include="BUSRoomType.cs" />
     <Compile Include="BUSRule.cs" />
+    <Compile Include="BUSServicesType.cs" />
     <Compile Include="BUSStaff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,6 +56,9 @@
       <Project>{3cfb56b9-b622-4381-8556-c004abb1ce7f}</Project>
       <Name>DataTransferObject</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
