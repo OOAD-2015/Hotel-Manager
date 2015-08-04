@@ -28,280 +28,488 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRoomType));
-            this.tabCutomerInfo = new DevExpress.XtraTab.XtraTabControl();
-            this.tabpRoomTypeInfo = new DevExpress.XtraTab.XtraTabPage();
-            this.grpListRoomType = new DevExpress.XtraEditors.GroupControl();
+            this.components = new System.ComponentModel.Container();
+            this.panelAuthorExecute = new DevExpress.XtraEditors.PanelControl();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancelOfUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.panelAuthorDetail = new DevExpress.XtraEditors.PanelControl();
+            this.spPrices = new DevExpress.XtraEditors.SpinEdit();
+            this.labMoneyStyle2 = new DevExpress.XtraEditors.LabelControl();
+            this.labImportPrice = new DevExpress.XtraEditors.LabelControl();
+            this.txtRoomTypeId = new DevExpress.XtraEditors.TextEdit();
+            this.txtRoomTypeName = new DevExpress.XtraEditors.TextEdit();
+            this.lblRoomTypeId = new DevExpress.XtraEditors.LabelControl();
+            this.lblRoomTypeName = new DevExpress.XtraEditors.LabelControl();
             this.grdListRoomType = new DevExpress.XtraGrid.GridControl();
             this.grdvListRoomType = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.txtRoomTypeID = new DevExpress.XtraEditors.TextEdit();
-            this.txtGender = new DevExpress.XtraEditors.TextEdit();
-            this.labPrice = new DevExpress.XtraEditors.LabelControl();
-            this.txtRoomTypeName = new DevExpress.XtraEditors.TextEdit();
-            this.labRoomTypeID = new DevExpress.XtraEditors.LabelControl();
-            this.labRoomTypeName = new DevExpress.XtraEditors.LabelControl();
-            this.panHeader = new DevExpress.XtraEditors.PanelControl();
-            this.labTitle = new DevExpress.XtraEditors.LabelControl();
-            this.picTitle = new DevExpress.XtraEditors.PictureEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabCutomerInfo)).BeginInit();
-            this.tabCutomerInfo.SuspendLayout();
-            this.tabpRoomTypeInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grpListRoomType)).BeginInit();
-            this.grpListRoomType.SuspendLayout();
+            this.RoomTypeSno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RoomTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rtxtRoomTypeId = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.RoomTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rtxtRoomTypeName = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.RoomTypeDrecription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rtxtDecriptions = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelAuthorTitle = new DevExpress.XtraEditors.PanelControl();
+            this.labRoomType = new DevExpress.XtraEditors.LabelControl();
+            this.navBarAuthorLookAt = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarGAuthorLookAt = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
+            this.txtRoomTypeNameLA = new DevExpress.XtraEditors.TextEdit();
+            this.lblRoomTypeNameLA = new DevExpress.XtraEditors.LabelControl();
+            this.panelAuthorView = new DevExpress.XtraEditors.PanelControl();
+            this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorExecute)).BeginInit();
+            this.panelAuthorExecute.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorDetail)).BeginInit();
+            this.panelAuthorDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spPrices.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdListRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListRoomType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGender.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panHeader)).BeginInit();
-            this.panHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtRoomTypeId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtRoomTypeName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtDecriptions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorTitle)).BeginInit();
+            this.panelAuthorTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarAuthorLookAt)).BeginInit();
+            this.navBarAuthorLookAt.SuspendLayout();
+            this.navBarGroupControlContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeNameLA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorView)).BeginInit();
+            this.panelAuthorView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabCutomerInfo
+            // panelAuthorExecute
             // 
-            this.tabCutomerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabCutomerInfo.Location = new System.Drawing.Point(0, 47);
-            this.tabCutomerInfo.Name = "tabCutomerInfo";
-            this.tabCutomerInfo.SelectedTabPage = this.tabpRoomTypeInfo;
-            this.tabCutomerInfo.Size = new System.Drawing.Size(707, 442);
-            this.tabCutomerInfo.TabIndex = 5;
-            this.tabCutomerInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tabpRoomTypeInfo});
+            this.panelAuthorExecute.Controls.Add(this.btnUpdate);
+            this.panelAuthorExecute.Controls.Add(this.btnSave);
+            this.panelAuthorExecute.Controls.Add(this.btnDelete);
+            this.panelAuthorExecute.Controls.Add(this.btnCancelOfUpdate);
+            this.panelAuthorExecute.Controls.Add(this.btnAdd);
+            this.panelAuthorExecute.Controls.Add(this.btnCancel);
+            this.panelAuthorExecute.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelAuthorExecute.Location = new System.Drawing.Point(0, 373);
+            this.panelAuthorExecute.Name = "panelAuthorExecute";
+            this.panelAuthorExecute.Size = new System.Drawing.Size(983, 54);
+            this.panelAuthorExecute.TabIndex = 0;
             // 
-            // tabpRoomTypeInfo
+            // btnUpdate
             // 
-            this.tabpRoomTypeInfo.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.tabpRoomTypeInfo.Appearance.Header.Options.UseFont = true;
-            this.tabpRoomTypeInfo.Controls.Add(this.grpListRoomType);
-            this.tabpRoomTypeInfo.Controls.Add(this.panelControl1);
-            this.tabpRoomTypeInfo.Name = "tabpRoomTypeInfo";
-            this.tabpRoomTypeInfo.Size = new System.Drawing.Size(701, 410);
-            this.tabpRoomTypeInfo.Text = "Thông tin loại phòng";
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Location = new System.Drawing.Point(472, 9);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 31);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "(F6)Cập nhật";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // grpListRoomType
+            // btnSave
             // 
-            this.grpListRoomType.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.grpListRoomType.Appearance.Options.UseFont = true;
-            this.grpListRoomType.Controls.Add(this.grdListRoomType);
-            this.grpListRoomType.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Thêm", ((System.Drawing.Image)(resources.GetObject("grpListRoomType.CustomHeaderButtons")))),
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Xóa ", ((System.Drawing.Image)(resources.GetObject("grpListRoomType.CustomHeaderButtons1")))),
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Sửa", ((System.Drawing.Image)(resources.GetObject("grpListRoomType.CustomHeaderButtons2")))),
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("Lưu", ((System.Drawing.Image)(resources.GetObject("grpListRoomType.CustomHeaderButtons3"))))});
-            this.grpListRoomType.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.grpListRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpListRoomType.Location = new System.Drawing.Point(0, 181);
-            this.grpListRoomType.Name = "grpListRoomType";
-            this.grpListRoomType.Size = new System.Drawing.Size(701, 229);
-            this.grpListRoomType.TabIndex = 4;
-            this.grpListRoomType.Text = "Danh sách loại phòng";
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(681, 7);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(82, 33);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "(F2)Lưu xuống";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(576, 7);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 33);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "(F4)Xóa bỏ";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnCancelOfUpdate
+            // 
+            this.btnCancelOfUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelOfUpdate.Location = new System.Drawing.Point(472, 9);
+            this.btnCancelOfUpdate.Name = "btnCancelOfUpdate";
+            this.btnCancelOfUpdate.Size = new System.Drawing.Size(75, 31);
+            this.btnCancelOfUpdate.TabIndex = 6;
+            this.btnCancelOfUpdate.Text = "Hủy thao tác";
+            this.btnCancelOfUpdate.Visible = false;
+            this.btnCancelOfUpdate.Click += new System.EventHandler(this.btnCacelOfUpdate_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Location = new System.Drawing.Point(369, 10);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 31);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "(F8)Thêm mới";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(369, 8);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 32);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Hủy thao tác";
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // panelAuthorDetail
+            // 
+            this.panelAuthorDetail.Controls.Add(this.spPrices);
+            this.panelAuthorDetail.Controls.Add(this.labMoneyStyle2);
+            this.panelAuthorDetail.Controls.Add(this.labImportPrice);
+            this.panelAuthorDetail.Controls.Add(this.txtRoomTypeId);
+            this.panelAuthorDetail.Controls.Add(this.txtRoomTypeName);
+            this.panelAuthorDetail.Controls.Add(this.lblRoomTypeId);
+            this.panelAuthorDetail.Controls.Add(this.lblRoomTypeName);
+            this.panelAuthorDetail.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAuthorDetail.Location = new System.Drawing.Point(2, 2);
+            this.panelAuthorDetail.Name = "panelAuthorDetail";
+            this.panelAuthorDetail.Size = new System.Drawing.Size(747, 84);
+            this.panelAuthorDetail.TabIndex = 1;
+            // 
+            // spPrices
+            // 
+            this.spPrices.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spPrices.Location = new System.Drawing.Point(114, 46);
+            this.spPrices.Name = "spPrices";
+            this.spPrices.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spPrices.Properties.IsFloatValue = false;
+            this.spPrices.Properties.Mask.EditMask = "c0";
+            this.spPrices.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.spPrices.Properties.MaxLength = 10;
+            this.spPrices.Properties.MaxValue = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.spPrices.Properties.ReadOnly = true;
+            this.spPrices.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.spPrices.Size = new System.Drawing.Size(200, 20);
+            this.spPrices.TabIndex = 15;
+            // 
+            // labMoneyStyle2
+            // 
+            this.labMoneyStyle2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labMoneyStyle2.Location = new System.Drawing.Point(318, 49);
+            this.labMoneyStyle2.Name = "labMoneyStyle2";
+            this.labMoneyStyle2.Size = new System.Drawing.Size(21, 13);
+            this.labMoneyStyle2.TabIndex = 13;
+            this.labMoneyStyle2.Text = "VNĐ";
+            // 
+            // labImportPrice
+            // 
+            this.labImportPrice.Location = new System.Drawing.Point(44, 53);
+            this.labImportPrice.Name = "labImportPrice";
+            this.labImportPrice.Size = new System.Drawing.Size(41, 13);
+            this.labImportPrice.TabIndex = 14;
+            this.labImportPrice.Text = "Đơn giá:";
+            // 
+            // txtRoomTypeId
+            // 
+            this.txtRoomTypeId.Location = new System.Drawing.Point(114, 20);
+            this.txtRoomTypeId.Name = "txtRoomTypeId";
+            this.txtRoomTypeId.Properties.ReadOnly = true;
+            this.txtRoomTypeId.Size = new System.Drawing.Size(200, 20);
+            this.txtRoomTypeId.TabIndex = 12;
+            // 
+            // txtRoomTypeName
+            // 
+            this.txtRoomTypeName.Location = new System.Drawing.Point(453, 20);
+            this.txtRoomTypeName.Name = "txtRoomTypeName";
+            this.txtRoomTypeName.Properties.MaxLength = 100;
+            this.txtRoomTypeName.Properties.ReadOnly = true;
+            this.txtRoomTypeName.Size = new System.Drawing.Size(277, 20);
+            this.txtRoomTypeName.TabIndex = 0;
+            this.txtRoomTypeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRoomTypeName_KeyDown);
+            this.txtRoomTypeName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtroomTypeName_KeyPress);
+            // 
+            // lblRoomTypeId
+            // 
+            this.lblRoomTypeId.Location = new System.Drawing.Point(24, 23);
+            this.lblRoomTypeId.Name = "lblRoomTypeId";
+            this.lblRoomTypeId.Size = new System.Drawing.Size(70, 13);
+            this.lblRoomTypeId.TabIndex = 0;
+            this.lblRoomTypeId.Text = "Mã loại phòng:";
+            // 
+            // lblRoomTypeName
+            // 
+            this.lblRoomTypeName.Location = new System.Drawing.Point(367, 23);
+            this.lblRoomTypeName.Name = "lblRoomTypeName";
+            this.lblRoomTypeName.Size = new System.Drawing.Size(74, 13);
+            this.lblRoomTypeName.TabIndex = 0;
+            this.lblRoomTypeName.Text = "Tên loại phòng:";
             // 
             // grdListRoomType
             // 
+            this.grdListRoomType.Cursor = System.Windows.Forms.Cursors.Default;
             this.grdListRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdListRoomType.Location = new System.Drawing.Point(2, 45);
+            this.grdListRoomType.Location = new System.Drawing.Point(2, 86);
             this.grdListRoomType.MainView = this.grdvListRoomType;
             this.grdListRoomType.Name = "grdListRoomType";
-            this.grdListRoomType.Size = new System.Drawing.Size(697, 182);
-            this.grdListRoomType.TabIndex = 2;
+            this.grdListRoomType.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rtxtRoomTypeId,
+            this.rtxtRoomTypeName,
+            this.rtxtDecriptions});
+            this.grdListRoomType.Size = new System.Drawing.Size(747, 242);
+            this.grdListRoomType.TabIndex = 0;
             this.grdListRoomType.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvListRoomType});
             // 
             // grdvListRoomType
             // 
             this.grdvListRoomType.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3});
+            this.RoomTypeSno,
+            this.RoomTypeId,
+            this.RoomTypeName,
+            this.RoomTypeDrecription,
+            this.Price});
             this.grdvListRoomType.GridControl = this.grdListRoomType;
             this.grdvListRoomType.Name = "grdvListRoomType";
             this.grdvListRoomType.OptionsView.ShowGroupPanel = false;
+            this.grdvListRoomType.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdvListAuthor_FocusedRowChanged);
             // 
-            // gridColumn1
+            // RoomTypeSno
             // 
-            this.gridColumn1.Caption = "Mã loại phòng";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.RoomTypeSno.AppearanceCell.Options.UseTextOptions = true;
+            this.RoomTypeSno.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.RoomTypeSno.Caption = "STT";
+            this.RoomTypeSno.FieldName = "STT";
+            this.RoomTypeSno.Name = "RoomTypeSno";
+            this.RoomTypeSno.Visible = true;
+            this.RoomTypeSno.VisibleIndex = 0;
+            this.RoomTypeSno.Width = 36;
             // 
-            // gridColumn2
+            // RoomTypeId
             // 
-            this.gridColumn2.Caption = "Tên loại phòng";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.RoomTypeId.Caption = "Mã loại phòng";
+            this.RoomTypeId.ColumnEdit = this.rtxtRoomTypeId;
+            this.RoomTypeId.FieldName = "RoomTypeID";
+            this.RoomTypeId.Name = "RoomTypeId";
+            this.RoomTypeId.Visible = true;
+            this.RoomTypeId.VisibleIndex = 1;
+            this.RoomTypeId.Width = 133;
             // 
-            // gridColumn3
+            // rtxtRoomTypeId
             // 
-            this.gridColumn3.Caption = "Giá theo ngày";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.rtxtRoomTypeId.AutoHeight = false;
+            this.rtxtRoomTypeId.Name = "rtxtRoomTypeId";
+            this.rtxtRoomTypeId.ReadOnly = true;
             // 
-            // panelControl1
+            // RoomTypeName
             // 
-            this.panelControl1.Controls.Add(this.pictureEdit1);
-            this.panelControl1.Controls.Add(this.txtRoomTypeID);
-            this.panelControl1.Controls.Add(this.txtGender);
-            this.panelControl1.Controls.Add(this.labPrice);
-            this.panelControl1.Controls.Add(this.txtRoomTypeName);
-            this.panelControl1.Controls.Add(this.labRoomTypeID);
-            this.panelControl1.Controls.Add(this.labRoomTypeName);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(701, 181);
-            this.panelControl1.TabIndex = 3;
+            this.RoomTypeName.Caption = "Tên loại phòng";
+            this.RoomTypeName.ColumnEdit = this.rtxtRoomTypeName;
+            this.RoomTypeName.FieldName = "RoomTypeName";
+            this.RoomTypeName.Name = "RoomTypeName";
+            this.RoomTypeName.Visible = true;
+            this.RoomTypeName.VisibleIndex = 2;
+            this.RoomTypeName.Width = 381;
             // 
-            // pictureEdit1
+            // rtxtRoomTypeName
             // 
-            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(32, 20);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(150, 140);
-            this.pictureEdit1.TabIndex = 3;
+            this.rtxtRoomTypeName.AutoHeight = false;
+            this.rtxtRoomTypeName.Name = "rtxtRoomTypeName";
+            this.rtxtRoomTypeName.ReadOnly = true;
             // 
-            // txtRoomTypeID
+            // RoomTypeDrecription
             // 
-            this.txtRoomTypeID.Location = new System.Drawing.Point(316, 17);
-            this.txtRoomTypeID.Name = "txtRoomTypeID";
-            this.txtRoomTypeID.Size = new System.Drawing.Size(100, 20);
-            this.txtRoomTypeID.TabIndex = 0;
+            this.RoomTypeDrecription.Caption = "Mô tả";
+            this.RoomTypeDrecription.ColumnEdit = this.rtxtDecriptions;
+            this.RoomTypeDrecription.FieldName = "MoTa";
+            this.RoomTypeDrecription.Name = "RoomTypeDrecription";
             // 
-            // txtGender
+            // rtxtDecriptions
             // 
-            this.txtGender.Location = new System.Drawing.Point(316, 60);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(100, 20);
-            this.txtGender.TabIndex = 0;
+            this.rtxtDecriptions.AutoHeight = false;
+            this.rtxtDecriptions.Name = "rtxtDecriptions";
+            this.rtxtDecriptions.ReadOnly = true;
             // 
-            // labPrice
+            // Price
             // 
-            this.labPrice.Location = new System.Drawing.Point(216, 63);
-            this.labPrice.Name = "labPrice";
-            this.labPrice.Size = new System.Drawing.Size(67, 13);
-            this.labPrice.TabIndex = 1;
-            this.labPrice.Text = "Giá theo ngày";
+            this.Price.Caption = "Giá phòng";
+            this.Price.FieldName = "Price";
+            this.Price.Name = "Price";
+            this.Price.Visible = true;
+            this.Price.VisibleIndex = 3;
+            this.Price.Width = 179;
             // 
-            // txtRoomTypeName
+            // panelAuthorTitle
             // 
-            this.txtRoomTypeName.Location = new System.Drawing.Point(559, 17);
-            this.txtRoomTypeName.Name = "txtRoomTypeName";
-            this.txtRoomTypeName.Size = new System.Drawing.Size(100, 20);
-            this.txtRoomTypeName.TabIndex = 0;
+            this.panelAuthorTitle.Controls.Add(this.labRoomType);
+            this.panelAuthorTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAuthorTitle.Location = new System.Drawing.Point(0, 0);
+            this.panelAuthorTitle.Name = "panelAuthorTitle";
+            this.panelAuthorTitle.Size = new System.Drawing.Size(983, 43);
+            this.panelAuthorTitle.TabIndex = 2;
             // 
-            // labRoomTypeID
+            // labRoomType
             // 
-            this.labRoomTypeID.Location = new System.Drawing.Point(216, 20);
-            this.labRoomTypeID.Name = "labRoomTypeID";
-            this.labRoomTypeID.Size = new System.Drawing.Size(66, 13);
-            this.labRoomTypeID.TabIndex = 1;
-            this.labRoomTypeID.Text = "Mã loại phòng";
+            this.labRoomType.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.labRoomType.Appearance.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.labRoomType.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labRoomType.Location = new System.Drawing.Point(305, 5);
+            this.labRoomType.Name = "labRoomType";
+            this.labRoomType.Size = new System.Drawing.Size(297, 32);
+            this.labRoomType.TabIndex = 1;
+            this.labRoomType.Text = "DANH SÁCH LOẠI PHÒNG";
             // 
-            // labRoomTypeName
+            // navBarAuthorLookAt
             // 
-            this.labRoomTypeName.Location = new System.Drawing.Point(457, 20);
-            this.labRoomTypeName.Name = "labRoomTypeName";
-            this.labRoomTypeName.Size = new System.Drawing.Size(70, 13);
-            this.labRoomTypeName.TabIndex = 1;
-            this.labRoomTypeName.Text = "Tên loại phòng";
+            this.navBarAuthorLookAt.ActiveGroup = this.navBarGAuthorLookAt;
+            this.navBarAuthorLookAt.Controls.Add(this.navBarGroupControlContainer1);
+            this.navBarAuthorLookAt.Dock = System.Windows.Forms.DockStyle.Right;
+            this.navBarAuthorLookAt.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarGAuthorLookAt});
+            this.navBarAuthorLookAt.Location = new System.Drawing.Point(749, 2);
+            this.navBarAuthorLookAt.Name = "navBarAuthorLookAt";
+            this.navBarAuthorLookAt.OptionsNavPane.ExpandedWidth = 232;
+            this.navBarAuthorLookAt.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
+            this.navBarAuthorLookAt.Size = new System.Drawing.Size(232, 326);
+            this.navBarAuthorLookAt.TabIndex = 0;
+            this.navBarAuthorLookAt.Text = "navBarControl1";
             // 
-            // panHeader
+            // navBarGAuthorLookAt
             // 
-            this.panHeader.Appearance.BackColor = System.Drawing.Color.White;
-            this.panHeader.Appearance.Options.UseBackColor = true;
-            this.panHeader.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panHeader.Controls.Add(this.labTitle);
-            this.panHeader.Controls.Add(this.picTitle);
-            this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHeader.Location = new System.Drawing.Point(0, 0);
-            this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(707, 47);
-            this.panHeader.TabIndex = 4;
+            this.navBarGAuthorLookAt.Caption = "Tìm nhanh";
+            this.navBarGAuthorLookAt.ControlContainer = this.navBarGroupControlContainer1;
+            this.navBarGAuthorLookAt.Expanded = true;
+            this.navBarGAuthorLookAt.GroupClientHeight = 80;
+            this.navBarGAuthorLookAt.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
+            this.navBarGAuthorLookAt.Name = "navBarGAuthorLookAt";
             // 
-            // labTitle
+            // navBarGroupControlContainer1
             // 
-            this.labTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labTitle.Appearance.ForeColor = System.Drawing.Color.RosyBrown;
-            this.labTitle.Location = new System.Drawing.Point(67, 9);
-            this.labTitle.Name = "labTitle";
-            this.labTitle.Size = new System.Drawing.Size(214, 25);
-            this.labTitle.TabIndex = 1;
-            this.labTitle.Text = "Thông tin loại phòng";
+            this.navBarGroupControlContainer1.Controls.Add(this.txtRoomTypeNameLA);
+            this.navBarGroupControlContainer1.Controls.Add(this.lblRoomTypeNameLA);
+            this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(232, 223);
+            this.navBarGroupControlContainer1.TabIndex = 0;
             // 
-            // picTitle
+            // txtRoomTypeNameLA
             // 
-            this.picTitle.EditValue = ((object)(resources.GetObject("picTitle.EditValue")));
-            this.picTitle.Location = new System.Drawing.Point(14, 7);
-            this.picTitle.Name = "picTitle";
-            this.picTitle.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.picTitle.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picTitle.Size = new System.Drawing.Size(47, 32);
-            this.picTitle.TabIndex = 0;
+            this.txtRoomTypeNameLA.Location = new System.Drawing.Point(41, 37);
+            this.txtRoomTypeNameLA.Name = "txtRoomTypeNameLA";
+            this.txtRoomTypeNameLA.Properties.MaxLength = 100;
+            this.txtRoomTypeNameLA.Size = new System.Drawing.Size(161, 20);
+            this.txtRoomTypeNameLA.TabIndex = 2;
+            this.txtRoomTypeNameLA.TextChanged += new System.EventHandler(this.txtroomTypeNameLA_TextChanged);
+            // 
+            // lblRoomTypeNameLA
+            // 
+            this.lblRoomTypeNameLA.Location = new System.Drawing.Point(19, 18);
+            this.lblRoomTypeNameLA.Name = "lblRoomTypeNameLA";
+            this.lblRoomTypeNameLA.Size = new System.Drawing.Size(74, 13);
+            this.lblRoomTypeNameLA.TabIndex = 1;
+            this.lblRoomTypeNameLA.Text = "Tên loại phòng:";
+            // 
+            // panelAuthorView
+            // 
+            this.panelAuthorView.Controls.Add(this.grdListRoomType);
+            this.panelAuthorView.Controls.Add(this.panelAuthorDetail);
+            this.panelAuthorView.Controls.Add(this.navBarAuthorLookAt);
+            this.panelAuthorView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAuthorView.Location = new System.Drawing.Point(0, 43);
+            this.panelAuthorView.Name = "panelAuthorView";
+            this.panelAuthorView.Size = new System.Drawing.Size(983, 330);
+            this.panelAuthorView.TabIndex = 4;
+            // 
+            // dxErrorProvider
+            // 
+            this.dxErrorProvider.ContainerControl = this;
             // 
             // frmRoomType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 489);
-            this.Controls.Add(this.tabCutomerInfo);
-            this.Controls.Add(this.panHeader);
+            this.ClientSize = new System.Drawing.Size(983, 427);
+            this.Controls.Add(this.panelAuthorView);
+            this.Controls.Add(this.panelAuthorTitle);
+            this.Controls.Add(this.panelAuthorExecute);
+            this.KeyPreview = true;
             this.Name = "frmRoomType";
-            this.Text = "Danh mục loại phòng";
-            ((System.ComponentModel.ISupportInitialize)(this.tabCutomerInfo)).EndInit();
-            this.tabCutomerInfo.ResumeLayout(false);
-            this.tabpRoomTypeInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grpListRoomType)).EndInit();
-            this.grpListRoomType.ResumeLayout(false);
+            this.Text = "Quản lý loại phòng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRoomType_FormClosing);
+            this.Load += new System.EventHandler(this.frmRoomType_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmRoomType_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorExecute)).EndInit();
+            this.panelAuthorExecute.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorDetail)).EndInit();
+            this.panelAuthorDetail.ResumeLayout(false);
+            this.panelAuthorDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spPrices.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdListRoomType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListRoomType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGender.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panHeader)).EndInit();
-            this.panHeader.ResumeLayout(false);
-            this.panHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTitle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtRoomTypeId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtRoomTypeName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtDecriptions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorTitle)).EndInit();
+            this.panelAuthorTitle.ResumeLayout(false);
+            this.panelAuthorTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarAuthorLookAt)).EndInit();
+            this.navBarAuthorLookAt.ResumeLayout(false);
+            this.navBarGroupControlContainer1.ResumeLayout(false);
+            this.navBarGroupControlContainer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeNameLA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelAuthorView)).EndInit();
+            this.panelAuthorView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraTab.XtraTabControl tabCutomerInfo;
-        private DevExpress.XtraTab.XtraTabPage tabpRoomTypeInfo;
-        private DevExpress.XtraEditors.GroupControl grpListRoomType;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.TextEdit txtRoomTypeID;
-        private DevExpress.XtraEditors.TextEdit txtGender;
-        private DevExpress.XtraEditors.LabelControl labPrice;
-        private DevExpress.XtraEditors.TextEdit txtRoomTypeName;
-        private DevExpress.XtraEditors.LabelControl labRoomTypeID;
-        private DevExpress.XtraEditors.LabelControl labRoomTypeName;
-        private DevExpress.XtraEditors.PanelControl panHeader;
-        private DevExpress.XtraEditors.LabelControl labTitle;
-        private DevExpress.XtraEditors.PictureEdit picTitle;
+        private DevExpress.XtraEditors.PanelControl panelAuthorExecute;
+        private DevExpress.XtraEditors.PanelControl panelAuthorDetail;
         private DevExpress.XtraGrid.GridControl grdListRoomType;
         private DevExpress.XtraGrid.Views.Grid.GridView grdvListRoomType;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.TextEdit txtRoomTypeName;
+        private DevExpress.XtraEditors.LabelControl lblRoomTypeName;
+        private DevExpress.XtraGrid.Columns.GridColumn RoomTypeId;
+        private DevExpress.XtraGrid.Columns.GridColumn RoomTypeName;
+        private DevExpress.XtraEditors.PanelControl panelAuthorTitle;
+        private DevExpress.XtraNavBar.NavBarControl navBarAuthorLookAt;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGAuthorLookAt;
+        private DevExpress.XtraEditors.PanelControl panelAuthorView;
+        private DevExpress.XtraEditors.TextEdit txtRoomTypeId;
+        private DevExpress.XtraEditors.LabelControl lblRoomTypeId;
+        private DevExpress.XtraEditors.LabelControl labRoomType;
+        private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer1;
+        private DevExpress.XtraEditors.TextEdit txtRoomTypeNameLA;
+        private DevExpress.XtraEditors.LabelControl lblRoomTypeNameLA;
+        private DevExpress.XtraGrid.Columns.GridColumn RoomTypeSno;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit rtxtRoomTypeId;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit rtxtRoomTypeName;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit rtxtDecriptions;
+        private DevExpress.XtraEditors.SimpleButton btnCancelOfUpdate;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider;
+        private DevExpress.XtraGrid.Columns.GridColumn RoomTypeDrecription;
+        private DevExpress.XtraEditors.SpinEdit spPrices;
+        private DevExpress.XtraEditors.LabelControl labMoneyStyle2;
+        private DevExpress.XtraEditors.LabelControl labImportPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn Price;
 
     }
 }

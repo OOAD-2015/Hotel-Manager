@@ -1,6 +1,6 @@
 ﻿namespace HotelManager
 {
-    partial class frmCustomer
+    partial class frmSearchCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panelCustomerTitles = new DevExpress.XtraEditors.PanelControl();
             this.labCustomerTitle = new DevExpress.XtraEditors.LabelControl();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.panelCustomerExecute = new DevExpress.XtraEditors.PanelControl();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCancelOfUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.panelCustomerView = new DevExpress.XtraEditors.PanelControl();
             this.grdListCustomer = new DevExpress.XtraGrid.GridControl();
             this.grdvListCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,13 +44,14 @@
             this.CustomerPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustomerEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustomerAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panCustomerViewDatail = new DevExpress.XtraEditors.PanelControl();
-            this.txtCMND = new DevExpress.XtraEditors.TextEdit();
             this.lblCMND = new DevExpress.XtraEditors.LabelControl();
+            this.txtCMND = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateBirthDayMax = new DevExpress.XtraEditors.DateEdit();
             this.dateBirthDay = new DevExpress.XtraEditors.DateEdit();
             this.labCustomerBirthDate = new DevExpress.XtraEditors.LabelControl();
-            this.labGenreName = new DevExpress.XtraEditors.LabelControl();
+            this.labBookGenreName = new DevExpress.XtraEditors.LabelControl();
             this.labCustomerPhone = new DevExpress.XtraEditors.LabelControl();
             this.labCustomerEmail = new DevExpress.XtraEditors.LabelControl();
             this.labCustomerAddress = new DevExpress.XtraEditors.LabelControl();
@@ -71,13 +66,14 @@
             this.navBarCustomerLookAt = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGCustomerLookAt = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
-            this.labCustomerNameLA = new DevExpress.XtraEditors.LabelControl();
-            this.txtCustomerNameLA = new DevExpress.XtraEditors.TextEdit();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtSearchDelay = new DevExpress.XtraEditors.TextEdit();
+            this.rgrSearAfter = new DevExpress.XtraEditors.RadioGroup();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.IDNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelCustomerTitles)).BeginInit();
             this.panelCustomerTitles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelCustomerExecute)).BeginInit();
-            this.panelCustomerExecute.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelCustomerView)).BeginInit();
             this.panelCustomerView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListCustomer)).BeginInit();
@@ -87,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panCustomerViewDatail)).BeginInit();
             this.panCustomerViewDatail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDayMax.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDayMax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBirthDay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBirthDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerPhone.Properties)).BeginInit();
@@ -98,7 +96,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarCustomerLookAt)).BeginInit();
             this.navBarCustomerLookAt.SuspendLayout();
             this.navBarGroupControlContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerNameLA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearchDelay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgrSearAfter.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,82 +123,13 @@
             this.labCustomerTitle.TabIndex = 1;
             this.labCustomerTitle.Text = "DANH SÁCH KHÁCH HÀNG";
             // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(712, 9);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 31);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "(F2)Lưu xuống";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(488, 9);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(93, 31);
-            this.btnUpdate.TabIndex = 14;
-            this.btnUpdate.Text = "(F6)Cập nhật";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // panelCustomerExecute
             // 
-            this.panelCustomerExecute.Controls.Add(this.btnSave);
-            this.panelCustomerExecute.Controls.Add(this.btnAdd);
-            this.panelCustomerExecute.Controls.Add(this.btnDelete);
-            this.panelCustomerExecute.Controls.Add(this.btnUpdate);
-            this.panelCustomerExecute.Controls.Add(this.btnCancelOfUpdate);
-            this.panelCustomerExecute.Controls.Add(this.btnCancel);
             this.panelCustomerExecute.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelCustomerExecute.Location = new System.Drawing.Point(0, 436);
+            this.panelCustomerExecute.Location = new System.Drawing.Point(0, 474);
             this.panelCustomerExecute.Name = "panelCustomerExecute";
-            this.panelCustomerExecute.Size = new System.Drawing.Size(1016, 58);
+            this.panelCustomerExecute.Size = new System.Drawing.Size(1016, 20);
             this.panelCustomerExecute.TabIndex = 4;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(362, 9);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(93, 31);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "(F8)Thêm mới";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(610, 9);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 31);
-            this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "(F4)Xóa bỏ";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnCancelOfUpdate
-            // 
-            this.btnCancelOfUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelOfUpdate.Location = new System.Drawing.Point(488, 9);
-            this.btnCancelOfUpdate.Name = "btnCancelOfUpdate";
-            this.btnCancelOfUpdate.Size = new System.Drawing.Size(93, 31);
-            this.btnCancelOfUpdate.TabIndex = 16;
-            this.btnCancelOfUpdate.Text = "Hủy thao tác";
-            this.btnCancelOfUpdate.Visible = false;
-            this.btnCancelOfUpdate.Click += new System.EventHandler(this.btnCancelOfUpdate_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(362, 9);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(93, 31);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Hủy thao tác";
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panelCustomerView
             // 
@@ -207,7 +139,7 @@
             this.panelCustomerView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCustomerView.Location = new System.Drawing.Point(0, 35);
             this.panelCustomerView.Name = "panelCustomerView";
-            this.panelCustomerView.Size = new System.Drawing.Size(1016, 401);
+            this.panelCustomerView.Size = new System.Drawing.Size(1016, 439);
             this.panelCustomerView.TabIndex = 6;
             // 
             // grdListCustomer
@@ -219,7 +151,7 @@
             this.grdListCustomer.Name = "grdListCustomer";
             this.grdListCustomer.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rdateCustomerBirthday});
-            this.grdListCustomer.Size = new System.Drawing.Size(783, 264);
+            this.grdListCustomer.Size = new System.Drawing.Size(783, 302);
             this.grdListCustomer.TabIndex = 2;
             this.grdListCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvListCustomer});
@@ -239,7 +171,6 @@
             this.grdvListCustomer.GridControl = this.grdListCustomer;
             this.grdvListCustomer.Name = "grdvListCustomer";
             this.grdvListCustomer.OptionsView.ShowGroupPanel = false;
-            this.grdvListCustomer.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdvListCustomer_FocusedRowChanged);
             // 
             // CustomerSno
             // 
@@ -249,7 +180,7 @@
             this.CustomerSno.OptionsColumn.ReadOnly = true;
             this.CustomerSno.Visible = true;
             this.CustomerSno.VisibleIndex = 0;
-            this.CustomerSno.Width = 65;
+            this.CustomerSno.Width = 39;
             // 
             // CustomerId
             // 
@@ -259,7 +190,7 @@
             this.CustomerId.OptionsColumn.ReadOnly = true;
             this.CustomerId.Visible = true;
             this.CustomerId.VisibleIndex = 1;
-            this.CustomerId.Width = 100;
+            this.CustomerId.Width = 91;
             // 
             // CustomerName
             // 
@@ -269,7 +200,7 @@
             this.CustomerName.OptionsColumn.ReadOnly = true;
             this.CustomerName.Visible = true;
             this.CustomerName.VisibleIndex = 2;
-            this.CustomerName.Width = 100;
+            this.CustomerName.Width = 105;
             // 
             // CustomerGender
             // 
@@ -279,7 +210,7 @@
             this.CustomerGender.OptionsColumn.ReadOnly = true;
             this.CustomerGender.Visible = true;
             this.CustomerGender.VisibleIndex = 4;
-            this.CustomerGender.Width = 91;
+            this.CustomerGender.Width = 56;
             // 
             // CustomerBirthday
             // 
@@ -290,7 +221,7 @@
             this.CustomerBirthday.OptionsColumn.ReadOnly = true;
             this.CustomerBirthday.Visible = true;
             this.CustomerBirthday.VisibleIndex = 5;
-            this.CustomerBirthday.Width = 114;
+            this.CustomerBirthday.Width = 83;
             // 
             // rdateCustomerBirthday
             // 
@@ -313,6 +244,7 @@
             this.CustomerPhone.Name = "CustomerPhone";
             this.CustomerPhone.Visible = true;
             this.CustomerPhone.VisibleIndex = 6;
+            this.CustomerPhone.Width = 97;
             // 
             // CustomerEmail
             // 
@@ -322,7 +254,7 @@
             this.CustomerEmail.OptionsColumn.ReadOnly = true;
             this.CustomerEmail.Visible = true;
             this.CustomerEmail.VisibleIndex = 7;
-            this.CustomerEmail.Width = 119;
+            this.CustomerEmail.Width = 129;
             // 
             // CustomerAddress
             // 
@@ -332,23 +264,17 @@
             this.CustomerAddress.OptionsColumn.ReadOnly = true;
             this.CustomerAddress.Visible = true;
             this.CustomerAddress.VisibleIndex = 8;
-            this.CustomerAddress.Width = 114;
-            // 
-            // IDNumber
-            // 
-            this.IDNumber.Caption = "CMND";
-            this.IDNumber.FieldName = "IDNumber";
-            this.IDNumber.Name = "IDNumber";
-            this.IDNumber.Visible = true;
-            this.IDNumber.VisibleIndex = 3;
+            this.CustomerAddress.Width = 165;
             // 
             // panCustomerViewDatail
             // 
-            this.panCustomerViewDatail.Controls.Add(this.txtCMND);
             this.panCustomerViewDatail.Controls.Add(this.lblCMND);
+            this.panCustomerViewDatail.Controls.Add(this.txtCMND);
+            this.panCustomerViewDatail.Controls.Add(this.label1);
+            this.panCustomerViewDatail.Controls.Add(this.dateBirthDayMax);
             this.panCustomerViewDatail.Controls.Add(this.dateBirthDay);
             this.panCustomerViewDatail.Controls.Add(this.labCustomerBirthDate);
-            this.panCustomerViewDatail.Controls.Add(this.labGenreName);
+            this.panCustomerViewDatail.Controls.Add(this.labBookGenreName);
             this.panCustomerViewDatail.Controls.Add(this.labCustomerPhone);
             this.panCustomerViewDatail.Controls.Add(this.labCustomerEmail);
             this.panCustomerViewDatail.Controls.Add(this.labCustomerAddress);
@@ -366,23 +292,49 @@
             this.panCustomerViewDatail.Size = new System.Drawing.Size(783, 133);
             this.panCustomerViewDatail.TabIndex = 1;
             // 
-            // txtCMND
-            // 
-            this.txtCMND.Location = new System.Drawing.Point(500, 44);
-            this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Properties.MaxLength = 10;
-            this.txtCMND.Properties.ReadOnly = true;
-            this.txtCMND.Size = new System.Drawing.Size(230, 20);
-            this.txtCMND.TabIndex = 2;
-            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
-            // 
             // lblCMND
             // 
             this.lblCMND.Location = new System.Drawing.Point(411, 47);
             this.lblCMND.Name = "lblCMND";
             this.lblCMND.Size = new System.Drawing.Size(33, 13);
-            this.lblCMND.TabIndex = 17;
+            this.lblCMND.TabIndex = 22;
             this.lblCMND.Text = "CMND:";
+            // 
+            // txtCMND
+            // 
+            this.txtCMND.Location = new System.Drawing.Point(500, 44);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Properties.MaxLength = 100;
+            this.txtCMND.Size = new System.Drawing.Size(230, 20);
+            this.txtCMND.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(220, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "_";
+            // 
+            // dateBirthDayMax
+            // 
+            this.dateBirthDayMax.EditValue = null;
+            this.dateBirthDayMax.Location = new System.Drawing.Point(244, 44);
+            this.dateBirthDayMax.Name = "dateBirthDayMax";
+            this.dateBirthDayMax.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBirthDayMax.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBirthDayMax.Properties.CalendarTimeProperties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateBirthDayMax.Properties.CalendarTimeProperties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateBirthDayMax.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dateBirthDayMax.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateBirthDayMax.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dateBirthDayMax.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateBirthDayMax.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateBirthDayMax.Size = new System.Drawing.Size(99, 20);
+            this.dateBirthDayMax.TabIndex = 16;
             // 
             // dateBirthDay
             // 
@@ -400,8 +352,7 @@
             this.dateBirthDay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateBirthDay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateBirthDay.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dateBirthDay.Properties.ReadOnly = true;
-            this.dateBirthDay.Size = new System.Drawing.Size(230, 20);
+            this.dateBirthDay.Size = new System.Drawing.Size(99, 20);
             this.dateBirthDay.TabIndex = 1;
             this.dateBirthDay.EditValueChanged += new System.EventHandler(this.dateBirthDay_EditValueChanged);
             // 
@@ -413,13 +364,13 @@
             this.labCustomerBirthDate.TabIndex = 14;
             this.labCustomerBirthDate.Text = "Ngày sinh:";
             // 
-            // labGenreName
+            // labBookGenreName
             // 
-            this.labGenreName.Location = new System.Drawing.Point(411, 76);
-            this.labGenreName.Name = "labGenreName";
-            this.labGenreName.Size = new System.Drawing.Size(42, 13);
-            this.labGenreName.TabIndex = 11;
-            this.labGenreName.Text = "Giới tính:";
+            this.labBookGenreName.Location = new System.Drawing.Point(411, 75);
+            this.labBookGenreName.Name = "labBookGenreName";
+            this.labBookGenreName.Size = new System.Drawing.Size(42, 13);
+            this.labBookGenreName.TabIndex = 11;
+            this.labBookGenreName.Text = "Giới tính:";
             // 
             // labCustomerPhone
             // 
@@ -457,8 +408,7 @@
             // 
             this.txtCustomerPhone.Location = new System.Drawing.Point(113, 73);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
-            this.txtCustomerPhone.Properties.MaxLength = 11;
-            this.txtCustomerPhone.Properties.ReadOnly = true;
+            this.txtCustomerPhone.Properties.MaxLength = 20;
             this.txtCustomerPhone.Size = new System.Drawing.Size(230, 20);
             this.txtCustomerPhone.TabIndex = 3;
             this.txtCustomerPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerPhone_KeyPress);
@@ -468,9 +418,8 @@
             this.txtCustomerEmail.Location = new System.Drawing.Point(500, 101);
             this.txtCustomerEmail.Name = "txtCustomerEmail";
             this.txtCustomerEmail.Properties.MaxLength = 100;
-            this.txtCustomerEmail.Properties.ReadOnly = true;
             this.txtCustomerEmail.Size = new System.Drawing.Size(230, 20);
-            this.txtCustomerEmail.TabIndex = 6;
+            this.txtCustomerEmail.TabIndex = 4;
             this.txtCustomerEmail.Leave += new System.EventHandler(this.txtCustomerEmail_Leave);
             // 
             // labCustomerName
@@ -486,7 +435,6 @@
             this.txtCustomerAddress.Location = new System.Drawing.Point(113, 101);
             this.txtCustomerAddress.Name = "txtCustomerAddress";
             this.txtCustomerAddress.Properties.MaxLength = 255;
-            this.txtCustomerAddress.Properties.ReadOnly = true;
             this.txtCustomerAddress.Size = new System.Drawing.Size(230, 20);
             this.txtCustomerAddress.TabIndex = 5;
             // 
@@ -495,7 +443,6 @@
             this.txtCustomerId.Location = new System.Drawing.Point(113, 15);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.Properties.MaxLength = 10;
-            this.txtCustomerId.Properties.ReadOnly = true;
             this.txtCustomerId.Size = new System.Drawing.Size(230, 20);
             this.txtCustomerId.TabIndex = 15;
             // 
@@ -504,14 +451,13 @@
             this.txtCustomerName.Location = new System.Drawing.Point(500, 15);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Properties.MaxLength = 100;
-            this.txtCustomerName.Properties.ReadOnly = true;
             this.txtCustomerName.Size = new System.Drawing.Size(230, 20);
             this.txtCustomerName.TabIndex = 0;
             this.txtCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerNameLA_KeyPress);
             // 
             // cmbCustomerGender
             // 
-            this.cmbCustomerGender.Location = new System.Drawing.Point(500, 73);
+            this.cmbCustomerGender.Location = new System.Drawing.Point(500, 72);
             this.cmbCustomerGender.Name = "cmbCustomerGender";
             this.cmbCustomerGender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -520,10 +466,9 @@
             "Nữ",
             "Khác"});
             this.cmbCustomerGender.Properties.PopupSizeable = true;
-            this.cmbCustomerGender.Properties.ReadOnly = true;
             this.cmbCustomerGender.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmbCustomerGender.Size = new System.Drawing.Size(230, 20);
-            this.cmbCustomerGender.TabIndex = 4;
+            this.cmbCustomerGender.TabIndex = 2;
             // 
             // navBarCustomerLookAt
             // 
@@ -536,13 +481,13 @@
             this.navBarCustomerLookAt.Name = "navBarCustomerLookAt";
             this.navBarCustomerLookAt.OptionsNavPane.ExpandedWidth = 229;
             this.navBarCustomerLookAt.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarCustomerLookAt.Size = new System.Drawing.Size(229, 397);
+            this.navBarCustomerLookAt.Size = new System.Drawing.Size(229, 435);
             this.navBarCustomerLookAt.TabIndex = 0;
             this.navBarCustomerLookAt.Text = "navBarControl1";
             // 
             // navBarGCustomerLookAt
             // 
-            this.navBarGCustomerLookAt.Caption = "Tìm nhanh";
+            this.navBarGCustomerLookAt.Caption = "Tùy chọn tìm kiếm";
             this.navBarGCustomerLookAt.ControlContainer = this.navBarGroupControlContainer1;
             this.navBarGCustomerLookAt.Expanded = true;
             this.navBarGCustomerLookAt.GroupClientHeight = 80;
@@ -551,35 +496,55 @@
             // 
             // navBarGroupControlContainer1
             // 
-            this.navBarGroupControlContainer1.Controls.Add(this.labCustomerNameLA);
-            this.navBarGroupControlContainer1.Controls.Add(this.txtCustomerNameLA);
+            this.navBarGroupControlContainer1.Controls.Add(this.groupControl2);
             this.navBarGroupControlContainer1.Name = "navBarGroupControlContainer1";
-            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(229, 294);
+            this.navBarGroupControlContainer1.Size = new System.Drawing.Size(229, 332);
             this.navBarGroupControlContainer1.TabIndex = 0;
             // 
-            // labCustomerNameLA
+            // groupControl2
             // 
-            this.labCustomerNameLA.Location = new System.Drawing.Point(5, 8);
-            this.labCustomerNameLA.Name = "labCustomerNameLA";
-            this.labCustomerNameLA.Size = new System.Drawing.Size(106, 13);
-            this.labCustomerNameLA.TabIndex = 10;
-            this.labCustomerNameLA.Text = "Nhập tên khách hàng:";
+            this.groupControl2.Controls.Add(this.txtSearchDelay);
+            this.groupControl2.Controls.Add(this.rgrSearAfter);
+            this.groupControl2.Location = new System.Drawing.Point(16, 14);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(200, 118);
+            this.groupControl2.TabIndex = 24;
+            this.groupControl2.Text = "Thời điểm lọc kết quả tra cứu";
             // 
-            // txtCustomerNameLA
+            // txtSearchDelay
             // 
-            this.txtCustomerNameLA.Location = new System.Drawing.Point(19, 33);
-            this.txtCustomerNameLA.Name = "txtCustomerNameLA";
-            this.txtCustomerNameLA.Properties.MaxLength = 100;
-            this.txtCustomerNameLA.Size = new System.Drawing.Size(200, 20);
-            this.txtCustomerNameLA.TabIndex = 12;
-            this.txtCustomerNameLA.TextChanged += new System.EventHandler(this.txtCustomerNameLA_TextChanged);
-            this.txtCustomerNameLA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerNameLA_KeyPress);
+            this.txtSearchDelay.EditValue = "330";
+            this.txtSearchDelay.Location = new System.Drawing.Point(57, 71);
+            this.txtSearchDelay.Name = "txtSearchDelay";
+            this.txtSearchDelay.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtSearchDelay.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtSearchDelay.Properties.MaxLength = 255;
+            this.txtSearchDelay.Size = new System.Drawing.Size(36, 20);
+            this.txtSearchDelay.TabIndex = 21;
+            // 
+            // rgrSearAfter
+            // 
+            this.rgrSearAfter.Location = new System.Drawing.Point(12, 36);
+            this.rgrSearAfter.Name = "rgrSearAfter";
+            this.rgrSearAfter.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Khi bấm phím Enter"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Sau               ms")});
+            this.rgrSearAfter.Size = new System.Drawing.Size(181, 65);
+            this.rgrSearAfter.TabIndex = 1;
             // 
             // dxErrorProvider
             // 
             this.dxErrorProvider.ContainerControl = this;
             // 
-            // frmCustomer
+            // IDNumber
+            // 
+            this.IDNumber.Caption = "CMND";
+            this.IDNumber.FieldName = "IDNumber";
+            this.IDNumber.Name = "IDNumber";
+            this.IDNumber.Visible = true;
+            this.IDNumber.VisibleIndex = 3;
+            // 
+            // frmSearchCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -587,16 +552,13 @@
             this.Controls.Add(this.panelCustomerView);
             this.Controls.Add(this.panelCustomerTitles);
             this.Controls.Add(this.panelCustomerExecute);
-            this.KeyPreview = true;
-            this.Name = "frmCustomer";
+            this.Name = "frmSearchCustomer";
             this.Text = "Quản lý khách hàng";
             this.Load += new System.EventHandler(this.frmCustomer_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCustomer_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.panelCustomerTitles)).EndInit();
             this.panelCustomerTitles.ResumeLayout(false);
             this.panelCustomerTitles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelCustomerExecute)).EndInit();
-            this.panelCustomerExecute.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelCustomerView)).EndInit();
             this.panelCustomerView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdListCustomer)).EndInit();
@@ -607,6 +569,8 @@
             this.panCustomerViewDatail.ResumeLayout(false);
             this.panCustomerViewDatail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDayMax.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBirthDayMax.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBirthDay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBirthDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerPhone.Properties)).EndInit();
@@ -618,8 +582,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarCustomerLookAt)).EndInit();
             this.navBarCustomerLookAt.ResumeLayout(false);
             this.navBarGroupControlContainer1.ResumeLayout(false);
-            this.navBarGroupControlContainer1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerNameLA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearchDelay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgrSearAfter.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -629,12 +595,7 @@
 
         private DevExpress.XtraEditors.PanelControl panelCustomerTitles;
         private DevExpress.XtraEditors.LabelControl labCustomerTitle;
-        private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.PanelControl panelCustomerExecute;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.PanelControl panelCustomerView;
         private DevExpress.XtraGrid.GridControl grdListCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView grdvListCustomer;
@@ -649,7 +610,7 @@
         private DevExpress.XtraEditors.PanelControl panCustomerViewDatail;
         private DevExpress.XtraEditors.DateEdit dateBirthDay;
         private DevExpress.XtraEditors.LabelControl labCustomerBirthDate;
-        private DevExpress.XtraEditors.LabelControl labGenreName;
+        private DevExpress.XtraEditors.LabelControl labBookGenreName;
         private DevExpress.XtraEditors.LabelControl labCustomerPhone;
         private DevExpress.XtraEditors.LabelControl labCustomerEmail;
         private DevExpress.XtraEditors.LabelControl labCustomerAddress;
@@ -664,11 +625,13 @@
         private DevExpress.XtraNavBar.NavBarControl navBarCustomerLookAt;
         private DevExpress.XtraNavBar.NavBarGroup navBarGCustomerLookAt;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer1;
-        private DevExpress.XtraEditors.LabelControl labCustomerNameLA;
-        private DevExpress.XtraEditors.TextEdit txtCustomerNameLA;
-        private DevExpress.XtraEditors.SimpleButton btnCancelOfUpdate;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider;
         private DevExpress.XtraGrid.Columns.GridColumn CustomerPhone;
+        private DevExpress.XtraEditors.DateEdit dateBirthDayMax;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.TextEdit txtSearchDelay;
+        private DevExpress.XtraEditors.RadioGroup rgrSearAfter;
         private DevExpress.XtraEditors.LabelControl lblCMND;
         private DevExpress.XtraEditors.TextEdit txtCMND;
         private DevExpress.XtraGrid.Columns.GridColumn IDNumber;

@@ -42,18 +42,30 @@
             this.barSiInfo = new DevExpress.XtraBars.BarStaticItem();
             this.barhiStatus = new DevExpress.XtraBars.BarStaticItem();
             this.barHiDateLogin = new DevExpress.XtraBars.BarHeaderItem();
+            this.bbtnStaff = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnInformation = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnCustomerManager = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnRule = new DevExpress.XtraBars.BarButtonItem();
             this.largeimageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.ribpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribpgRule = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpAction = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribgCategory = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpManager = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribpgCustomer = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpStaff = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribpgStaff = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpHelp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.xtraTabbedMdiManagerMenu = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribpgServices = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbtnServicesType = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallimageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeimageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManagerMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -71,18 +83,26 @@
             this.bbtnAreaCategory,
             this.barSiInfo,
             this.barhiStatus,
-            this.barHiDateLogin});
+            this.barHiDateLogin,
+            this.bbtnStaff,
+            this.bbtnInformation,
+            this.bbtnLogout,
+            this.bbtnCustomerManager,
+            this.bbtnRule,
+            this.bbtnServicesType});
             this.ribbon.LargeImages = this.largeimageCollection;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 13;
+            this.ribbon.MaxItemId = 19;
             this.ribbon.Name = "ribbon";
+            this.ribbon.PageHeaderItemLinks.Add(this.bbtnInformation);
+            this.ribbon.PageHeaderItemLinks.Add(this.bbtnLogout);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribpSystem,
             this.ribpAction,
             this.ribpManager,
             this.ribpStaff,
             this.ribpHelp});
-            this.ribbon.Size = new System.Drawing.Size(812, 143);
+            this.ribbon.Size = new System.Drawing.Size(1290, 143);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // smallimageCollection
@@ -91,6 +111,10 @@
             this.smallimageCollection.Images.SetKeyName(0, "Login.png");
             this.smallimageCollection.Images.SetKeyName(1, "database.png");
             this.smallimageCollection.Images.SetKeyName(2, "customer.png");
+            this.smallimageCollection.Images.SetKeyName(3, "1438116541_hotel.png");
+            this.smallimageCollection.Images.SetKeyName(4, "Staff.png");
+            this.smallimageCollection.Images.SetKeyName(5, "ic_help.ico");
+            this.smallimageCollection.Images.SetKeyName(6, "ic_logout1.ico");
             // 
             // bbtnLogin
             // 
@@ -128,6 +152,7 @@
             this.bbtnRoomTypeCategory.Caption = "Danh mục loại phòng";
             this.bbtnRoomTypeCategory.Id = 5;
             this.bbtnRoomTypeCategory.Name = "bbtnRoomTypeCategory";
+            this.bbtnRoomTypeCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnRoomTypeCategory_ItemClick);
             // 
             // bbtnRoomCategory
             // 
@@ -161,6 +186,46 @@
             this.barHiDateLogin.Id = 12;
             this.barHiDateLogin.Name = "barHiDateLogin";
             // 
+            // bbtnStaff
+            // 
+            this.bbtnStaff.Caption = "Nhân viên";
+            this.bbtnStaff.Id = 13;
+            this.bbtnStaff.LargeImageIndex = 4;
+            this.bbtnStaff.Name = "bbtnStaff";
+            this.bbtnStaff.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnStaff_ItemClick);
+            // 
+            // bbtnInformation
+            // 
+            this.bbtnInformation.Caption = "Thông tin";
+            this.bbtnInformation.Id = 14;
+            this.bbtnInformation.ImageIndex = 5;
+            this.bbtnInformation.Name = "bbtnInformation";
+            this.bbtnInformation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnInformation_ItemClick);
+            // 
+            // bbtnLogout
+            // 
+            this.bbtnLogout.Caption = "Đăng xuất";
+            this.bbtnLogout.Id = 15;
+            this.bbtnLogout.ImageIndex = 6;
+            this.bbtnLogout.Name = "bbtnLogout";
+            this.bbtnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnLogout_ItemClick);
+            // 
+            // bbtnCustomerManager
+            // 
+            this.bbtnCustomerManager.Caption = "Khách hàng";
+            this.bbtnCustomerManager.Id = 16;
+            this.bbtnCustomerManager.LargeImageIndex = 5;
+            this.bbtnCustomerManager.Name = "bbtnCustomerManager";
+            this.bbtnCustomerManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnCustomerManager_ItemClick);
+            // 
+            // bbtnRule
+            // 
+            this.bbtnRule.Caption = "Quy định";
+            this.bbtnRule.Id = 17;
+            this.bbtnRule.LargeImageIndex = 6;
+            this.bbtnRule.Name = "bbtnRule";
+            this.bbtnRule.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnRule_ItemClick);
+            // 
             // largeimageCollection
             // 
             this.largeimageCollection.ImageSize = new System.Drawing.Size(32, 32);
@@ -168,11 +233,17 @@
             this.largeimageCollection.Images.SetKeyName(0, "Login.png");
             this.largeimageCollection.Images.SetKeyName(1, "database.png");
             this.largeimageCollection.Images.SetKeyName(2, "customer.png");
+            this.largeimageCollection.Images.SetKeyName(3, "1438116541_hotel.png");
+            this.largeimageCollection.Images.SetKeyName(4, "Staff.png");
+            this.largeimageCollection.Images.SetKeyName(5, "ic_customers.ico");
+            this.largeimageCollection.Images.SetKeyName(6, "ic_regulations.ico");
+            this.largeimageCollection.Images.SetKeyName(7, "ic_services_types.ico");
             // 
             // ribpSystem
             // 
             this.ribpSystem.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribpgSystem});
+            this.ribpgSystem,
+            this.ribpgRule});
             this.ribpSystem.Name = "ribpSystem";
             this.ribpSystem.Text = "Hệ thống";
             // 
@@ -182,6 +253,12 @@
             this.ribpgSystem.ItemLinks.Add(this.bbtnConnectData);
             this.ribpgSystem.Name = "ribpgSystem";
             this.ribpgSystem.Text = "Nhóm hệ thống";
+            // 
+            // ribpgRule
+            // 
+            this.ribpgRule.ItemLinks.Add(this.bbtnRule);
+            this.ribpgRule.Name = "ribpgRule";
+            this.ribpgRule.Text = "Quy định";
             // 
             // ribpAction
             // 
@@ -202,13 +279,30 @@
             // 
             // ribpManager
             // 
+            this.ribpManager.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribpgCustomer,
+            this.ribpgServices});
             this.ribpManager.Name = "ribpManager";
             this.ribpManager.Text = "Quản trị";
             // 
+            // ribpgCustomer
+            // 
+            this.ribpgCustomer.ItemLinks.Add(this.bbtnCustomerManager);
+            this.ribpgCustomer.Name = "ribpgCustomer";
+            this.ribpgCustomer.Text = "Khách hàng";
+            // 
             // ribpStaff
             // 
+            this.ribpStaff.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribpgStaff});
             this.ribpStaff.Name = "ribpStaff";
             this.ribpStaff.Text = "Nhân sự";
+            // 
+            // ribpgStaff
+            // 
+            this.ribpgStaff.ItemLinks.Add(this.bbtnStaff);
+            this.ribpgStaff.Name = "ribpgStaff";
+            this.ribpgStaff.Text = "Nhân sự";
             // 
             // ribpHelp
             // 
@@ -220,21 +314,43 @@
             this.ribbonStatusBar.ItemLinks.Add(this.barSiInfo);
             this.ribbonStatusBar.ItemLinks.Add(this.barhiStatus);
             this.ribbonStatusBar.ItemLinks.Add(this.barHiDateLogin);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 307);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 658);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(812, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1290, 31);
+            // 
+            // xtraTabbedMdiManagerMenu
+            // 
+            this.xtraTabbedMdiManagerMenu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.xtraTabbedMdiManagerMenu.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.xtraTabbedMdiManagerMenu.MdiParent = this;
+            // 
+            // ribpgServices
+            // 
+            this.ribpgServices.ItemLinks.Add(this.bbtnServicesType);
+            this.ribpgServices.Name = "ribpgServices";
+            this.ribpgServices.Text = "Dịch vụ";
+            // 
+            // bbtnServicesType
+            // 
+            this.bbtnServicesType.Caption = "Loại dịch vụ";
+            this.bbtnServicesType.Id = 18;
+            this.bbtnServicesType.LargeImageIndex = 7;
+            this.bbtnServicesType.Name = "bbtnServicesType";
+            this.bbtnServicesType.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnServicesType_ItemClick);
             // 
             // frmHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 338);
+            this.ClientSize = new System.Drawing.Size(1290, 689);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IsMdiContainer = true;
             this.Name = "frmHomePage";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Quản lý khách sạn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHomePage_FormClosing);
@@ -243,6 +359,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallimageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeimageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManagerMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +388,16 @@
         private DevExpress.XtraBars.BarStaticItem barSiInfo;
         private DevExpress.XtraBars.BarStaticItem barhiStatus;
         private DevExpress.XtraBars.BarHeaderItem barHiDateLogin;
+        private DevExpress.XtraBars.BarButtonItem bbtnStaff;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribpgStaff;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManagerMenu;
+        private DevExpress.XtraBars.BarButtonItem bbtnInformation;
+        private DevExpress.XtraBars.BarButtonItem bbtnLogout;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribpgCustomer;
+        private DevExpress.XtraBars.BarButtonItem bbtnCustomerManager;
+        private DevExpress.XtraBars.BarButtonItem bbtnRule;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribpgRule;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribpgServices;
+        private DevExpress.XtraBars.BarButtonItem bbtnServicesType;
     }
 }

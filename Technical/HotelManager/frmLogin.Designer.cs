@@ -42,7 +42,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.EditValue = "";
+            this.txtUsername.EditValue = "trungpv93";
             this.txtUsername.Location = new System.Drawing.Point(275, 86);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -55,7 +55,7 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.EditValue = "";
+            this.txtPassword.EditValue = "trungpv";
             this.txtPassword.Location = new System.Drawing.Point(275, 125);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,7 +92,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("MS Reference Sans Serif", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lblTitle.Location = new System.Drawing.Point(41, 23);
+            this.lblTitle.Location = new System.Drawing.Point(87, 21);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(420, 28);
             this.lblTitle.TabIndex = 6;
