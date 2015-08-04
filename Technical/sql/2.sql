@@ -572,3 +572,236 @@ BEGIN
 END
 
 GO
+
+/* STATUS */
+
+CREATE PROCEDURE [dbo].[sp_LookAtStatusDataFromDatabase]
+(
+	@StatusName nvarchar(100)
+)
+
+AS
+	SELECT * 
+	FROM STATUS 
+	WHERE StatusName like '%'+@StatusName+'%'
+
+RETURN
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_DeleteStatus]
+(
+	@StatusId nvarchar(10)
+)
+
+AS
+	DELETE STATUS 
+	WHERE StatusID = @StatusId
+
+RETURN
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_EditStatusUpdate]
+(
+	@StatusID nvarchar(10),
+	@StatusName nvarchar(100)
+)
+AS
+	UPDATE STATUS 
+	SET StatusName = @StatusName
+	WHERE StatusID = @StatusID
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_AddNewStatusInsert]
+(
+	@StatusID nvarchar(10),
+	@StatusName nvarchar(100)
+)
+AS
+	INSERT INTO STATUS 
+	VALUES(@StatusID,@StatusName)
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetStatusByID]
+(
+	@StatusID nvarchar(10)
+)
+AS
+	SELECT StatusID, StatusName
+	FROM STATUS  
+	Where STATUS.StatusID = @StatusID
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetAllStatus]
+AS
+	SELECT StatusID, StatusName
+	FROM STATUS
+
+
+
+GO
+
+CREATE TRIGGER [dbo].[NV_AutoIncrementStatusId]
+ON [dbo].[STATUS]
+FOR INSERT
+AS
+BEGIN
+ DECLARE @MAXValue VARCHAR(10),@NEWValue VARCHAR(10),@NEW_ID VARCHAR(10), @OLD_ID VARCHAR(10);
+ --Lấy giá trị lớn nhất 
+ IF ((SELECT COUNT(StatusID) FROM STATUS)>1)
+  BEGIN
+   SELECT @MAXValue=MAX(StatusID) FROM STATUS;
+  END
+ ELSE
+  BEGIN
+   SET @MAXValue='TT0000000';
+  END
+ --Lấy giá trị ID được chèn vào từ bên ngoài (bất kì, không quan trọng)
+ select @OLD_ID = StatusID from INSERTED
+ --Lấy phần chuỗi số đằng sau TL rồi tăng lên 1 đơn vị
+ SET @NEWValue= REPLACE(@MaxValue,'TT','')+1
+ -- Kiểm tra NEWValue nếu < 100
+ -- Nếu <100, thêm vào số 0 sao cho NEWValue có độ dài = 9
+ SET @NEW_ID = 'TT'+
+  CASE
+     WHEN LEN(@NEWValue)<7
+     THEN REPLICATE('0',7-LEN(@newValue))
+     ELSE ''
+     END +
+     @NEWValue
+ --Thay thế giá trị Id từ bên ngoài bằng Id vừa được tạo
+ UPDATE STATUS SET StatusID = @NEW_ID WHERE StatusID = @OLD_ID
+END
+
+GO
+
+/* UNIT */
+
+
+CREATE PROCEDURE [dbo].[sp_LookAtUnitDataFromDatabase]
+(
+	@UnitName nvarchar(100)
+)
+
+AS
+	SELECT * 
+	FROM UNIT 
+	WHERE UnitName like '%'+@UnitName+'%'
+
+RETURN
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_DeleteUnit]
+(
+	@UnitId nvarchar(10)
+)
+
+AS
+	DELETE UNIT 
+	WHERE UnitID = @UnitId
+
+RETURN
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_EditUnitUpdate]
+(
+	@UnitID nvarchar(10),
+	@UnitName nvarchar(100)
+)
+AS
+	UPDATE UNIT 
+	SET UnitName = @UnitName
+	WHERE UnitID = @UnitID
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_AddNewUnitInsert]
+(
+	@UnitID nvarchar(10),
+	@UnitName nvarchar(100)
+)
+AS
+	INSERT INTO UNIT 
+	VALUES(@UnitID,@UnitName)
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetUnitByID]
+(
+	@UnitID nvarchar(10)
+)
+AS
+	SELECT UnitID, UnitName
+	FROM UNIT  
+	Where UNIT.UnitID = @UnitID
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetAllUnit]
+AS
+	SELECT UnitID, UnitName
+	FROM UNIT
+
+
+
+GO
+
+CREATE TRIGGER [dbo].[NV_AutoIncrementUnitId]
+ON [dbo].[UNIT]
+FOR INSERT
+AS
+BEGIN
+ DECLARE @MAXValue VARCHAR(10),@NEWValue VARCHAR(10),@NEW_ID VARCHAR(10), @OLD_ID VARCHAR(10);
+ --Lấy giá trị lớn nhất 
+ IF ((SELECT COUNT(UnitID) FROM UNIT)>1)
+  BEGIN
+   SELECT @MAXValue=MAX(UnitID) FROM UNIT;
+  END
+ ELSE
+  BEGIN
+   SET @MAXValue='DOV0000000';
+  END
+ --Lấy giá trị ID được chèn vào từ bên ngoài (bất kì, không quan trọng)
+ select @OLD_ID = UnitID from INSERTED
+ --Lấy phần chuỗi số đằng sau TL rồi tăng lên 1 đơn vị
+ SET @NEWValue= REPLACE(@MaxValue,'DOV','')+1
+ -- Kiểm tra NEWValue nếu < 100
+ -- Nếu <100, thêm vào số 0 sao cho NEWValue có độ dài = 9
+ SET @NEW_ID = 'DOV'+
+  CASE
+     WHEN LEN(@NEWValue)<7
+     THEN REPLICATE('0',7-LEN(@newValue))
+     ELSE ''
+     END +
+     @NEWValue
+ --Thay thế giá trị Id từ bên ngoài bằng Id vừa được tạo
+ UPDATE UNIT SET UnitID = @NEW_ID WHERE UnitID = @OLD_ID
+END
+
+GO

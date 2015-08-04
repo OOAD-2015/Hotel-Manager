@@ -45,6 +45,9 @@
     <Compile Include="BUSRule.cs" />
     <Compile Include="BUSServicesType.cs" />
     <Compile Include="BUSStaff.cs" />
+    <Compile Include="BUSStatus.cs" />
+    <Compile Include="BUSUnit.cs" />
+    <Compile Include="DTOStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

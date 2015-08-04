@@ -194,6 +194,18 @@
     <Compile Include="frmRoom.Designer.cs">
       <DependentUpon>frmRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatus.Designer.cs">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnit.Designer.cs">
+      <DependentUpon>frmUnit.cs</DependentUpon>
+    </Compile>
     <Compile Include="General\CheckInformationEntered.cs" />
     <Compile Include="General\CheckMarkSelection.cs" />
     <Compile Include="Program.cs" />
@@ -236,6 +248,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoom.resx">
       <DependentUpon>frmRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatus.resx">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnit.resx">
+      <DependentUpon>frmUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

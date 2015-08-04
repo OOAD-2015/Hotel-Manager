@@ -58,6 +58,7 @@
     <Compile Include="DTOServiceDetail.cs" />
     <Compile Include="DTOServices.cs" />
     <Compile Include="DTOStaff.cs" />
+    <Compile Include="DTOStatus.cs" />
     <Compile Include="DTOUnit.cs" />
     <Compile Include="GetSetConnectString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
