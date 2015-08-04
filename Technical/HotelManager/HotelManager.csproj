@@ -57,9 +57,11 @@
     <Reference Include="DevExpress.Data.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.RichEdit.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -81,6 +83,8 @@
     <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
@@ -127,6 +131,18 @@
     </Compile>
     <Compile Include="frmDialogAddNewRolePermission.Designer.cs">
       <DependentUpon>frmDialogAddNewRolePermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDialogAddNewRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDialogAddNewRoomType.Designer.cs">
+      <DependentUpon>frmDialogAddNewRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDialogAddNewStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDialogAddNewStatus.Designer.cs">
+      <DependentUpon>frmDialogAddNewStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHomePage.cs">
       <SubType>Form</SubType>
@@ -218,6 +234,15 @@
     </Compile>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDialogAddNewRolePermission.resx">
+      <DependentUpon>frmDialogAddNewRolePermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDialogAddNewRoomType.resx">
+      <DependentUpon>frmDialogAddNewRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDialogAddNewStatus.resx">
+      <DependentUpon>frmDialogAddNewStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHomePage.resx">
       <DependentUpon>frmHomePage.cs</DependentUpon>

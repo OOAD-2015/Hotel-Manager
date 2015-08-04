@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using DataTransferObject;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,24 +10,24 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class BUSRule
+    public class BUSRoom
     {
-        private DAORule ruleDAO;
+        private DAORoom roomDAO;
 
-        public BUSRule()
+        public BUSRoom()
         {
-            ruleDAO = new DAORule();
+            roomDAO = new DAORoom();
         }
 
         /// <summary>
-        /// Phương thức lấy tất cả các Rule từ csdl
+        /// Phương thức lấy tất cả các Room từ csdl
         /// </summary>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public DataTable GetAllRule()
+        public DataTable GetAllRoom()
         {
             try
             {
-                return ruleDAO.GetAllRule();
+                return roomDAO.GetAllRoom();
             }
             catch (SqlException)
             {
@@ -35,15 +36,15 @@ namespace BusinessLayer
             }
         }
         /// <summary>
-        /// Phương thức lấy Rule theo id của Rule
+        /// Phương thức lấy Room theo id của Room
         /// </summary>
-        /// <param name="iRuleId">id của feedback</param>
+        /// <param name="iRoomId">id của feedback</param>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public String GetRuleById(String strRuleId)
+        public String GetRoomById(String strRoomId)
         {
             try
             {
-                return ruleDAO.GetRuleById(strRuleId);
+                return roomDAO.GetRoomById(strRoomId);
             }
             catch (SqlException)
             {
@@ -52,15 +53,15 @@ namespace BusinessLayer
 
         }
         /// <summary>
-        /// Phương thức lấy Rule theo id của Rule
+        /// Phương thức lấy Room theo id của Room
         /// </summary>
-        /// <param name="iRuleId">id của feedback</param>
+        /// <param name="iRoomId">id của feedback</param>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public String GetRuleByLabel(String strRuleLabel)
+        public String GetRoomByLabel(String strRoomLabel)
         {
             try
             {
-                return ruleDAO.GetRuleByLabel(strRuleLabel);
+                return roomDAO.GetRoomByLabel(strRoomLabel);
             }
             catch (SqlException)
             {
@@ -69,14 +70,14 @@ namespace BusinessLayer
 
         }
         /// <summary>
-        /// Phương thức thêm mới một Rule vào csdl
+        /// Phương thức thêm mới một Room vào csdl
         /// </summary>
         /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
-        public bool InsertRule(DTORule Rule)
+        public bool InsertRoom(DTORoom Room)
         {
             try
             {
-                return ruleDAO.InsertRule(Rule);
+                return roomDAO.InsertRoom(Room);
             }
             catch (SqlException)
             {
@@ -85,14 +86,14 @@ namespace BusinessLayer
             }
         }
         /// <summary>
-        /// Phương thức cập nhật một Rule xuống csdl theo id
+        /// Phương thức cập nhật một Room xuống csdl theo id
         /// </summary>
         /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
-        public bool UpdateRule(DTORule Rule)
+        public bool UpdateRoom(DTORoom Room)
         {
             try
             {
-                return ruleDAO.UpdateRule(Rule);
+                return roomDAO.UpdateRoom(Room);
             }
             catch (SqlException)
             {
@@ -101,15 +102,28 @@ namespace BusinessLayer
             }
         }
         /// <summary>
-        /// Phương thức xóa một Rule theo id
+        /// Phương thức xóa một Room theo id
         /// </summary>
-        /// <param name="iRuleId"></param>
+        /// <param name="iRoomId"></param>
         /// <returns>true: thêm mới thành công, false: thêm mới thất bại</returns>
-        public bool DeleteRule(String strRuleId)
+        public bool DeleteRoom(String strRoomId)
         {
             try
             {
-                return ruleDAO.DeleteRule(strRuleId);
+                return roomDAO.DeleteRoom(strRoomId);
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+        }
+
+        public DataTable LookAtRoom(String strRoomId)
+        {
+            try
+            {
+                return roomDAO.LookAtRoom(strRoomId);
             }
             catch (SqlException)
             {

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BUSCustomer.cs" />
     <Compile Include="BUSRolePermission.cs" />
+    <Compile Include="BUSRoom.cs" />
     <Compile Include="BUSRoomType.cs" />
     <Compile Include="BUSRule.cs" />
     <Compile Include="BUSServicesType.cs" />

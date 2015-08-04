@@ -48,6 +48,8 @@
             this.bbtnCustomerManager = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnRule = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnServicesType = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnStatus = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnUnit = new DevExpress.XtraBars.BarButtonItem();
             this.largeimageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.ribpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,14 +59,12 @@
             this.ribpManager = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgCustomer = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpgServices = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribpgOther = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpStaff = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgStaff = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpHelp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManagerMenu = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribpgOther = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbtnStatus = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnUnit = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallimageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeimageCollection)).BeginInit();
@@ -164,6 +164,7 @@
             this.bbtnRoomCategory.Caption = "Danh mục phòng";
             this.bbtnRoomCategory.Id = 6;
             this.bbtnRoomCategory.Name = "bbtnRoomCategory";
+            this.bbtnRoomCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnRoomCategory_ItemClick);
             // 
             // bbtnAreaCategory
             // 
@@ -239,6 +240,22 @@
             this.bbtnServicesType.Name = "bbtnServicesType";
             this.bbtnServicesType.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnServicesType_ItemClick);
             // 
+            // bbtnStatus
+            // 
+            this.bbtnStatus.Caption = "Trạng thái";
+            this.bbtnStatus.Id = 19;
+            this.bbtnStatus.LargeImageIndex = 9;
+            this.bbtnStatus.Name = "bbtnStatus";
+            this.bbtnStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnStatus_ItemClick);
+            // 
+            // bbtnUnit
+            // 
+            this.bbtnUnit.Caption = "Đơn vị";
+            this.bbtnUnit.Id = 20;
+            this.bbtnUnit.LargeImageIndex = 8;
+            this.bbtnUnit.Name = "bbtnUnit";
+            this.bbtnUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnUnit_ItemClick);
+            // 
             // largeimageCollection
             // 
             this.largeimageCollection.ImageSize = new System.Drawing.Size(32, 32);
@@ -313,6 +330,13 @@
             this.ribpgServices.Name = "ribpgServices";
             this.ribpgServices.Text = "Dịch vụ";
             // 
+            // ribpgOther
+            // 
+            this.ribpgOther.ItemLinks.Add(this.bbtnStatus);
+            this.ribpgOther.ItemLinks.Add(this.bbtnUnit);
+            this.ribpgOther.Name = "ribpgOther";
+            this.ribpgOther.Text = "Khác";
+            // 
             // ribpStaff
             // 
             this.ribpStaff.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -347,29 +371,6 @@
             this.xtraTabbedMdiManagerMenu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManagerMenu.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManagerMenu.MdiParent = this;
-            // 
-            // ribpgOther
-            // 
-            this.ribpgOther.ItemLinks.Add(this.bbtnStatus);
-            this.ribpgOther.ItemLinks.Add(this.bbtnUnit);
-            this.ribpgOther.Name = "ribpgOther";
-            this.ribpgOther.Text = "Khác";
-            // 
-            // bbtnStatus
-            // 
-            this.bbtnStatus.Caption = "Trạng thái";
-            this.bbtnStatus.Id = 19;
-            this.bbtnStatus.LargeImageIndex = 9;
-            this.bbtnStatus.Name = "bbtnStatus";
-            this.bbtnStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnStatus_ItemClick);
-            // 
-            // bbtnUnit
-            // 
-            this.bbtnUnit.Caption = "Đơn vị";
-            this.bbtnUnit.Id = 20;
-            this.bbtnUnit.LargeImageIndex = 8;
-            this.bbtnUnit.Name = "bbtnUnit";
-            this.bbtnUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnUnit_ItemClick);
             // 
             // frmHomePage
             // 

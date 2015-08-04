@@ -25,6 +25,7 @@ namespace HotelManager
         private frmServiceType servicesTypeFormObject;
         private frmStatus statusFormObject;
         private frmUnit unitFormObject;
+        private frmRoom roomFormObject;
         #endregion
 
         #region "Varaibles"
@@ -193,6 +194,19 @@ namespace HotelManager
             }
             else
                 unitFormObject.Activate();
+        }
+
+        private void bbtnRoomCategory_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(roomFormObject))
+            {
+                roomFormObject = new frmRoom();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(roomFormObject);
+                roomFormObject.MdiParent = this;
+                roomFormObject.Show();
+            }
+            else
+                roomFormObject.Activate();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace HotelManager
 {
-    partial class frmDialogAddNewRolePermission
+    partial class frmDialogAddNewStatus
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtRolePermissionId = new DevExpress.XtraEditors.TextEdit();
-            this.txtRolePermissionName = new DevExpress.XtraEditors.TextEdit();
-            this.lblRolePermissionId = new DevExpress.XtraEditors.LabelControl();
-            this.lblRolePermissionName = new DevExpress.XtraEditors.LabelControl();
+            this.txtStatusId = new DevExpress.XtraEditors.TextEdit();
+            this.txtStatusName = new DevExpress.XtraEditors.TextEdit();
+            this.lblStatusId = new DevExpress.XtraEditors.LabelControl();
+            this.lblStatusName = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -41,8 +41,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lblTitle = new DevExpress.XtraEditors.LabelControl();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.txtRolePermissionId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRolePermissionName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStatusId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStatusName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -50,37 +50,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtRolePermissionId
+            // txtStatusId
             // 
-            this.txtRolePermissionId.Location = new System.Drawing.Point(86, 52);
-            this.txtRolePermissionId.Name = "txtRolePermissionId";
-            this.txtRolePermissionId.Properties.ReadOnly = true;
-            this.txtRolePermissionId.Size = new System.Drawing.Size(150, 20);
-            this.txtRolePermissionId.TabIndex = 18;
+            this.txtStatusId.Location = new System.Drawing.Point(86, 52);
+            this.txtStatusId.Name = "txtStatusId";
+            this.txtStatusId.Properties.ReadOnly = true;
+            this.txtStatusId.Size = new System.Drawing.Size(150, 20);
+            this.txtStatusId.TabIndex = 18;
             // 
-            // txtRolePermissionName
+            // txtStatusName
             // 
-            this.txtRolePermissionName.Location = new System.Drawing.Point(325, 52);
-            this.txtRolePermissionName.Name = "txtRolePermissionName";
-            this.txtRolePermissionName.Properties.MaxLength = 100;
-            this.txtRolePermissionName.Size = new System.Drawing.Size(214, 20);
-            this.txtRolePermissionName.TabIndex = 0;
+            this.txtStatusName.Location = new System.Drawing.Point(325, 52);
+            this.txtStatusName.Name = "txtStatusName";
+            this.txtStatusName.Properties.MaxLength = 100;
+            this.txtStatusName.Size = new System.Drawing.Size(214, 20);
+            this.txtStatusName.TabIndex = 0;
             // 
-            // lblRolePermissionId
+            // lblStatusId
             // 
-            this.lblRolePermissionId.Location = new System.Drawing.Point(24, 55);
-            this.lblRolePermissionId.Name = "lblRolePermissionId";
-            this.lblRolePermissionId.Size = new System.Drawing.Size(59, 13);
-            this.lblRolePermissionId.TabIndex = 14;
-            this.lblRolePermissionId.Text = "Mã chức vụ:";
+            this.lblStatusId.Location = new System.Drawing.Point(10, 55);
+            this.lblStatusId.Name = "lblStatusId";
+            this.lblStatusId.Size = new System.Drawing.Size(68, 13);
+            this.lblStatusId.TabIndex = 14;
+            this.lblStatusId.Text = "Mã trạng thái:";
             // 
-            // lblRolePermissionName
+            // lblStatusName
             // 
-            this.lblRolePermissionName.Location = new System.Drawing.Point(259, 55);
-            this.lblRolePermissionName.Name = "lblRolePermissionName";
-            this.lblRolePermissionName.Size = new System.Drawing.Size(63, 13);
-            this.lblRolePermissionName.TabIndex = 15;
-            this.lblRolePermissionName.Text = "Tên chức vụ:";
+            this.lblStatusName.Location = new System.Drawing.Point(250, 55);
+            this.lblStatusName.Name = "lblStatusName";
+            this.lblStatusName.Size = new System.Drawing.Size(72, 13);
+            this.lblStatusName.TabIndex = 15;
+            this.lblStatusName.Text = "Tên trạng thái:";
             // 
             // panelControl1
             // 
@@ -96,7 +96,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(424, 6);
+            this.btnClose.Location = new System.Drawing.Point(419, 8);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 32);
             this.btnClose.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(297, 6);
+            this.btnSave.Location = new System.Drawing.Point(294, 8);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 32);
             this.btnSave.TabIndex = 3;
@@ -114,7 +114,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(170, 6);
+            this.btnAdd.Location = new System.Drawing.Point(169, 8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 32);
             this.btnAdd.TabIndex = 0;
@@ -123,7 +123,7 @@
             // 
             // btnCancelAdd
             // 
-            this.btnCancelAdd.Location = new System.Drawing.Point(43, 6);
+            this.btnCancelAdd.Location = new System.Drawing.Point(44, 8);
             this.btnCancelAdd.Name = "btnCancelAdd";
             this.btnCancelAdd.Size = new System.Drawing.Size(94, 32);
             this.btnCancelAdd.TabIndex = 4;
@@ -133,10 +133,10 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.lblTitle);
-            this.panelControl2.Controls.Add(this.lblRolePermissionName);
-            this.panelControl2.Controls.Add(this.lblRolePermissionId);
-            this.panelControl2.Controls.Add(this.txtRolePermissionName);
-            this.panelControl2.Controls.Add(this.txtRolePermissionId);
+            this.panelControl2.Controls.Add(this.lblStatusName);
+            this.panelControl2.Controls.Add(this.lblStatusId);
+            this.panelControl2.Controls.Add(this.txtStatusName);
+            this.panelControl2.Controls.Add(this.txtStatusId);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
@@ -149,15 +149,15 @@
             this.lblTitle.Appearance.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.lblTitle.Location = new System.Drawing.Point(169, 7);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(238, 28);
+            this.lblTitle.Size = new System.Drawing.Size(280, 28);
             this.lblTitle.TabIndex = 19;
-            this.lblTitle.Text = "THÊM MỚI CHỨC VỤ";
+            this.lblTitle.Text = "THÊM MỚI TRẠNG THÁI";
             // 
             // dxErrorProvider
             // 
             this.dxErrorProvider.ContainerControl = this;
             // 
-            // frmDialogAddNewRolePermission
+            // frmDialogAddNewStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,13 +167,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.LookAndFeel.SkinName = "Metropolis";
-            this.Name = "frmDialogAddNewRolePermission";
+            this.Name = "frmDialogAddNewStatus";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDialogAddNewRolePermission";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDialogAddNewRolePermission_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.txtRolePermissionId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRolePermissionName.Properties)).EndInit();
+            this.Text = "frmDialogAddNewStatus";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDialogAddNewStatus_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.txtStatusId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStatusName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -186,10 +186,10 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.TextEdit txtRolePermissionId;
-        private DevExpress.XtraEditors.TextEdit txtRolePermissionName;
-        private DevExpress.XtraEditors.LabelControl lblRolePermissionId;
-        private DevExpress.XtraEditors.LabelControl lblRolePermissionName;
+        private DevExpress.XtraEditors.TextEdit txtStatusId;
+        private DevExpress.XtraEditors.TextEdit txtStatusName;
+        private DevExpress.XtraEditors.LabelControl lblStatusId;
+        private DevExpress.XtraEditors.LabelControl lblStatusName;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnSave;

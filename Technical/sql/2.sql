@@ -805,3 +805,127 @@ BEGIN
 END
 
 GO
+
+/* ROOM */
+
+
+CREATE PROCEDURE [dbo].[sp_LookAtRoomDataFromDatabase]
+(
+	@RoomName nvarchar(100)
+)
+
+AS
+	SELECT RoomID, RoomName, ROOM.RoomTypeID, ROOMTYPE.RoomTypeName, NumberOfBeds, Description, ROOM.StatusID, STATUS.StatusName
+	FROM ROOM, ROOMTYPE, STATUS WHERE ROOM.RoomTypeID=ROOMTYPE.RoomTypeID AND ROOM.StatusID = STATUS.StatusID AND RoomName like '%'+@RoomName+'%'
+
+RETURN
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_DeleteRoom]
+(
+	@RoomId nvarchar(10)
+)
+
+AS
+	DELETE ROOM 
+	WHERE RoomID = @RoomId
+
+RETURN
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_EditRoomUpdate]
+(
+	@RoomID nvarchar(10),
+	@RoomName nvarchar(100),
+	@RoomTypeID nvarchar(10),
+	@NumberOfBeds int, 
+	@Description nvarchar(255),
+	@RoomStatusID nvarchar(10)
+)
+AS
+	UPDATE ROOM 
+	SET RoomName = @RoomName, RoomTypeID = @RoomTypeID , NumberOfBeds = @NumberOfBeds , Description = @Description , StatusID = @RoomStatusID
+	WHERE RoomID = @RoomID
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_AddNewRoomInsert]
+(
+	@RoomID nvarchar(10),
+	@RoomName nvarchar(100),
+	@RoomTypeID nvarchar(10),
+	@NumberOfBeds int, 
+	@Description nvarchar(255),
+	@RoomStatusID nvarchar(10)
+)
+AS
+	INSERT INTO ROOM 
+	VALUES(@RoomID,@RoomName, @RoomTypeID, @NumberOfBeds, @Description, @RoomStatusID)
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetRoomByID]
+(
+	@RoomID nvarchar(10)
+)
+AS
+	SELECT *
+	FROM ROOM  
+	Where ROOM.RoomID = @RoomID
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetAllRoom]
+AS
+	SELECT RoomID, RoomName, ROOM.RoomTypeID, ROOMTYPE.RoomTypeName, NumberOfBeds, Description, ROOM.StatusID, STATUS.StatusName
+	FROM ROOM, ROOMTYPE, STATUS WHERE ROOM.RoomTypeID=ROOMTYPE.RoomTypeID AND ROOM.StatusID = STATUS.StatusID
+
+
+
+GO
+
+CREATE TRIGGER [dbo].[NV_AutoIncrementRoomId]
+ON [dbo].[ROOM]
+FOR INSERT
+AS
+BEGIN
+ DECLARE @MAXValue VARCHAR(10),@NEWValue VARCHAR(10),@NEW_ID VARCHAR(10), @OLD_ID VARCHAR(10);
+ --Lấy giá trị lớn nhất 
+ IF ((SELECT COUNT(RoomID) FROM ROOM)>1)
+  BEGIN
+   SELECT @MAXValue=MAX(RoomID) FROM ROOM;
+  END
+ ELSE
+  BEGIN
+   SET @MAXValue='PH0000000';
+  END
+ --Lấy giá trị ID được chèn vào từ bên ngoài (bất kì, không quan trọng)
+ select @OLD_ID = RoomID from INSERTED
+ --Lấy phần chuỗi số đằng sau TL rồi tăng lên 1 đơn vị
+ SET @NEWValue= REPLACE(@MaxValue,'PH','')+1
+ -- Kiểm tra NEWValue nếu < 100
+ -- Nếu <100, thêm vào số 0 sao cho NEWValue có độ dài = 9
+ SET @NEW_ID = 'PH'+
+  CASE
+     WHEN LEN(@NEWValue)<7
+     THEN REPLICATE('0',7-LEN(@newValue))
+     ELSE ''
+     END +
+     @NEWValue
+ --Thay thế giá trị Id từ bên ngoài bằng Id vừa được tạo
+ UPDATE ROOM SET RoomID = @NEW_ID WHERE RoomID = @OLD_ID
+END
+
+GO

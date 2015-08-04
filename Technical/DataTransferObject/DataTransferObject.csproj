@@ -51,7 +51,6 @@
     <Compile Include="DTOPriceListDetail.cs" />
     <Compile Include="DTORolePermission.cs" />
     <Compile Include="DTORoom.cs" />
-    <Compile Include="DTORoomStatus.cs" />
     <Compile Include="DTORoomType.cs" />
     <Compile Include="DTORule.cs" />
     <Compile Include="DTOServicesType.cs" />
