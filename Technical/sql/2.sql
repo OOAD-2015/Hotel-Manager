@@ -929,3 +929,125 @@ BEGIN
 END
 
 GO
+
+/* SERVICES */
+
+
+CREATE PROCEDURE [dbo].[sp_LookAtServicesDataFromDatabase]
+(
+	@ServicesName nvarchar(100)
+)
+
+AS
+	SELECT ServicesID, ServicesName, SERVICES.ServicesTypeID, SERVICESTYPE.ServicesTypeName, Price, SERVICES.UnitID, UNIT.UnitName
+	FROM SERVICES, SERVICESTYPE, UNIT WHERE SERVICES.ServicesTypeID=SERVICESTYPE.ServicesTypeID AND SERVICES.UnitID = UNIT.UnitID AND ServicesName like '%'+@ServicesName+'%'
+
+RETURN
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_DeleteServices]
+(
+	@ServicesId nvarchar(10)
+)
+
+AS
+	DELETE SERVICES 
+	WHERE ServicesID = @ServicesId
+
+RETURN
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_EditServicesUpdate]
+(
+	@ServicesID nvarchar(10),
+	@ServicesName nvarchar(100),
+	@ServicesTypeID nvarchar(10),
+	@Price int, 
+	@ServicesUnitID nvarchar(10)
+)
+AS
+	UPDATE SERVICES 
+	SET ServicesName = @ServicesName, ServicesTypeID = @ServicesTypeID , Price = @Price , UnitID = @ServicesUnitID
+	WHERE ServicesID = @ServicesID
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_AddNewServicesInsert]
+(
+	@ServicesID nvarchar(10),
+	@ServicesName nvarchar(100),
+	@ServicesTypeID nvarchar(10),
+	@Price int, 
+	@ServicesUnitID nvarchar(10)
+)
+AS
+	INSERT INTO SERVICES 
+	VALUES(@ServicesTypeID, @ServicesID,@ServicesName, @ServicesUnitID, @Price)
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetServicesByID]
+(
+	@ServicesID nvarchar(10)
+)
+AS
+	SELECT *
+	FROM SERVICES  
+	Where SERVICES.ServicesID = @ServicesID
+
+
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetAllServices]
+AS
+	SELECT ServicesID, ServicesName, SERVICES.ServicesTypeID, SERVICESTYPE.ServicesTypeName, Price, SERVICES.UnitID, UNIT.UnitName
+	FROM SERVICES, SERVICESTYPE, UNIT WHERE SERVICES.ServicesTypeID=SERVICESTYPE.ServicesTypeID AND SERVICES.UnitID = UNIT.UnitID
+
+
+
+GO
+
+CREATE TRIGGER [dbo].[NV_AutoIncrementServicesId]
+ON [dbo].[SERVICES]
+FOR INSERT
+AS
+BEGIN
+ DECLARE @MAXValue VARCHAR(10),@NEWValue VARCHAR(10),@NEW_ID VARCHAR(10), @OLD_ID VARCHAR(10);
+ --Lấy giá trị lớn nhất 
+ IF ((SELECT COUNT(ServicesID) FROM SERVICES)>1)
+  BEGIN
+   SELECT @MAXValue=MAX(ServicesID) FROM SERVICES;
+  END
+ ELSE
+  BEGIN
+   SET @MAXValue='DV0000000';
+  END
+ --Lấy giá trị ID được chèn vào từ bên ngoài (bất kì, không quan trọng)
+ select @OLD_ID = ServicesID from INSERTED
+ --Lấy phần chuỗi số đằng sau TL rồi tăng lên 1 đơn vị
+ SET @NEWValue= REPLACE(@MaxValue,'DV','')+1
+ -- Kiểm tra NEWValue nếu < 100
+ -- Nếu <100, thêm vào số 0 sao cho NEWValue có độ dài = 9
+ SET @NEW_ID = 'DV'+
+  CASE
+     WHEN LEN(@NEWValue)<7
+     THEN REPLICATE('0',7-LEN(@newValue))
+     ELSE ''
+     END +
+     @NEWValue
+ --Thay thế giá trị Id từ bên ngoài bằng Id vừa được tạo
+ UPDATE SERVICES SET ServicesID = @NEW_ID WHERE ServicesID = @OLD_ID
+END
+
+GO

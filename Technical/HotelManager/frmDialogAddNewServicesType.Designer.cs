@@ -1,6 +1,6 @@
 ﻿namespace HotelManager
 {
-    partial class frmDialogAddNewRoomType
+    partial class frmDialogAddNewServicesType
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtRoomTypeId = new DevExpress.XtraEditors.TextEdit();
-            this.txtRoomTypeName = new DevExpress.XtraEditors.TextEdit();
-            this.lblRoomTypeId = new DevExpress.XtraEditors.LabelControl();
-            this.lblRoomTypeName = new DevExpress.XtraEditors.LabelControl();
+            this.txtServiceTypeId = new DevExpress.XtraEditors.TextEdit();
+            this.txtServiceTypeName = new DevExpress.XtraEditors.TextEdit();
+            this.lblServiceTypeId = new DevExpress.XtraEditors.LabelControl();
+            this.lblServiceTypeName = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -41,8 +41,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lblTitle = new DevExpress.XtraEditors.LabelControl();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServiceTypeId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServiceTypeName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -50,37 +50,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtRoomTypeId
+            // txtServiceTypeId
             // 
-            this.txtRoomTypeId.Location = new System.Drawing.Point(86, 52);
-            this.txtRoomTypeId.Name = "txtRoomTypeId";
-            this.txtRoomTypeId.Properties.ReadOnly = true;
-            this.txtRoomTypeId.Size = new System.Drawing.Size(150, 20);
-            this.txtRoomTypeId.TabIndex = 18;
+            this.txtServiceTypeId.Location = new System.Drawing.Point(86, 52);
+            this.txtServiceTypeId.Name = "txtServiceTypeId";
+            this.txtServiceTypeId.Properties.ReadOnly = true;
+            this.txtServiceTypeId.Size = new System.Drawing.Size(150, 20);
+            this.txtServiceTypeId.TabIndex = 18;
             // 
-            // txtRoomTypeName
+            // txtServiceTypeName
             // 
-            this.txtRoomTypeName.Location = new System.Drawing.Point(325, 52);
-            this.txtRoomTypeName.Name = "txtRoomTypeName";
-            this.txtRoomTypeName.Properties.MaxLength = 100;
-            this.txtRoomTypeName.Size = new System.Drawing.Size(214, 20);
-            this.txtRoomTypeName.TabIndex = 0;
+            this.txtServiceTypeName.Location = new System.Drawing.Point(325, 52);
+            this.txtServiceTypeName.Name = "txtServiceTypeName";
+            this.txtServiceTypeName.Properties.MaxLength = 100;
+            this.txtServiceTypeName.Size = new System.Drawing.Size(214, 20);
+            this.txtServiceTypeName.TabIndex = 0;
             // 
-            // lblRoomTypeId
+            // lblServiceTypeId
             // 
-            this.lblRoomTypeId.Location = new System.Drawing.Point(10, 55);
-            this.lblRoomTypeId.Name = "lblRoomTypeId";
-            this.lblRoomTypeId.Size = new System.Drawing.Size(73, 13);
-            this.lblRoomTypeId.TabIndex = 14;
-            this.lblRoomTypeId.Text = "Mã Loại Phòng:";
+            this.lblServiceTypeId.Location = new System.Drawing.Point(6, 55);
+            this.lblServiceTypeId.Name = "lblServiceTypeId";
+            this.lblServiceTypeId.Size = new System.Drawing.Size(78, 13);
+            this.lblServiceTypeId.TabIndex = 14;
+            this.lblServiceTypeId.Text = "Mã Loại Dịch Vụ:";
             // 
-            // lblRoomTypeName
+            // lblServiceTypeName
             // 
-            this.lblRoomTypeName.Location = new System.Drawing.Point(250, 55);
-            this.lblRoomTypeName.Name = "lblRoomTypeName";
-            this.lblRoomTypeName.Size = new System.Drawing.Size(74, 13);
-            this.lblRoomTypeName.TabIndex = 15;
-            this.lblRoomTypeName.Text = "Tên loại phòng:";
+            this.lblServiceTypeName.Location = new System.Drawing.Point(241, 55);
+            this.lblServiceTypeName.Name = "lblServiceTypeName";
+            this.lblServiceTypeName.Size = new System.Drawing.Size(82, 13);
+            this.lblServiceTypeName.TabIndex = 15;
+            this.lblServiceTypeName.Text = "Tên Loại Dịch Vụ:";
             // 
             // panelControl1
             // 
@@ -133,10 +133,10 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.lblTitle);
-            this.panelControl2.Controls.Add(this.lblRoomTypeName);
-            this.panelControl2.Controls.Add(this.lblRoomTypeId);
-            this.panelControl2.Controls.Add(this.txtRoomTypeName);
-            this.panelControl2.Controls.Add(this.txtRoomTypeId);
+            this.panelControl2.Controls.Add(this.lblServiceTypeName);
+            this.panelControl2.Controls.Add(this.lblServiceTypeId);
+            this.panelControl2.Controls.Add(this.txtServiceTypeName);
+            this.panelControl2.Controls.Add(this.txtServiceTypeId);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
@@ -147,17 +147,17 @@
             // 
             this.lblTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Appearance.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lblTitle.Location = new System.Drawing.Point(169, 7);
+            this.lblTitle.Location = new System.Drawing.Point(142, 5);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(283, 28);
+            this.lblTitle.Size = new System.Drawing.Size(298, 28);
             this.lblTitle.TabIndex = 19;
-            this.lblTitle.Text = "THÊM MỚI LOẠI PHÒNG";
+            this.lblTitle.Text = "THÊM MỚI LOẠI DỊCH VỤ";
             // 
             // dxErrorProvider
             // 
             this.dxErrorProvider.ContainerControl = this;
             // 
-            // frmDialogAddNewRoomType
+            // frmDialogAddNewServicesType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,13 +167,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.LookAndFeel.SkinName = "Metropolis";
-            this.Name = "frmDialogAddNewRoomType";
+            this.Name = "frmDialogAddNewServicesType";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDialogAddNewRoomType";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDialogAddNewRoomType_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRoomTypeName.Properties)).EndInit();
+            this.Text = "frmDialogAddNewServiceType";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDialogAddNewServiceType_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.txtServiceTypeId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServiceTypeName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -186,10 +186,10 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.TextEdit txtRoomTypeId;
-        private DevExpress.XtraEditors.TextEdit txtRoomTypeName;
-        private DevExpress.XtraEditors.LabelControl lblRoomTypeId;
-        private DevExpress.XtraEditors.LabelControl lblRoomTypeName;
+        private DevExpress.XtraEditors.TextEdit txtServiceTypeId;
+        private DevExpress.XtraEditors.TextEdit txtServiceTypeName;
+        private DevExpress.XtraEditors.LabelControl lblServiceTypeId;
+        private DevExpress.XtraEditors.LabelControl lblServiceTypeName;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnSave;

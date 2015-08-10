@@ -14,19 +14,19 @@ using System.Windows.Forms;
 
 namespace HotelManager
 {
-    public partial class frmDialogAddNewStatus : DevExpress.XtraEditors.XtraForm
+    public partial class frmDialogAddNewServicesType : DevExpress.XtraEditors.XtraForm
     {
-        private BUSStatus statusBUS;
-        private DTOStatus statusObject;
-        public frmDialogAddNewStatus()
+        private BUSServicesType serviceTypeBUS;
+        private DTOServicesType serviceTypeObject;
+        public frmDialogAddNewServicesType()
         {
             InitializeComponent();
             //
-            statusBUS = new BUSStatus();
+            serviceTypeBUS = new BUSServicesType();
             //
             btnAdd.Enabled = false;
-            txtStatusName.Focus();
-            txtStatusId.Text = "TT00000***";
+            txtServiceTypeName.Focus();
+            txtServiceTypeId.Text = "LDV00000***";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -42,10 +42,10 @@ namespace HotelManager
             }
             else
             {
-                String statusName = Utils.standardNamePerson(txtStatusName.Text);
-                statusObject = new DTOStatus("TT0000000", statusName);
+                String serviceTypeName = Utils.standardNamePerson(txtServiceTypeName.Text);
+                serviceTypeObject = new DTOServicesType("LDV0000000", serviceTypeName);
 
-                if (statusBUS.InsertStatus(statusObject))
+                if (serviceTypeBUS.InsertServicesType(serviceTypeObject))
                 {
                     XtraCustomMessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", true, 1);
                     btnAdd.Enabled = true;
@@ -62,8 +62,8 @@ namespace HotelManager
 
         private void btnCancelAdd_Click(object sender, EventArgs e)
         {
-            txtStatusId.Text = null;
-            txtStatusName.Text = null;
+            txtServiceTypeId.Text = null;
+            txtServiceTypeName.Text = null;
             //
             btnAdd.Enabled = true;
             btnCancelAdd.Enabled = false;
@@ -75,9 +75,9 @@ namespace HotelManager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            txtStatusId.Text = "TT00000***";
-            txtStatusName.Text = null;
-            txtStatusName.Focus();
+            txtServiceTypeId.Text = "LDV00000***";
+            txtServiceTypeName.Text = null;
+            txtServiceTypeName.Focus();
             //
             btnCancelAdd.Enabled = true;
             btnCancelAdd.Visible = true;
@@ -86,7 +86,7 @@ namespace HotelManager
 
         private bool checkData()
         {
-            if (CheckInformationEntered.checkDataInput(txtStatusName, Utils.errorMessage, ref dxErrorProvider))
+            if (CheckInformationEntered.checkDataInput(txtServiceTypeName, Utils.errorMessage, ref dxErrorProvider))
             {
                 return true;
             }
@@ -95,7 +95,7 @@ namespace HotelManager
 
         }
 
-        private void frmDialogAddNewStatus_KeyDown(object sender, KeyEventArgs e)
+        private void frmDialogAddNewServiceType_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F2)
                 btnSave_Click(null, null);

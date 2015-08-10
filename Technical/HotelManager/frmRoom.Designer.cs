@@ -61,6 +61,8 @@
             this.RoomDrecription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rtxtDecriptions = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Status = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NumberOfBeds = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RoomType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelAuthorTitle = new DevExpress.XtraEditors.PanelControl();
             this.labRoom = new DevExpress.XtraEditors.LabelControl();
             this.navBarAuthorLookAt = new DevExpress.XtraNavBar.NavBarControl();
@@ -70,8 +72,6 @@
             this.lblRoomNameLA = new DevExpress.XtraEditors.LabelControl();
             this.panelAuthorView = new DevExpress.XtraEditors.PanelControl();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.NumberOfBeds = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RoomType = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelAuthorExecute)).BeginInit();
             this.panelAuthorExecute.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelAuthorDetail)).BeginInit();
@@ -380,7 +380,7 @@
             // 
             // RoomId
             // 
-            this.RoomId.Caption = "Mã loại phòng";
+            this.RoomId.Caption = "Mã phòng";
             this.RoomId.ColumnEdit = this.rtxtRoomId;
             this.RoomId.FieldName = "RoomID";
             this.RoomId.Name = "RoomId";
@@ -396,7 +396,7 @@
             // 
             // RoomName
             // 
-            this.RoomName.Caption = "Tên loại phòng";
+            this.RoomName.Caption = "Tên phòng";
             this.RoomName.ColumnEdit = this.rtxtRoomName;
             this.RoomName.FieldName = "RoomName";
             this.RoomName.Name = "RoomName";
@@ -432,6 +432,24 @@
             this.Status.VisibleIndex = 3;
             this.Status.Width = 97;
             // 
+            // NumberOfBeds
+            // 
+            this.NumberOfBeds.Caption = "Số người";
+            this.NumberOfBeds.FieldName = "NumberOfBeds";
+            this.NumberOfBeds.Name = "NumberOfBeds";
+            this.NumberOfBeds.Visible = true;
+            this.NumberOfBeds.VisibleIndex = 4;
+            this.NumberOfBeds.Width = 94;
+            // 
+            // RoomType
+            // 
+            this.RoomType.Caption = "Loại phòng";
+            this.RoomType.FieldName = "RoomTypeName";
+            this.RoomType.Name = "RoomType";
+            this.RoomType.Visible = true;
+            this.RoomType.VisibleIndex = 5;
+            this.RoomType.Width = 113;
+            // 
             // panelAuthorTitle
             // 
             this.panelAuthorTitle.Controls.Add(this.labRoom);
@@ -448,9 +466,9 @@
             this.labRoom.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
             this.labRoom.Location = new System.Drawing.Point(305, 5);
             this.labRoom.Name = "labRoom";
-            this.labRoom.Size = new System.Drawing.Size(297, 32);
+            this.labRoom.Size = new System.Drawing.Size(236, 32);
             this.labRoom.TabIndex = 1;
-            this.labRoom.Text = "DANH SÁCH LOẠI PHÒNG";
+            this.labRoom.Text = "DANH SÁCH PHÒNG";
             // 
             // navBarAuthorLookAt
             // 
@@ -497,9 +515,9 @@
             // 
             this.lblRoomNameLA.Location = new System.Drawing.Point(19, 18);
             this.lblRoomNameLA.Name = "lblRoomNameLA";
-            this.lblRoomNameLA.Size = new System.Drawing.Size(74, 13);
+            this.lblRoomNameLA.Size = new System.Drawing.Size(55, 13);
             this.lblRoomNameLA.TabIndex = 1;
-            this.lblRoomNameLA.Text = "Tên loại phòng:";
+            this.lblRoomNameLA.Text = "Tên phòng:";
             // 
             // panelAuthorView
             // 
@@ -516,24 +534,6 @@
             // 
             this.dxErrorProvider.ContainerControl = this;
             // 
-            // NumberOfBeds
-            // 
-            this.NumberOfBeds.Caption = "Số người";
-            this.NumberOfBeds.FieldName = "NumberOfBeds";
-            this.NumberOfBeds.Name = "NumberOfBeds";
-            this.NumberOfBeds.Visible = true;
-            this.NumberOfBeds.VisibleIndex = 4;
-            this.NumberOfBeds.Width = 94;
-            // 
-            // RoomType
-            // 
-            this.RoomType.Caption = "Loại phòng";
-            this.RoomType.FieldName = "RoomTypeName";
-            this.RoomType.Name = "RoomType";
-            this.RoomType.Visible = true;
-            this.RoomType.VisibleIndex = 5;
-            this.RoomType.Width = 113;
-            // 
             // frmRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,7 +544,7 @@
             this.Controls.Add(this.panelAuthorExecute);
             this.KeyPreview = true;
             this.Name = "frmRoom";
-            this.Text = "Quản lý loại phòng";
+            this.Text = "Quản lý phòng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRoom_FormClosing);
             this.Load += new System.EventHandler(this.frmRoom_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmRoom_KeyDown);

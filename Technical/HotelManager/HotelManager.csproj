@@ -138,11 +138,23 @@
     <Compile Include="frmDialogAddNewRoomType.Designer.cs">
       <DependentUpon>frmDialogAddNewRoomType.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDialogAddNewServicesType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDialogAddNewServicesType.Designer.cs">
+      <DependentUpon>frmDialogAddNewServicesType.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDialogAddNewStatus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDialogAddNewStatus.Designer.cs">
       <DependentUpon>frmDialogAddNewStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDialogAddNewUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDialogAddNewUnit.Designer.cs">
+      <DependentUpon>frmDialogAddNewUnit.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHomePage.cs">
       <SubType>Form</SubType>
@@ -185,6 +197,12 @@
     </Compile>
     <Compile Include="frmSearchStaff.Designer.cs">
       <DependentUpon>frmSearchStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServices.Designer.cs">
+      <DependentUpon>frmServices.cs</DependentUpon>
     </Compile>
     <Compile Include="frmServiceType.cs">
       <SubType>Form</SubType>
@@ -241,8 +259,14 @@
     <EmbeddedResource Include="frmDialogAddNewRoomType.resx">
       <DependentUpon>frmDialogAddNewRoomType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDialogAddNewServicesType.resx">
+      <DependentUpon>frmDialogAddNewServicesType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDialogAddNewStatus.resx">
       <DependentUpon>frmDialogAddNewStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDialogAddNewUnit.resx">
+      <DependentUpon>frmDialogAddNewUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHomePage.resx">
       <DependentUpon>frmHomePage.cs</DependentUpon>
@@ -264,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchStaff.resx">
       <DependentUpon>frmSearchStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServices.resx">
+      <DependentUpon>frmServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmServiceType.resx">
       <DependentUpon>frmServiceType.cs</DependentUpon>

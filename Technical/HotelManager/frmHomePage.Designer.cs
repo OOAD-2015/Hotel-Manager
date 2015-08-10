@@ -65,6 +65,7 @@
             this.ribpHelp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManagerMenu = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.bbtnServices = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallimageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeimageCollection)).BeginInit();
@@ -94,10 +95,11 @@
             this.bbtnRule,
             this.bbtnServicesType,
             this.bbtnStatus,
-            this.bbtnUnit});
+            this.bbtnUnit,
+            this.bbtnServices});
             this.ribbon.LargeImages = this.largeimageCollection;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 21;
+            this.ribbon.MaxItemId = 22;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnInformation);
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnLogout);
@@ -270,6 +272,7 @@
             this.largeimageCollection.Images.SetKeyName(7, "ic_services_types.ico");
             this.largeimageCollection.Images.SetKeyName(8, "1438721492_unit.png");
             this.largeimageCollection.Images.SetKeyName(9, "status_hotel.png");
+            this.largeimageCollection.Images.SetKeyName(10, "service.png");
             // 
             // ribpSystem
             // 
@@ -326,6 +329,7 @@
             // 
             // ribpgServices
             // 
+            this.ribpgServices.ItemLinks.Add(this.bbtnServices);
             this.ribpgServices.ItemLinks.Add(this.bbtnServicesType);
             this.ribpgServices.Name = "ribpgServices";
             this.ribpgServices.Text = "Dịch vụ";
@@ -371,6 +375,14 @@
             this.xtraTabbedMdiManagerMenu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManagerMenu.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManagerMenu.MdiParent = this;
+            // 
+            // bbtnServices
+            // 
+            this.bbtnServices.Caption = "Dịch vụ";
+            this.bbtnServices.Id = 21;
+            this.bbtnServices.LargeImageIndex = 10;
+            this.bbtnServices.Name = "bbtnServices";
+            this.bbtnServices.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnServices_ItemClick);
             // 
             // frmHomePage
             // 
@@ -434,5 +446,6 @@
         private DevExpress.XtraBars.BarButtonItem bbtnStatus;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribpgOther;
         private DevExpress.XtraBars.BarButtonItem bbtnUnit;
+        private DevExpress.XtraBars.BarButtonItem bbtnServices;
     }
 }
