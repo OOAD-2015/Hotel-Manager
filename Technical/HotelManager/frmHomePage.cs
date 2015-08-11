@@ -27,6 +27,7 @@ namespace HotelManager
         private frmUnit unitFormObject;
         private frmRoom roomFormObject;
         private frmServices serviceFormObject;
+        private frmSearchCustomer searchCustomerFormObject;
         #endregion
 
         #region "Varaibles"
@@ -221,6 +222,19 @@ namespace HotelManager
             }
             else
                 serviceFormObject.Activate();
+        }
+
+        private void bbtnSearchCustomer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(searchCustomerFormObject))
+            {
+                searchCustomerFormObject = new frmSearchCustomer();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(searchCustomerFormObject);
+                searchCustomerFormObject.MdiParent = this;
+                searchCustomerFormObject.Show();
+            }
+            else
+                searchCustomerFormObject.Activate();
         }
     }
 }
