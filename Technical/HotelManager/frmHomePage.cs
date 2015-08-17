@@ -28,6 +28,8 @@ namespace HotelManager
         private frmRoom roomFormObject;
         private frmServices serviceFormObject;
         private frmSearchCustomer searchCustomerFormObject;
+        private frmRevenueReport revenueReportFormObject;
+        private frmSearchRoom searchRoomFormObject;
         #endregion
 
         #region "Varaibles"
@@ -235,6 +237,46 @@ namespace HotelManager
             }
             else
                 searchCustomerFormObject.Activate();
+        }
+
+        private void bbtnSearchStaff_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(searchStaffFormObject))
+            {
+                searchStaffFormObject = new frmSearchStaff();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(searchStaffFormObject);
+                searchStaffFormObject.MdiParent = this;
+                searchStaffFormObject.Show();
+            }
+            else
+                searchStaffFormObject.Activate();
+        }
+
+        private void bbtnRevenueReport_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(revenueReportFormObject))
+            {
+                revenueReportFormObject = new frmRevenueReport();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(revenueReportFormObject);
+                revenueReportFormObject.MdiParent = this;
+                revenueReportFormObject.Show();
+            }
+            else
+                revenueReportFormObject.Activate();
+        }
+
+        private void bbtnSearchRoom_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(searchRoomFormObject))
+            {
+                searchRoomFormObject = new frmSearchRoom();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(searchRoomFormObject);
+                searchRoomFormObject.MdiParent = this;
+                searchRoomFormObject.Show();
+            }
+            else
+                searchRoomFormObject.Activate();
         }
     }
 }

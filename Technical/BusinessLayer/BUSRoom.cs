@@ -36,6 +36,22 @@ namespace BusinessLayer
             }
         }
         /// <summary>
+        /// Phương thức lấy tất cả các Room từ csdl With Date
+        /// </summary>
+        /// <returns>true: lấy thành công, false: lấy thất bại</returns>
+        public DataTable GetAllRoomWithDate()
+        {
+            try
+            {
+                return roomDAO.GetAllRoomWithDate();
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+        }
+        /// <summary>
         /// Phương thức lấy Room theo id của Room
         /// </summary>
         /// <param name="iRoomId">id của feedback</param>

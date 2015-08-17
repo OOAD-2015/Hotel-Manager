@@ -149,12 +149,12 @@ namespace HotelManager
             updateEnableButtonAndResetValueOfControl(ref btnCancel);
         }
 
-        private void txtroomNameLA_TextChanged(object sender, EventArgs e)
-        {
-            grdvListRoom.FocusedRowHandle = 0;
-            roomDataTable = roomBUS.LookAtRoom(txtRoomNameLA.Text);
-            grdListRoom.DataSource = roomDataTable;
-        }
+        //private void txtRoomNameLA_TextChanged(object sender, EventArgs e)
+        //{
+        //    grdvListRoom.FocusedRowHandle = 0;
+        //    roomDataTable = roomBUS.LookAtRoom(txtRoomNameLA.Text);
+        //    grdListRoom.DataSource = roomDataTable;
+        //}
 
         private void updateEnableButtonAndResetValueOfControl(ref SimpleButton _btnControl)
         {
@@ -472,6 +472,11 @@ namespace HotelManager
         {
             roomTypeDataTable = roomTypeBUS.GetAllRoomType();
             lkRoomType.Properties.DataSource = roomTypeDataTable;
+        }
+
+        private void txtRoomNameLA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
 
     }

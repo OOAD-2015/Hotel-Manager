@@ -29,6 +29,22 @@ namespace DataAccessLayer
             }
         }
         /// <summary>
+        /// Phương thức lấy tất cả các Room từ csdl With date
+        /// </summary>
+        /// <returns>true: lấy thành công, false: lấy thất bại</returns>
+        public DataTable GetAllRoomWithDate()
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetAllRoomWithDate");
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+        /// <summary>
         /// Phương thức lấy Room theo id của Room
         /// </summary>
         /// <param name="iRoomId">id của feedback</param>

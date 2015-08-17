@@ -376,7 +376,7 @@
             this.RoomSno.Name = "RoomSno";
             this.RoomSno.Visible = true;
             this.RoomSno.VisibleIndex = 0;
-            this.RoomSno.Width = 27;
+            this.RoomSno.Width = 26;
             // 
             // RoomId
             // 
@@ -386,7 +386,6 @@
             this.RoomId.Name = "RoomId";
             this.RoomId.Visible = true;
             this.RoomId.VisibleIndex = 1;
-            this.RoomId.Width = 78;
             // 
             // rtxtRoomId
             // 
@@ -402,7 +401,7 @@
             this.RoomName.Name = "RoomName";
             this.RoomName.Visible = true;
             this.RoomName.VisibleIndex = 2;
-            this.RoomName.Width = 197;
+            this.RoomName.Width = 152;
             // 
             // rtxtRoomName
             // 
@@ -430,7 +429,7 @@
             this.Status.Name = "Status";
             this.Status.Visible = true;
             this.Status.VisibleIndex = 3;
-            this.Status.Width = 97;
+            this.Status.Width = 91;
             // 
             // NumberOfBeds
             // 
@@ -439,7 +438,7 @@
             this.NumberOfBeds.Name = "NumberOfBeds";
             this.NumberOfBeds.Visible = true;
             this.NumberOfBeds.VisibleIndex = 4;
-            this.NumberOfBeds.Width = 94;
+            this.NumberOfBeds.Width = 84;
             // 
             // RoomType
             // 
@@ -448,7 +447,7 @@
             this.RoomType.Name = "RoomType";
             this.RoomType.Visible = true;
             this.RoomType.VisibleIndex = 5;
-            this.RoomType.Width = 113;
+            this.RoomType.Width = 99;
             // 
             // panelAuthorTitle
             // 
@@ -509,7 +508,8 @@
             this.txtRoomNameLA.Properties.MaxLength = 100;
             this.txtRoomNameLA.Size = new System.Drawing.Size(161, 20);
             this.txtRoomNameLA.TabIndex = 2;
-            this.txtRoomNameLA.TextChanged += new System.EventHandler(this.txtroomNameLA_TextChanged);
+            this.txtRoomNameLA.TextChanged += new System.EventHandler(this.txtRoomNameLA_TextChanged);
+            this.txtRoomNameLA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomNameLA_KeyPress);
             // 
             // lblRoomNameLA
             // 

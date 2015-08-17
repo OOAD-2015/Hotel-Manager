@@ -54,10 +54,12 @@
     <Reference Include="DevExpress.BonusSkins.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -68,12 +70,15 @@
     <Reference Include="DevExpress.Utils.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Utils.v15.1.UI, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraGauges.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -84,6 +89,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Private>True</Private>
@@ -174,6 +181,12 @@
     <Compile Include="frmOrder.Designer.cs">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRevenueReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRevenueReport.Designer.cs">
+      <DependentUpon>frmRevenueReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRoomType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +204,12 @@
     </Compile>
     <Compile Include="frmSearchCustomer.Designer.cs">
       <DependentUpon>frmSearchCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchRoom.Designer.cs">
+      <DependentUpon>frmSearchRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSearchStaff.cs">
       <SubType>Form</SubType>
@@ -240,10 +259,28 @@
     <Compile Include="frmUnit.Designer.cs">
       <DependentUpon>frmUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmViewBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewBill.Designer.cs">
+      <DependentUpon>frmViewBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="General\CheckInformationEntered.cs" />
     <Compile Include="General\CheckMarkSelection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rptRevenueReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptRevenueReport.Designer.cs">
+      <DependentUpon>rptRevenueReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptViewBill.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptViewBill.Designer.cs">
+      <DependentUpon>rptViewBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraCustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +314,9 @@
     <EmbeddedResource Include="frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRevenueReport.resx">
+      <DependentUpon>frmRevenueReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRoomType.resx">
       <DependentUpon>frmRoomType.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchCustomer.resx">
       <DependentUpon>frmSearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchRoom.resx">
+      <DependentUpon>frmSearchRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchStaff.resx">
       <DependentUpon>frmSearchStaff.cs</DependentUpon>
@@ -307,11 +350,20 @@
     <EmbeddedResource Include="frmUnit.resx">
       <DependentUpon>frmUnit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmViewBill.resx">
+      <DependentUpon>frmViewBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptRevenueReport.resx">
+      <DependentUpon>rptRevenueReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptViewBill.resx">
+      <DependentUpon>rptViewBill.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -377,6 +429,7 @@
   <ItemGroup>
     <None Include="Resources\ic_warning_circle.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

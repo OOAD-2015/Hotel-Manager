@@ -390,7 +390,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkStaffCharge.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("STT", "STT"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenCV", "Tên chức vụ")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RolePermissionName", "Tên chức vụ")});
             this.lkStaffCharge.Properties.NullText = "";
             this.lkStaffCharge.Size = new System.Drawing.Size(230, 20);
             this.lkStaffCharge.TabIndex = 7;
