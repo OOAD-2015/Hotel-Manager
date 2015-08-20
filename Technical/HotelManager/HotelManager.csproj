@@ -267,6 +267,8 @@
     </Compile>
     <Compile Include="General\CheckInformationEntered.cs" />
     <Compile Include="General\CheckMarkSelection.cs" />
+    <Compile Include="General\DataTableCustomize.cs" />
+    <Compile Include="General\GridViewColumnExtend .cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\rptRevenueReport.cs">

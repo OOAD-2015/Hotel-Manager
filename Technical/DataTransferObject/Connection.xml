@@ -11,7 +11,7 @@ Thong so co ban:
 -->
 <config>
   <authorities>true</authorities>
-  <servname>TONEY_LEE\SQLEXPRESS</servname>
+  <servname>DESKTOP-KQ3U72C</servname>
   <username />
   <password />
   <database>Hotelmanager</database>

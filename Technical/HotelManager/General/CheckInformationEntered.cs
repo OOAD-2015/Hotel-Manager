@@ -84,5 +84,15 @@ namespace HotelManager.General
             else
                 return false;
         }
+
+        //Hàm để kiểm tra với ngày nhập vào với ngày cho trước
+        public static bool checkDate(DateTime dateInput, DateTime dateCondition)
+        {
+            if ((dateInput - dateCondition).Days >= 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

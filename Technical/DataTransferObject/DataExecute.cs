@@ -151,6 +151,7 @@ namespace DataTransferObject.Extention
                 }
                 catch (SqlException ex)
                 {
+                    
                     //DevExpress.XtraEditors.XtraMessageBox.Show(ex.ToString());
                     if (this.m_sqlTransaction != null)
                     {

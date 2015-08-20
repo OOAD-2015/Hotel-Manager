@@ -28,549 +28,1060 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labCustomerName = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.labRoomID = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
+            this.pnlTitle = new DevExpress.XtraEditors.PanelControl();
+            this.labOrder = new DevExpress.XtraEditors.LabelControl();
+            this.pnlExecute = new DevExpress.XtraEditors.PanelControl();
+            this.btnChangeToView = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.pnlDetails = new DevExpress.XtraEditors.PanelControl();
+            this.grpListRoom = new DevExpress.XtraEditors.GroupControl();
+            this.grdListRoom = new DevExpress.XtraGrid.GridControl();
+            this.grdvListRoom = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdCol1RoomSno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdCol1RoomID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdCol1RoomName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdCol1RoomTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdCol1StartDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.grdCol1EndDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.grdCol1NumberOfPeople = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grpCol1Price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdCol1Monetized = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnCancelChooseRoom1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.spinDeposit = new DevExpress.XtraEditors.SpinEdit();
+            this.labDeposit = new DevExpress.XtraEditors.LabelControl();
+            this.spintotalEstimate = new DevExpress.XtraEditors.SpinEdit();
+            this.labTotalEstimate = new DevExpress.XtraEditors.LabelControl();
+            this.spinTotalPeople = new DevExpress.XtraEditors.SpinEdit();
+            this.labTotalPeople = new DevExpress.XtraEditors.LabelControl();
+            this.spinTotalRoom = new DevExpress.XtraEditors.SpinEdit();
+            this.labTotalRoom = new DevExpress.XtraEditors.LabelControl();
+            this.pnlTransform = new DevExpress.XtraEditors.PanelControl();
+            this.btnDeleteRoom = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAcceptChooseRoom = new DevExpress.XtraEditors.SimpleButton();
+            this.grpRoomSearch = new DevExpress.XtraEditors.GroupControl();
+            this.grpRoomSearchResult = new DevExpress.XtraEditors.GroupControl();
+            this.grdSearchRoomResult = new DevExpress.XtraGrid.GridControl();
+            this.grdvSearchRoomResult = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdColRomSno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColRoomID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColRoomName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColRoomType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColNumberOfPeople = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdColStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pnlRoomSearchInfo = new DevExpress.XtraEditors.PanelControl();
+            this.chkCmbRoomTypeName = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.labRoomType = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnCancelChooseRoom = new DevExpress.XtraEditors.SimpleButton();
+            this.grpOrderInfo = new DevExpress.XtraEditors.GroupControl();
+            this.btnAddCustomer = new DevExpress.XtraEditors.SimpleButton();
+            this.lkCustomer = new DevExpress.XtraEditors.LookUpEdit();
+            this.dateEnd = new DevExpress.XtraEditors.DateEdit();
+            this.labDateEnd = new DevExpress.XtraEditors.LabelControl();
+            this.labDateStart = new DevExpress.XtraEditors.LabelControl();
+            this.OrderOfDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.calcEdit1 = new DevExpress.XtraEditors.CalcEdit();
-            this.calcEdit2 = new DevExpress.XtraEditors.CalcEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
-            this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColum = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
+            this.dateStart = new DevExpress.XtraEditors.DateEdit();
+            this.labStaffName = new DevExpress.XtraEditors.LabelControl();
+            this.txtAddress = new DevExpress.XtraEditors.TextEdit();
+            this.labAddress = new DevExpress.XtraEditors.LabelControl();
+            this.txtNumberID = new DevExpress.XtraEditors.TextEdit();
+            this.labNumberID = new DevExpress.XtraEditors.LabelControl();
+            this.labCustomerName = new DevExpress.XtraEditors.LabelControl();
+            this.txtCustomerID = new DevExpress.XtraEditors.TextEdit();
+            this.labCustomerID = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlTitle)).BeginInit();
+            this.pnlTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlExecute)).BeginInit();
+            this.pnlExecute.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlDetails)).BeginInit();
+            this.pnlDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpListRoom)).BeginInit();
+            this.grpListRoom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvListRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
-            this.panelControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinDeposit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spintotalEstimate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinTotalPeople.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinTotalRoom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlTransform)).BeginInit();
+            this.pnlTransform.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpRoomSearch)).BeginInit();
+            this.grpRoomSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpRoomSearchResult)).BeginInit();
+            this.grpRoomSearchResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSearchRoomResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvSearchRoomResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlRoomSearchInfo)).BeginInit();
+            this.pnlRoomSearchInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkCmbRoomTypeName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpOrderInfo)).BeginInit();
+            this.grpOrderInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkCustomer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEnd.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEnd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderOfDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderOfDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
-            this.panelControl9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumberID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBoxEdit1
+            // pnlTitle
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(686, 22);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.pnlTitle.Controls.Add(this.labOrder);
+            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(1201, 70);
+            this.pnlTitle.TabIndex = 0;
+            // 
+            // labOrder
+            // 
+            this.labOrder.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labOrder.Appearance.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.labOrder.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labOrder.Location = new System.Drawing.Point(430, 24);
+            this.labOrder.Name = "labOrder";
+            this.labOrder.Size = new System.Drawing.Size(280, 26);
+            this.labOrder.TabIndex = 2;
+            this.labOrder.Text = "TIẾP NHẬN ĐẶT PHÒNG";
+            // 
+            // pnlExecute
+            // 
+            this.pnlExecute.Controls.Add(this.btnChangeToView);
+            this.pnlExecute.Controls.Add(this.btnUpdate);
+            this.pnlExecute.Controls.Add(this.btnSave);
+            this.pnlExecute.Controls.Add(this.btnDelete);
+            this.pnlExecute.Controls.Add(this.btnAdd);
+            this.pnlExecute.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlExecute.Location = new System.Drawing.Point(0, 621);
+            this.pnlExecute.Name = "pnlExecute";
+            this.pnlExecute.Size = new System.Drawing.Size(1201, 49);
+            this.pnlExecute.TabIndex = 1;
+            // 
+            // btnChangeToView
+            // 
+            this.btnChangeToView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChangeToView.Location = new System.Drawing.Point(991, 6);
+            this.btnChangeToView.Name = "btnChangeToView";
+            this.btnChangeToView.Size = new System.Drawing.Size(161, 33);
+            this.btnChangeToView.TabIndex = 10;
+            this.btnChangeToView.Text = "(F3)Tiếp nhận phòng";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Location = new System.Drawing.Point(665, 9);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 31);
+            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Text = "(F6)Cập nhật";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(874, 7);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(82, 33);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "(F2)Lưu xuống";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(769, 7);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 33);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "(F4)Xóa bỏ";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Location = new System.Drawing.Point(562, 10);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 31);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "(F8)Thêm mới";
+            // 
+            // pnlDetails
+            // 
+            this.pnlDetails.Controls.Add(this.grpListRoom);
+            this.pnlDetails.Controls.Add(this.pnlTransform);
+            this.pnlDetails.Controls.Add(this.grpRoomSearch);
+            this.pnlDetails.Controls.Add(this.grpOrderInfo);
+            this.pnlDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDetails.Location = new System.Drawing.Point(0, 70);
+            this.pnlDetails.Name = "pnlDetails";
+            this.pnlDetails.Size = new System.Drawing.Size(1201, 551);
+            this.pnlDetails.TabIndex = 2;
+            // 
+            // grpListRoom
+            // 
+            this.grpListRoom.Controls.Add(this.grdListRoom);
+            this.grpListRoom.Controls.Add(this.panelControl2);
+            this.grpListRoom.Controls.Add(this.panelControl3);
+            this.grpListRoom.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.grpListRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpListRoom.Location = new System.Drawing.Point(601, 137);
+            this.grpListRoom.Name = "grpListRoom";
+            this.grpListRoom.Size = new System.Drawing.Size(598, 412);
+            this.grpListRoom.TabIndex = 4;
+            this.grpListRoom.Text = "Danh sách phòng ở";
+            // 
+            // grdListRoom
+            // 
+            this.grdListRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdListRoom.Location = new System.Drawing.Point(2, 20);
+            this.grdListRoom.MainView = this.grdvListRoom;
+            this.grdListRoom.Name = "grdListRoom";
+            this.grdListRoom.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit1,
+            this.repositoryItemDateEdit2});
+            this.grdListRoom.Size = new System.Drawing.Size(594, 234);
+            this.grdListRoom.TabIndex = 3;
+            this.grdListRoom.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdvListRoom});
+            // 
+            // grdvListRoom
+            // 
+            this.grdvListRoom.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdCol1RoomSno,
+            this.grdCol1RoomID,
+            this.grdCol1RoomName,
+            this.grdCol1RoomTypeName,
+            this.grdCol1StartDate,
+            this.grdCol1EndDate,
+            this.grdCol1NumberOfPeople,
+            this.grpCol1Price,
+            this.grdCol1Monetized});
+            this.grdvListRoom.GridControl = this.grdListRoom;
+            this.grdvListRoom.Name = "grdvListRoom";
+            this.grdvListRoom.OptionsView.ShowGroupPanel = false;
+            // 
+            // grdCol1RoomSno
+            // 
+            this.grdCol1RoomSno.Caption = "STT";
+            this.grdCol1RoomSno.FieldName = "STT";
+            this.grdCol1RoomSno.Name = "grdCol1RoomSno";
+            this.grdCol1RoomSno.OptionsColumn.ReadOnly = true;
+            this.grdCol1RoomSno.Visible = true;
+            this.grdCol1RoomSno.VisibleIndex = 0;
+            this.grdCol1RoomSno.Width = 31;
+            // 
+            // grdCol1RoomID
+            // 
+            this.grdCol1RoomID.Caption = "Mã phòng";
+            this.grdCol1RoomID.FieldName = "RoomID";
+            this.grdCol1RoomID.Name = "grdCol1RoomID";
+            this.grdCol1RoomID.OptionsColumn.ReadOnly = true;
+            this.grdCol1RoomID.Visible = true;
+            this.grdCol1RoomID.VisibleIndex = 1;
+            this.grdCol1RoomID.Width = 68;
+            // 
+            // grdCol1RoomName
+            // 
+            this.grdCol1RoomName.Caption = "Tên phòng";
+            this.grdCol1RoomName.FieldName = "RoomName";
+            this.grdCol1RoomName.Name = "grdCol1RoomName";
+            this.grdCol1RoomName.OptionsColumn.ReadOnly = true;
+            this.grdCol1RoomName.Visible = true;
+            this.grdCol1RoomName.VisibleIndex = 2;
+            this.grdCol1RoomName.Width = 68;
+            // 
+            // grdCol1RoomTypeName
+            // 
+            this.grdCol1RoomTypeName.Caption = "Loại phòng";
+            this.grdCol1RoomTypeName.FieldName = "RoomTypeName";
+            this.grdCol1RoomTypeName.Name = "grdCol1RoomTypeName";
+            this.grdCol1RoomTypeName.OptionsColumn.ReadOnly = true;
+            this.grdCol1RoomTypeName.Visible = true;
+            this.grdCol1RoomTypeName.VisibleIndex = 3;
+            this.grdCol1RoomTypeName.Width = 88;
+            // 
+            // grdCol1StartDate
+            // 
+            this.grdCol1StartDate.Caption = "Ngày đến";
+            this.grdCol1StartDate.ColumnEdit = this.repositoryItemDateEdit1;
+            this.grdCol1StartDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.grdCol1StartDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.grdCol1StartDate.FieldName = "StartDate";
+            this.grdCol1StartDate.GroupFormat.FormatString = "dd/MM/yyyy";
+            this.grdCol1StartDate.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.grdCol1StartDate.Name = "grdCol1StartDate";
+            this.grdCol1StartDate.OptionsColumn.ReadOnly = true;
+            this.grdCol1StartDate.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.grdCol1StartDate.Visible = true;
+            this.grdCol1StartDate.VisibleIndex = 4;
+            this.grdCol1StartDate.Width = 62;
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEdit1.TabIndex = 0;
-            // 
-            // labCustomerName
-            // 
-            this.labCustomerName.Location = new System.Drawing.Point(243, 25);
-            this.labCustomerName.Name = "labCustomerName";
-            this.labCustomerName.Size = new System.Drawing.Size(56, 13);
-            this.labCustomerName.TabIndex = 1;
-            this.labCustomerName.Text = "Khách hàng";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(85, 33);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 2;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.lookUpEdit2);
-            this.panelControl1.Controls.Add(this.comboBoxEdit1);
-            this.panelControl1.Controls.Add(this.textEdit3);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.lookUpEdit1);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.labCustomerName);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(868, 95);
-            this.panelControl1.TabIndex = 3;
-            // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(346, 22);
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(100, 20);
-            this.lookUpEdit1.TabIndex = 3;
+            this.repositoryItemDateEdit1.DisplayFormat.FormatString = "dd/MM/yyy";
+            this.repositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.EditFormat.FormatString = "dd/MM/yyyy";
+            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.Mask.EditMask = "dd/MM/yyyy";
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
-            // labRoomID
+            // grdCol1EndDate
             // 
-            this.labRoomID.Location = new System.Drawing.Point(22, 36);
-            this.labRoomID.Name = "labRoomID";
-            this.labRoomID.Size = new System.Drawing.Size(47, 13);
-            this.labRoomID.TabIndex = 1;
-            this.labRoomID.Text = "Mã phòng";
+            this.grdCol1EndDate.Caption = "Ngày đi";
+            this.grdCol1EndDate.ColumnEdit = this.repositoryItemDateEdit2;
+            this.grdCol1EndDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.grdCol1EndDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.grdCol1EndDate.FieldName = "EndDate";
+            this.grdCol1EndDate.Name = "grdCol1EndDate";
+            this.grdCol1EndDate.OptionsColumn.ReadOnly = true;
+            this.grdCol1EndDate.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.grdCol1EndDate.Visible = true;
+            this.grdCol1EndDate.VisibleIndex = 5;
+            this.grdCol1EndDate.Width = 62;
             // 
-            // labelControl1
+            // repositoryItemDateEdit2
             // 
-            this.labelControl1.Location = new System.Drawing.Point(18, 62);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 13);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Nhân viên";
-            // 
-            // lookUpEdit2
-            // 
-            this.lookUpEdit2.Location = new System.Drawing.Point(115, 59);
-            this.lookUpEdit2.Name = "lookUpEdit2";
-            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemDateEdit2.AutoHeight = false;
+            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit2.Size = new System.Drawing.Size(100, 20);
-            this.lookUpEdit2.TabIndex = 3;
+            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.repositoryItemDateEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit2.EditFormat.FormatString = "dd/MM/yyyy";
+            this.repositoryItemDateEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit2.Mask.EditMask = "dd/MM/yyyy";
+            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
+            // 
+            // grdCol1NumberOfPeople
+            // 
+            this.grdCol1NumberOfPeople.Caption = "Số người";
+            this.grdCol1NumberOfPeople.FieldName = "NumberOfBeds";
+            this.grdCol1NumberOfPeople.Name = "grdCol1NumberOfPeople";
+            this.grdCol1NumberOfPeople.OptionsColumn.ReadOnly = true;
+            this.grdCol1NumberOfPeople.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NumberOfBeds", "SUM={0:0.##}")});
+            this.grdCol1NumberOfPeople.Visible = true;
+            this.grdCol1NumberOfPeople.VisibleIndex = 6;
+            this.grdCol1NumberOfPeople.Width = 62;
+            // 
+            // grpCol1Price
+            // 
+            this.grpCol1Price.Caption = "Giá";
+            this.grpCol1Price.FieldName = "Price";
+            this.grpCol1Price.Name = "grpCol1Price";
+            this.grpCol1Price.OptionsColumn.ReadOnly = true;
+            this.grpCol1Price.Visible = true;
+            this.grpCol1Price.VisibleIndex = 7;
+            this.grpCol1Price.Width = 62;
+            // 
+            // grdCol1Monetized
+            // 
+            this.grdCol1Monetized.Caption = "Thành tiền";
+            this.grdCol1Monetized.FieldName = "Monetized";
+            this.grdCol1Monetized.Name = "grdCol1Monetized";
+            this.grdCol1Monetized.OptionsColumn.ReadOnly = true;
+            this.grdCol1Monetized.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monetized", "SUM={0:0.##}")});
+            this.grdCol1Monetized.Visible = true;
+            this.grdCol1Monetized.VisibleIndex = 8;
+            this.grdCol1Monetized.Width = 81;
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.panelControl11);
-            this.panelControl2.Controls.Add(this.panelControl10);
+            this.panelControl2.Controls.Add(this.btnCancelChooseRoom1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 389);
+            this.panelControl2.Location = new System.Drawing.Point(2, 254);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(868, 100);
-            this.panelControl2.TabIndex = 4;
+            this.panelControl2.Size = new System.Drawing.Size(594, 37);
+            this.panelControl2.TabIndex = 2;
+            // 
+            // btnCancelChooseRoom1
+            // 
+            this.btnCancelChooseRoom1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelChooseRoom1.Location = new System.Drawing.Point(525, 11);
+            this.btnCancelChooseRoom1.Name = "btnCancelChooseRoom1";
+            this.btnCancelChooseRoom1.Size = new System.Drawing.Size(66, 20);
+            this.btnCancelChooseRoom1.TabIndex = 8;
+            this.btnCancelChooseRoom1.Text = "Hủy chọn";
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.panelControl5);
-            this.panelControl3.Controls.Add(this.panelControl6);
-            this.panelControl3.Controls.Add(this.panelControl4);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(0, 95);
+            this.panelControl3.Controls.Add(this.spinDeposit);
+            this.panelControl3.Controls.Add(this.labDeposit);
+            this.panelControl3.Controls.Add(this.spintotalEstimate);
+            this.panelControl3.Controls.Add(this.labTotalEstimate);
+            this.panelControl3.Controls.Add(this.spinTotalPeople);
+            this.panelControl3.Controls.Add(this.labTotalPeople);
+            this.panelControl3.Controls.Add(this.spinTotalRoom);
+            this.panelControl3.Controls.Add(this.labTotalRoom);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl3.Location = new System.Drawing.Point(2, 291);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(868, 294);
-            this.panelControl3.TabIndex = 5;
+            this.panelControl3.Size = new System.Drawing.Size(594, 119);
+            this.panelControl3.TabIndex = 0;
             // 
-            // panelControl4
+            // spinDeposit
             // 
-            this.panelControl4.Controls.Add(this.panelControl7);
-            this.panelControl4.Controls.Add(this.panelControl9);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl4.Location = new System.Drawing.Point(2, 2);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(348, 290);
-            this.panelControl4.TabIndex = 0;
-            // 
-            // panelControl6
-            // 
-            this.panelControl6.Controls.Add(this.simpleButton2);
-            this.panelControl6.Controls.Add(this.simpleButton1);
-            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl6.Location = new System.Drawing.Point(350, 2);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(99, 290);
-            this.panelControl6.TabIndex = 2;
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.Controls.Add(this.panelControl8);
-            this.panelControl5.Controls.Add(this.groupControl1);
-            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(449, 2);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(417, 290);
-            this.panelControl5.TabIndex = 3;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleButton1.Location = new System.Drawing.Point(29, 120);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(32, 23);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "<";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleButton2.Location = new System.Drawing.Point(29, 151);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(32, 23);
-            this.simpleButton2.TabIndex = 0;
-            this.simpleButton2.Text = ">";
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.spinEdit1);
-            this.groupControl1.Controls.Add(this.calcEdit2);
-            this.groupControl1.Controls.Add(this.calcEdit1);
-            this.groupControl1.Controls.Add(this.textEdit2);
-            this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.labelControl6);
-            this.groupControl1.Controls.Add(this.textEdit1);
-            this.groupControl1.Controls.Add(this.labRoomID);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(2, 2);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(413, 121);
-            this.groupControl1.TabIndex = 3;
-            this.groupControl1.Text = "Thông tin chi tiết phòng";
-            // 
-            // panelControl8
-            // 
-            this.panelControl8.Controls.Add(this.gridControl2);
-            this.panelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl8.Location = new System.Drawing.Point(2, 123);
-            this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(413, 165);
-            this.panelControl8.TabIndex = 4;
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(409, 161);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(223, 36);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(51, 13);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Tên phòng";
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(286, 33);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(100, 20);
-            this.textEdit2.TabIndex = 2;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(16, 25);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(72, 13);
-            this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "Mã khách hàng";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(115, 22);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(100, 20);
-            this.textEdit3.TabIndex = 2;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(22, 62);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(46, 13);
-            this.labelControl4.TabIndex = 1;
-            this.labelControl4.Text = "Ngày đến";
-            // 
-            // calcEdit1
-            // 
-            this.calcEdit1.Location = new System.Drawing.Point(85, 62);
-            this.calcEdit1.Name = "calcEdit1";
-            this.calcEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calcEdit1.Size = new System.Drawing.Size(100, 20);
-            this.calcEdit1.TabIndex = 3;
-            // 
-            // calcEdit2
-            // 
-            this.calcEdit2.Location = new System.Drawing.Point(286, 62);
-            this.calcEdit2.Name = "calcEdit2";
-            this.calcEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calcEdit2.Size = new System.Drawing.Size(100, 20);
-            this.calcEdit2.TabIndex = 3;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(223, 69);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(36, 13);
-            this.labelControl5.TabIndex = 1;
-            this.labelControl5.Text = "Ngày đi";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(22, 91);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(51, 13);
-            this.labelControl6.TabIndex = 1;
-            this.labelControl6.Text = "Số người ở";
-            // 
-            // spinEdit1
-            // 
-            this.spinEdit1.EditValue = new decimal(new int[] {
+            this.spinDeposit.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(85, 88);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinDeposit.Location = new System.Drawing.Point(398, 79);
+            this.spinDeposit.Name = "spinDeposit";
+            this.spinDeposit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.spinDeposit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Size = new System.Drawing.Size(301, 20);
-            this.spinEdit1.TabIndex = 4;
+            this.spinDeposit.Size = new System.Drawing.Size(123, 20);
+            this.spinDeposit.TabIndex = 24;
             // 
-            // panelControl9
+            // labDeposit
             // 
-            this.panelControl9.Controls.Add(this.simpleButton4);
-            this.panelControl9.Controls.Add(this.simpleButton3);
-            this.panelControl9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl9.Location = new System.Drawing.Point(2, 253);
-            this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(344, 35);
-            this.panelControl9.TabIndex = 3;
+            this.labDeposit.Location = new System.Drawing.Point(269, 82);
+            this.labDeposit.Name = "labDeposit";
+            this.labDeposit.Size = new System.Drawing.Size(71, 13);
+            this.labDeposit.TabIndex = 0;
+            this.labDeposit.Text = "Số tiền đặt cọc";
             // 
-            // panelControl7
+            // spintotalEstimate
             // 
-            this.panelControl7.Controls.Add(this.gridControl1);
-            this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl7.Location = new System.Drawing.Point(2, 2);
-            this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(344, 251);
-            this.panelControl7.TabIndex = 4;
+            this.spintotalEstimate.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spintotalEstimate.Location = new System.Drawing.Point(398, 48);
+            this.spintotalEstimate.Name = "spintotalEstimate";
+            this.spintotalEstimate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.spintotalEstimate.Properties.Appearance.BackColor = System.Drawing.Color.Pink;
+            this.spintotalEstimate.Properties.Appearance.Options.UseBackColor = true;
+            this.spintotalEstimate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spintotalEstimate.Properties.ReadOnly = true;
+            this.spintotalEstimate.Size = new System.Drawing.Size(123, 20);
+            this.spintotalEstimate.TabIndex = 24;
             // 
-            // gridControl1
+            // labTotalEstimate
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(340, 247);
-            this.gridControl1.TabIndex = 1;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.labTotalEstimate.Location = new System.Drawing.Point(269, 51);
+            this.labTotalEstimate.Name = "labTotalEstimate";
+            this.labTotalEstimate.Size = new System.Drawing.Size(87, 13);
+            this.labTotalEstimate.TabIndex = 0;
+            this.labTotalEstimate.Text = "Tổng tiền ước tính";
             // 
-            // gridView1
+            // spinTotalPeople
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColum,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn1});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.spinTotalPeople.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinTotalPeople.Location = new System.Drawing.Point(398, 16);
+            this.spinTotalPeople.Name = "spinTotalPeople";
+            this.spinTotalPeople.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.spinTotalPeople.Properties.Appearance.BackColor = System.Drawing.Color.Pink;
+            this.spinTotalPeople.Properties.Appearance.Options.UseBackColor = true;
+            this.spinTotalPeople.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinTotalPeople.Properties.ReadOnly = true;
+            this.spinTotalPeople.Size = new System.Drawing.Size(123, 20);
+            this.spinTotalPeople.TabIndex = 24;
             // 
-            // gridColum
+            // labTotalPeople
             // 
-            this.gridColum.Caption = "Mã phòng";
-            this.gridColum.Name = "gridColum";
-            this.gridColum.Visible = true;
-            this.gridColum.VisibleIndex = 0;
+            this.labTotalPeople.Location = new System.Drawing.Point(269, 19);
+            this.labTotalPeople.Name = "labTotalPeople";
+            this.labTotalPeople.Size = new System.Drawing.Size(115, 13);
+            this.labTotalPeople.TabIndex = 0;
+            this.labTotalPeople.Text = "Tổng số người ở dự kiến";
             // 
-            // gridColumn2
+            // spinTotalRoom
             // 
-            this.gridColumn2.Caption = "Tên phòng";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.spinTotalRoom.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinTotalRoom.Location = new System.Drawing.Point(112, 16);
+            this.spinTotalRoom.Name = "spinTotalRoom";
+            this.spinTotalRoom.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.spinTotalRoom.Properties.Appearance.BackColor = System.Drawing.Color.Pink;
+            this.spinTotalRoom.Properties.Appearance.Options.UseBackColor = true;
+            this.spinTotalRoom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinTotalRoom.Properties.ReadOnly = true;
+            this.spinTotalRoom.Size = new System.Drawing.Size(123, 20);
+            this.spinTotalRoom.TabIndex = 24;
             // 
-            // gridColumn3
+            // labTotalRoom
             // 
-            this.gridColumn3.Caption = "Loại phòng";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.labTotalRoom.Location = new System.Drawing.Point(28, 19);
+            this.labTotalRoom.Name = "labTotalRoom";
+            this.labTotalRoom.Size = new System.Drawing.Size(71, 13);
+            this.labTotalRoom.TabIndex = 0;
+            this.labTotalRoom.Text = "Tổng số phòng";
             // 
-            // gridColumn1
+            // pnlTransform
             // 
-            this.gridColumn1.Caption = "Trạng thái";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
+            this.pnlTransform.Controls.Add(this.btnDeleteRoom);
+            this.pnlTransform.Controls.Add(this.btnAcceptChooseRoom);
+            this.pnlTransform.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlTransform.Location = new System.Drawing.Point(511, 137);
+            this.pnlTransform.Name = "pnlTransform";
+            this.pnlTransform.Size = new System.Drawing.Size(90, 412);
+            this.pnlTransform.TabIndex = 3;
             // 
-            // simpleButton3
+            // btnDeleteRoom
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(24, 6);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(141, 23);
-            this.simpleButton3.TabIndex = 0;
-            this.simpleButton3.Text = "Tìm phòng nhanh";
+            this.btnDeleteRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRoom.Image")));
+            this.btnDeleteRoom.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnDeleteRoom.Location = new System.Drawing.Point(4, 192);
+            this.btnDeleteRoom.Name = "btnDeleteRoom";
+            this.btnDeleteRoom.Size = new System.Drawing.Size(82, 33);
+            this.btnDeleteRoom.TabIndex = 8;
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
             // 
-            // simpleButton4
+            // btnAcceptChooseRoom
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(187, 6);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(131, 23);
-            this.simpleButton4.TabIndex = 0;
-            this.simpleButton4.Text = "Chọn phòng tự động";
+            this.btnAcceptChooseRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAcceptChooseRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnAcceptChooseRoom.Image")));
+            this.btnAcceptChooseRoom.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAcceptChooseRoom.Location = new System.Drawing.Point(3, 153);
+            this.btnAcceptChooseRoom.Name = "btnAcceptChooseRoom";
+            this.btnAcceptChooseRoom.Size = new System.Drawing.Size(82, 33);
+            this.btnAcceptChooseRoom.TabIndex = 8;
+            this.btnAcceptChooseRoom.Click += new System.EventHandler(this.btnAcceptChooseRoom_Click);
             // 
-            // panelControl10
+            // grpRoomSearch
             // 
-            this.panelControl10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl10.Location = new System.Drawing.Point(2, 2);
-            this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(348, 96);
-            this.panelControl10.TabIndex = 0;
+            this.grpRoomSearch.Controls.Add(this.grpRoomSearchResult);
+            this.grpRoomSearch.Controls.Add(this.pnlRoomSearchInfo);
+            this.grpRoomSearch.Controls.Add(this.panelControl1);
+            this.grpRoomSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.grpRoomSearch.Location = new System.Drawing.Point(2, 137);
+            this.grpRoomSearch.Name = "grpRoomSearch";
+            this.grpRoomSearch.Size = new System.Drawing.Size(509, 412);
+            this.grpRoomSearch.TabIndex = 1;
+            this.grpRoomSearch.Text = "Tra cứu phòng";
             // 
-            // panelControl11
+            // grpRoomSearchResult
             // 
-            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl11.Location = new System.Drawing.Point(350, 2);
-            this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(516, 96);
-            this.panelControl11.TabIndex = 2;
+            this.grpRoomSearchResult.Controls.Add(this.grdSearchRoomResult);
+            this.grpRoomSearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpRoomSearchResult.Location = new System.Drawing.Point(2, 85);
+            this.grpRoomSearchResult.Name = "grpRoomSearchResult";
+            this.grpRoomSearchResult.Size = new System.Drawing.Size(505, 288);
+            this.grpRoomSearchResult.TabIndex = 26;
+            this.grpRoomSearchResult.Text = "Thông tin tìm kiếm";
+            // 
+            // grdSearchRoomResult
+            // 
+            this.grdSearchRoomResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdSearchRoomResult.Location = new System.Drawing.Point(2, 20);
+            this.grdSearchRoomResult.MainView = this.grdvSearchRoomResult;
+            this.grdSearchRoomResult.Name = "grdSearchRoomResult";
+            this.grdSearchRoomResult.Size = new System.Drawing.Size(501, 266);
+            this.grdSearchRoomResult.TabIndex = 0;
+            this.grdSearchRoomResult.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdvSearchRoomResult});
+            // 
+            // grdvSearchRoomResult
+            // 
+            this.grdvSearchRoomResult.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdColRomSno,
+            this.grdColRoomID,
+            this.grdColRoomName,
+            this.grdColRoomType,
+            this.grdColNumberOfPeople,
+            this.grdColPrice,
+            this.grdColStatus});
+            this.grdvSearchRoomResult.GridControl = this.grdSearchRoomResult;
+            this.grdvSearchRoomResult.Name = "grdvSearchRoomResult";
+            this.grdvSearchRoomResult.OptionsView.ShowGroupPanel = false;
+            // 
+            // grdColRomSno
+            // 
+            this.grdColRomSno.Caption = "STT";
+            this.grdColRomSno.FieldName = "STT";
+            this.grdColRomSno.Name = "grdColRomSno";
+            this.grdColRomSno.OptionsColumn.ReadOnly = true;
+            this.grdColRomSno.Visible = true;
+            this.grdColRomSno.VisibleIndex = 0;
+            // 
+            // grdColRoomID
+            // 
+            this.grdColRoomID.Caption = "Mã phòng";
+            this.grdColRoomID.FieldName = "RoomID";
+            this.grdColRoomID.Name = "grdColRoomID";
+            this.grdColRoomID.OptionsColumn.ReadOnly = true;
+            this.grdColRoomID.Visible = true;
+            this.grdColRoomID.VisibleIndex = 1;
+            // 
+            // grdColRoomName
+            // 
+            this.grdColRoomName.Caption = "Tên phòng";
+            this.grdColRoomName.FieldName = "RoomName";
+            this.grdColRoomName.Name = "grdColRoomName";
+            this.grdColRoomName.OptionsColumn.ReadOnly = true;
+            this.grdColRoomName.Visible = true;
+            this.grdColRoomName.VisibleIndex = 2;
+            // 
+            // grdColRoomType
+            // 
+            this.grdColRoomType.Caption = "Loại phòng";
+            this.grdColRoomType.FieldName = "RoomTypeName";
+            this.grdColRoomType.Name = "grdColRoomType";
+            this.grdColRoomType.OptionsColumn.ReadOnly = true;
+            this.grdColRoomType.Visible = true;
+            this.grdColRoomType.VisibleIndex = 3;
+            // 
+            // grdColNumberOfPeople
+            // 
+            this.grdColNumberOfPeople.Caption = "Số người";
+            this.grdColNumberOfPeople.FieldName = "NumberOfBeds";
+            this.grdColNumberOfPeople.Name = "grdColNumberOfPeople";
+            this.grdColNumberOfPeople.OptionsColumn.ReadOnly = true;
+            this.grdColNumberOfPeople.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NumberOfBeds", "SUM={0:0.##}")});
+            this.grdColNumberOfPeople.Visible = true;
+            this.grdColNumberOfPeople.VisibleIndex = 4;
+            // 
+            // grdColPrice
+            // 
+            this.grdColPrice.Caption = "Giá";
+            this.grdColPrice.FieldName = "Price";
+            this.grdColPrice.Name = "grdColPrice";
+            this.grdColPrice.OptionsColumn.ReadOnly = true;
+            this.grdColPrice.Visible = true;
+            this.grdColPrice.VisibleIndex = 5;
+            // 
+            // grdColStatus
+            // 
+            this.grdColStatus.Caption = "Trạng thái";
+            this.grdColStatus.FieldName = "StatusName";
+            this.grdColStatus.Name = "grdColStatus";
+            this.grdColStatus.OptionsColumn.ReadOnly = true;
+            this.grdColStatus.Visible = true;
+            this.grdColStatus.VisibleIndex = 6;
+            // 
+            // pnlRoomSearchInfo
+            // 
+            this.pnlRoomSearchInfo.Controls.Add(this.chkCmbRoomTypeName);
+            this.pnlRoomSearchInfo.Controls.Add(this.btnSearch);
+            this.pnlRoomSearchInfo.Controls.Add(this.labRoomType);
+            this.pnlRoomSearchInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlRoomSearchInfo.Location = new System.Drawing.Point(2, 20);
+            this.pnlRoomSearchInfo.Name = "pnlRoomSearchInfo";
+            this.pnlRoomSearchInfo.Size = new System.Drawing.Size(505, 65);
+            this.pnlRoomSearchInfo.TabIndex = 25;
+            // 
+            // chkCmbRoomTypeName
+            // 
+            this.chkCmbRoomTypeName.EditValue = "";
+            this.chkCmbRoomTypeName.Location = new System.Drawing.Point(91, 26);
+            this.chkCmbRoomTypeName.Name = "chkCmbRoomTypeName";
+            this.chkCmbRoomTypeName.Properties.AllowMultiSelect = true;
+            this.chkCmbRoomTypeName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.chkCmbRoomTypeName.Size = new System.Drawing.Size(123, 20);
+            this.chkCmbRoomTypeName.TabIndex = 26;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnSearch.Location = new System.Drawing.Point(244, 23);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(103, 30);
+            this.btnSearch.TabIndex = 25;
+            this.btnSearch.Text = "Tìm phòng";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // labRoomType
+            // 
+            this.labRoomType.Location = new System.Drawing.Point(23, 29);
+            this.labRoomType.Name = "labRoomType";
+            this.labRoomType.Size = new System.Drawing.Size(52, 13);
+            this.labRoomType.TabIndex = 0;
+            this.labRoomType.Text = "Loại phòng";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.btnCancelChooseRoom);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(2, 373);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(505, 37);
+            this.panelControl1.TabIndex = 0;
+            // 
+            // btnCancelChooseRoom
+            // 
+            this.btnCancelChooseRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelChooseRoom.Location = new System.Drawing.Point(5, 9);
+            this.btnCancelChooseRoom.Name = "btnCancelChooseRoom";
+            this.btnCancelChooseRoom.Size = new System.Drawing.Size(82, 23);
+            this.btnCancelChooseRoom.TabIndex = 8;
+            this.btnCancelChooseRoom.Text = "Hủy chọn";
+            this.btnCancelChooseRoom.Click += new System.EventHandler(this.btnCancelChooseRoom_Click);
+            // 
+            // grpOrderInfo
+            // 
+            this.grpOrderInfo.Controls.Add(this.btnAddCustomer);
+            this.grpOrderInfo.Controls.Add(this.lkCustomer);
+            this.grpOrderInfo.Controls.Add(this.dateEnd);
+            this.grpOrderInfo.Controls.Add(this.labDateEnd);
+            this.grpOrderInfo.Controls.Add(this.labDateStart);
+            this.grpOrderInfo.Controls.Add(this.OrderOfDate);
+            this.grpOrderInfo.Controls.Add(this.labelControl1);
+            this.grpOrderInfo.Controls.Add(this.textEdit2);
+            this.grpOrderInfo.Controls.Add(this.dateStart);
+            this.grpOrderInfo.Controls.Add(this.labStaffName);
+            this.grpOrderInfo.Controls.Add(this.txtAddress);
+            this.grpOrderInfo.Controls.Add(this.labAddress);
+            this.grpOrderInfo.Controls.Add(this.txtNumberID);
+            this.grpOrderInfo.Controls.Add(this.labNumberID);
+            this.grpOrderInfo.Controls.Add(this.labCustomerName);
+            this.grpOrderInfo.Controls.Add(this.txtCustomerID);
+            this.grpOrderInfo.Controls.Add(this.labCustomerID);
+            this.grpOrderInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpOrderInfo.Location = new System.Drawing.Point(2, 2);
+            this.grpOrderInfo.Name = "grpOrderInfo";
+            this.grpOrderInfo.Size = new System.Drawing.Size(1197, 135);
+            this.grpOrderInfo.TabIndex = 0;
+            this.grpOrderInfo.Text = "Thông tin chi tiết";
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.Location = new System.Drawing.Point(577, 25);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(53, 23);
+            this.btnAddCustomer.TabIndex = 23;
+            this.btnAddCustomer.Text = "Thêm ";
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // lkCustomer
+            // 
+            this.lkCustomer.Location = new System.Drawing.Point(393, 27);
+            this.lkCustomer.Name = "lkCustomer";
+            this.lkCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkCustomer.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CustomerID", "Mã khách hàng"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CustomerName", "Tên khách hàng")});
+            this.lkCustomer.Properties.NullText = "";
+            this.lkCustomer.Size = new System.Drawing.Size(164, 20);
+            this.lkCustomer.TabIndex = 22;
+            this.lkCustomer.EditValueChanged += new System.EventHandler(this.lkCustomer_EditValueChanged);
+            // 
+            // dateEnd
+            // 
+            this.dateEnd.EditValue = null;
+            this.dateEnd.Location = new System.Drawing.Point(393, 91);
+            this.dateEnd.Name = "dateEnd";
+            this.dateEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEnd.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEnd.Size = new System.Drawing.Size(164, 20);
+            this.dateEnd.TabIndex = 23;
+            this.dateEnd.EditValueChanged += new System.EventHandler(this.dateEnd_EditValueChanged);
+            // 
+            // labDateEnd
+            // 
+            this.labDateEnd.Location = new System.Drawing.Point(288, 100);
+            this.labDateEnd.Name = "labDateEnd";
+            this.labDateEnd.Size = new System.Drawing.Size(36, 13);
+            this.labDateEnd.TabIndex = 0;
+            this.labDateEnd.Text = "Ngày đi";
+            // 
+            // labDateStart
+            // 
+            this.labDateStart.Location = new System.Drawing.Point(31, 98);
+            this.labDateStart.Name = "labDateStart";
+            this.labDateStart.Size = new System.Drawing.Size(46, 13);
+            this.labDateStart.TabIndex = 0;
+            this.labDateStart.Text = "Ngày đến";
+            // 
+            // OrderOfDate
+            // 
+            this.OrderOfDate.EditValue = new System.DateTime(2015, 8, 16, 13, 9, 36, 237);
+            this.OrderOfDate.Location = new System.Drawing.Point(812, 27);
+            this.OrderOfDate.Name = "OrderOfDate";
+            this.OrderOfDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.OrderOfDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.OrderOfDate.Properties.ReadOnly = true;
+            this.OrderOfDate.Size = new System.Drawing.Size(128, 20);
+            this.OrderOfDate.TabIndex = 2;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(704, 30);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(42, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Ngày lập";
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(812, 61);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.ReadOnly = true;
+            this.textEdit2.Size = new System.Drawing.Size(128, 20);
+            this.textEdit2.TabIndex = 1;
+            // 
+            // dateStart
+            // 
+            this.dateStart.EditValue = null;
+            this.dateStart.Location = new System.Drawing.Point(117, 93);
+            this.dateStart.Name = "dateStart";
+            this.dateStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateStart.Size = new System.Drawing.Size(150, 20);
+            this.dateStart.TabIndex = 23;
+            this.dateStart.EditValueChanged += new System.EventHandler(this.dateStart_EditValueChanged);
+            // 
+            // labStaffName
+            // 
+            this.labStaffName.Location = new System.Drawing.Point(704, 64);
+            this.labStaffName.Name = "labStaffName";
+            this.labStaffName.Size = new System.Drawing.Size(48, 13);
+            this.labStaffName.TabIndex = 0;
+            this.labStaffName.Text = "Nhân viên";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(393, 61);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Properties.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(238, 20);
+            this.txtAddress.TabIndex = 1;
+            // 
+            // labAddress
+            // 
+            this.labAddress.Location = new System.Drawing.Point(288, 63);
+            this.labAddress.Name = "labAddress";
+            this.labAddress.Size = new System.Drawing.Size(36, 13);
+            this.labAddress.TabIndex = 0;
+            this.labAddress.Text = "Địa chỉ";
+            // 
+            // txtNumberID
+            // 
+            this.txtNumberID.Location = new System.Drawing.Point(117, 60);
+            this.txtNumberID.Name = "txtNumberID";
+            this.txtNumberID.Properties.MaxLength = 10;
+            this.txtNumberID.Properties.ReadOnly = true;
+            this.txtNumberID.Size = new System.Drawing.Size(150, 20);
+            this.txtNumberID.TabIndex = 1;
+            this.txtNumberID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumberID_KeyPress);
+            // 
+            // labNumberID
+            // 
+            this.labNumberID.Location = new System.Drawing.Point(29, 63);
+            this.labNumberID.Name = "labNumberID";
+            this.labNumberID.Size = new System.Drawing.Size(44, 13);
+            this.labNumberID.TabIndex = 0;
+            this.labNumberID.Text = "Số CMND";
+            // 
+            // labCustomerName
+            // 
+            this.labCustomerName.Location = new System.Drawing.Point(288, 31);
+            this.labCustomerName.Name = "labCustomerName";
+            this.labCustomerName.Size = new System.Drawing.Size(76, 13);
+            this.labCustomerName.TabIndex = 0;
+            this.labCustomerName.Text = "Tên khách hàng";
+            // 
+            // txtCustomerID
+            // 
+            this.txtCustomerID.Location = new System.Drawing.Point(117, 29);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.Properties.ReadOnly = true;
+            this.txtCustomerID.Size = new System.Drawing.Size(150, 20);
+            this.txtCustomerID.TabIndex = 1;
+            // 
+            // labCustomerID
+            // 
+            this.labCustomerID.Location = new System.Drawing.Point(29, 32);
+            this.labCustomerID.Name = "labCustomerID";
+            this.labCustomerID.Size = new System.Drawing.Size(72, 13);
+            this.labCustomerID.TabIndex = 0;
+            this.labCustomerID.Text = "Mã khách hàng";
             // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 489);
-            this.Controls.Add(this.panelControl3);
-            this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(1201, 670);
+            this.Controls.Add(this.pnlDetails);
+            this.Controls.Add(this.pnlExecute);
+            this.Controls.Add(this.pnlTitle);
             this.Name = "frmOrder";
             this.Text = "Tiếp nhận đặt phòng";
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.frmOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pnlTitle)).EndInit();
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlExecute)).EndInit();
+            this.pnlExecute.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pnlDetails)).EndInit();
+            this.pnlDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grpListRoom)).EndInit();
+            this.grpListRoom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdListRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvListRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
-            this.panelControl8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinDeposit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spintotalEstimate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinTotalPeople.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinTotalRoom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlTransform)).EndInit();
+            this.pnlTransform.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grpRoomSearch)).EndInit();
+            this.grpRoomSearch.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grpRoomSearchResult)).EndInit();
+            this.grpRoomSearchResult.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdSearchRoomResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvSearchRoomResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlRoomSearchInfo)).EndInit();
+            this.pnlRoomSearchInfo.ResumeLayout(false);
+            this.pnlRoomSearchInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkCmbRoomTypeName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grpOrderInfo)).EndInit();
+            this.grpOrderInfo.ResumeLayout(false);
+            this.grpOrderInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkCustomer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEnd.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEnd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderOfDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderOfDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
-            this.panelControl9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumberID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.LabelControl labCustomerName;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.PanelControl pnlTitle;
+        private DevExpress.XtraEditors.PanelControl pnlExecute;
+        private DevExpress.XtraEditors.PanelControl pnlDetails;
+        private DevExpress.XtraEditors.LabelControl labOrder;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.GroupControl grpOrderInfo;
+        private DevExpress.XtraEditors.DateEdit OrderOfDate;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labRoomID;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl11;
-        private DevExpress.XtraEditors.PanelControl panelControl10;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.PanelControl panelControl8;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SpinEdit spinEdit1;
-        private DevExpress.XtraEditors.CalcEdit calcEdit2;
-        private DevExpress.XtraEditors.CalcEdit calcEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.PanelControl panelControl6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.PanelControl panelControl7;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColum;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.PanelControl panelControl9;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.LabelControl labStaffName;
+        private DevExpress.XtraEditors.TextEdit txtAddress;
+        private DevExpress.XtraEditors.LabelControl labAddress;
+        private DevExpress.XtraEditors.TextEdit txtNumberID;
+        private DevExpress.XtraEditors.LabelControl labNumberID;
+        private DevExpress.XtraEditors.LabelControl labCustomerName;
+        private DevExpress.XtraEditors.TextEdit txtCustomerID;
+        private DevExpress.XtraEditors.LabelControl labCustomerID;
+        private DevExpress.XtraEditors.SimpleButton btnChangeToView;
+        private DevExpress.XtraEditors.SimpleButton btnAddCustomer;
+        private DevExpress.XtraEditors.LookUpEdit lkCustomer;
+        private DevExpress.XtraEditors.GroupControl grpRoomSearch;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnAcceptChooseRoom;
+        private DevExpress.XtraEditors.SimpleButton btnCancelChooseRoom;
+        private DevExpress.XtraEditors.GroupControl grpRoomSearchResult;
+        private DevExpress.XtraGrid.GridControl grdSearchRoomResult;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdvSearchRoomResult;
+        private DevExpress.XtraEditors.PanelControl pnlRoomSearchInfo;
+        private DevExpress.XtraEditors.SimpleButton btnSearch;
+        private DevExpress.XtraEditors.LabelControl labDateStart;
+        private DevExpress.XtraEditors.DateEdit dateEnd;
+        private DevExpress.XtraEditors.LabelControl labRoomType;
+        private DevExpress.XtraEditors.DateEdit dateStart;
+        private DevExpress.XtraEditors.LabelControl labDateEnd;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColRoomID;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColRoomName;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColRoomType;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColNumberOfPeople;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColRomSno;
+        private DevExpress.XtraGrid.Columns.GridColumn grdColStatus;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit chkCmbRoomTypeName;
+        private DevExpress.XtraEditors.GroupControl grpListRoom;
+        private DevExpress.XtraGrid.GridControl grdListRoom;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdvListRoom;
+        private DevExpress.XtraGrid.Columns.GridColumn grdCol1RoomSno;
+        private DevExpress.XtraGrid.Columns.GridColumn grdCol1RoomID;
+        private DevExpress.XtraGrid.Columns.GridColumn grdCol1RoomName;
+        private DevExpress.XtraGrid.Columns.GridColumn grdCol1RoomTypeName;
+        private DevExpress.XtraGrid.Columns.GridColumn grdCol1StartDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn grdCol1EndDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn grdCol1NumberOfPeople;
+        private DevExpress.XtraGrid.Columns.GridColumn grpCol1Price;
+        private DevExpress.XtraGrid.Columns.GridColumn grdCol1Monetized;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.SimpleButton btnCancelChooseRoom1;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SpinEdit spinDeposit;
+        private DevExpress.XtraEditors.LabelControl labDeposit;
+        private DevExpress.XtraEditors.SpinEdit spintotalEstimate;
+        private DevExpress.XtraEditors.LabelControl labTotalEstimate;
+        private DevExpress.XtraEditors.SpinEdit spinTotalPeople;
+        private DevExpress.XtraEditors.LabelControl labTotalPeople;
+        private DevExpress.XtraEditors.SpinEdit spinTotalRoom;
+        private DevExpress.XtraEditors.LabelControl labTotalRoom;
+        private DevExpress.XtraEditors.PanelControl pnlTransform;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteRoom;
+
     }
 }
