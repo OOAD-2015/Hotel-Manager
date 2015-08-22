@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
             this.pnlTitle = new DevExpress.XtraEditors.PanelControl();
             this.labOrder = new DevExpress.XtraEditors.LabelControl();
             this.pnlExecute = new DevExpress.XtraEditors.PanelControl();
-            this.btnChangeToView = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancelOfUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChangeToView = new DevExpress.XtraEditors.SimpleButton();
             this.pnlDetails = new DevExpress.XtraEditors.PanelControl();
             this.grpListRoom = new DevExpress.XtraEditors.GroupControl();
             this.grdListRoom = new DevExpress.XtraGrid.GridControl();
@@ -101,6 +103,7 @@
             this.labCustomerName = new DevExpress.XtraEditors.LabelControl();
             this.txtCustomerID = new DevExpress.XtraEditors.TextEdit();
             this.labCustomerID = new DevExpress.XtraEditors.LabelControl();
+            this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pnlTitle)).BeginInit();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlExecute)).BeginInit();
@@ -149,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumberID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -173,61 +177,80 @@
             // 
             // pnlExecute
             // 
-            this.pnlExecute.Controls.Add(this.btnChangeToView);
             this.pnlExecute.Controls.Add(this.btnUpdate);
             this.pnlExecute.Controls.Add(this.btnSave);
-            this.pnlExecute.Controls.Add(this.btnDelete);
+            this.pnlExecute.Controls.Add(this.btnCancelOfUpdate);
             this.pnlExecute.Controls.Add(this.btnAdd);
+            this.pnlExecute.Controls.Add(this.btnCancel);
+            this.pnlExecute.Controls.Add(this.btnChangeToView);
             this.pnlExecute.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlExecute.Location = new System.Drawing.Point(0, 621);
             this.pnlExecute.Name = "pnlExecute";
             this.pnlExecute.Size = new System.Drawing.Size(1201, 49);
             this.pnlExecute.TabIndex = 1;
             // 
-            // btnChangeToView
-            // 
-            this.btnChangeToView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChangeToView.Location = new System.Drawing.Point(991, 6);
-            this.btnChangeToView.Name = "btnChangeToView";
-            this.btnChangeToView.Size = new System.Drawing.Size(161, 33);
-            this.btnChangeToView.TabIndex = 10;
-            this.btnChangeToView.Text = "(F3)Tiếp nhận phòng";
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(665, 9);
+            this.btnUpdate.Location = new System.Drawing.Point(753, 8);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 31);
-            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "(F6)Cập nhật";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(874, 7);
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(861, 8);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(82, 33);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.Size = new System.Drawing.Size(82, 29);
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "(F2)Lưu xuống";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnDelete
+            // btnCancelOfUpdate
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(769, 7);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 33);
-            this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "(F4)Xóa bỏ";
+            this.btnCancelOfUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelOfUpdate.Location = new System.Drawing.Point(753, 8);
+            this.btnCancelOfUpdate.Name = "btnCancelOfUpdate";
+            this.btnCancelOfUpdate.Size = new System.Drawing.Size(75, 31);
+            this.btnCancelOfUpdate.TabIndex = 16;
+            this.btnCancelOfUpdate.Text = "Hủy thao tác";
+            this.btnCancelOfUpdate.Visible = false;
+            this.btnCancelOfUpdate.Click += new System.EventHandler(this.btnCancelOfUpdate_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(562, 10);
+            this.btnAdd.Location = new System.Drawing.Point(650, 7);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 31);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Size = new System.Drawing.Size(75, 32);
+            this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "(F8)Thêm mới";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(650, 7);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 32);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "Hủy thao tác";
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnChangeToView
+            // 
+            this.btnChangeToView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChangeToView.Location = new System.Drawing.Point(1003, 6);
+            this.btnChangeToView.Name = "btnChangeToView";
+            this.btnChangeToView.Size = new System.Drawing.Size(161, 31);
+            this.btnChangeToView.TabIndex = 10;
+            this.btnChangeToView.Text = "(F3)Tiếp nhận phòng";
+            this.btnChangeToView.Click += new System.EventHandler(this.btnChangeToView_Click);
             // 
             // pnlDetails
             // 
@@ -714,11 +737,13 @@
             this.chkCmbRoomTypeName.Properties.AllowMultiSelect = true;
             this.chkCmbRoomTypeName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.chkCmbRoomTypeName.Properties.ReadOnly = true;
             this.chkCmbRoomTypeName.Size = new System.Drawing.Size(123, 20);
             this.chkCmbRoomTypeName.TabIndex = 26;
             // 
             // btnSearch
             // 
+            this.btnSearch.Enabled = false;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnSearch.Location = new System.Drawing.Point(244, 23);
@@ -800,6 +825,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CustomerID", "Mã khách hàng"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CustomerName", "Tên khách hàng")});
             this.lkCustomer.Properties.NullText = "";
+            this.lkCustomer.Properties.ReadOnly = true;
             this.lkCustomer.Size = new System.Drawing.Size(164, 20);
             this.lkCustomer.TabIndex = 22;
             this.lkCustomer.EditValueChanged += new System.EventHandler(this.lkCustomer_EditValueChanged);
@@ -813,6 +839,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEnd.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEnd.Properties.ReadOnly = true;
             this.dateEnd.Size = new System.Drawing.Size(164, 20);
             this.dateEnd.TabIndex = 23;
             this.dateEnd.EditValueChanged += new System.EventHandler(this.dateEnd_EditValueChanged);
@@ -871,6 +898,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateStart.Properties.ReadOnly = true;
             this.dateStart.Size = new System.Drawing.Size(150, 20);
             this.dateStart.TabIndex = 23;
             this.dateStart.EditValueChanged += new System.EventHandler(this.dateStart_EditValueChanged);
@@ -941,6 +969,10 @@
             this.labCustomerID.TabIndex = 0;
             this.labCustomerID.Text = "Mã khách hàng";
             // 
+            // dxErrorProvider
+            // 
+            this.dxErrorProvider.ContainerControl = this;
+            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1004,6 +1036,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumberID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1014,10 +1047,6 @@
         private DevExpress.XtraEditors.PanelControl pnlExecute;
         private DevExpress.XtraEditors.PanelControl pnlDetails;
         private DevExpress.XtraEditors.LabelControl labOrder;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
-        private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.GroupControl grpOrderInfo;
         private DevExpress.XtraEditors.DateEdit OrderOfDate;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -1071,6 +1100,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn grdCol1Monetized;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton btnCancelChooseRoom1;
+        private DevExpress.XtraEditors.PanelControl pnlTransform;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteRoom;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.SpinEdit spinDeposit;
         private DevExpress.XtraEditors.LabelControl labDeposit;
@@ -1080,8 +1111,12 @@
         private DevExpress.XtraEditors.LabelControl labTotalPeople;
         private DevExpress.XtraEditors.SpinEdit spinTotalRoom;
         private DevExpress.XtraEditors.LabelControl labTotalRoom;
-        private DevExpress.XtraEditors.PanelControl pnlTransform;
-        private DevExpress.XtraEditors.SimpleButton btnDeleteRoom;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnCancelOfUpdate;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider;
 
     }
 }

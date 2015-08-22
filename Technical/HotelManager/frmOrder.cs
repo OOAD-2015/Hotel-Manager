@@ -15,6 +15,8 @@ using DevExpress.Skins;
 using DevExpress.XtraEditors.Drawing;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Utils.Drawing;
+using DataTransferObject.Utils;
+using DataTransferObject;
 
 namespace HotelManager
 {
@@ -26,6 +28,7 @@ namespace HotelManager
         private BUSRoomType roomTypeBUS;
         private DataTable customerDataTable;
         private BUSCustomer customerBUS;
+        private BUSOrder orderBUS;
         private DataTable roomTypeDataTable;
         private DataTable roomResultDataTable;
         private DataTable roomResultDataTableClone;
@@ -39,6 +42,7 @@ namespace HotelManager
             roomTypeBUS = new BUSRoomType();
             //roomMulitiSelect = new GridCheckMarksSelection();
             customerBUS = new BUSCustomer();
+            orderBUS = new BUSOrder();
             //Test
             roomBUS = new BUSRoom();
         }
@@ -68,7 +72,7 @@ namespace HotelManager
             //
             grdColRomSno.VisibleIndex = 1;
             roomResultDataTable = roomBUS.GetAllRoom();
-            roomResultDataTableClone = roomBUS.GetAllRoom();
+            roomResultDataTableClone = roomResultDataTable.Clone();
             roomMulitiSelect = new GridCheckMarksSelection(grdvSearchRoomResult);
             grdSearchRoomResult.DataSource = roomResultDataTableClone;
             //
@@ -95,11 +99,20 @@ namespace HotelManager
             if(sender is LookUpEdit)
             {
                 LookUpEdit lkTemp = sender as LookUpEdit;
-                txtCustomerID.Text = lkTemp.EditValue.ToString();
-                DataRowView rowView = (DataRowView)lkTemp.GetSelectedDataRow();
-                DataRow row = rowView.Row;
-                txtAddress.Text = row["Address"].ToString();
-                txtNumberID.Text = row["IDNumber"].ToString();
+                if (lkTemp.EditValue != null)
+                {
+                    txtCustomerID.Text = lkTemp.EditValue.ToString();
+                    DataRowView rowView = (DataRowView)lkTemp.GetSelectedDataRow();
+                    DataRow row = rowView.Row;
+                    txtAddress.Text = row["Address"].ToString();
+                    txtNumberID.Text = row["IDNumber"].ToString();
+                }
+                else
+                {
+                    txtCustomerID.Text = "";
+                    txtAddress.Text = "";
+                    txtNumberID.Text = "";
+                }
             }
         }
 
@@ -114,7 +127,7 @@ namespace HotelManager
             {
                 if (dateEnd.EditValue != null)
                 {
-                    dateEnd.EditValue = null;
+                    dateEnd.EditValue = dateStart.EditValue;
                     XtraCustomMessageBox.Show("Ngày đi không được nhỏ hơn ngày đến! \nXin vui lòng nhập lại", "Thông báo", true, 4);
                 }
             
@@ -127,7 +140,7 @@ namespace HotelManager
             {
                 if (dateStart.EditValue != null)
                 {
-                    dateStart.EditValue = null;
+                    dateStart.EditValue = DateTime.Now;
                     XtraCustomMessageBox.Show("Ngày đến không được nhỏ hơn ngày hiện tại! \nXin vui lòng nhập lại", "Thông báo", true, 4);
                 }
             }
@@ -159,16 +172,8 @@ namespace HotelManager
                 //
                 roomSelectsDataTable = DataTableCustomize.AutoNumberedTable(roomSelectsDataTable);
                 grdListRoom.DataSource = roomSelectsDataTable;
-                //Set gia tri
-                spinTotalRoom.Text = roomSelectsDataTable.Rows.Count.ToString();
-                if (grdCol1NumberOfPeople.SummaryItem.SummaryValue != null)
-                    spinTotalPeople.Text = grdCol1NumberOfPeople.SummaryItem.SummaryValue.ToString();
-                else
-                    spinTotalPeople.Text = "0";
-                if (grdCol1Monetized.SummaryItem.SummaryValue != null)
-                    spintotalEstimate.Text = grdCol1Monetized.SummaryItem.SummaryValue.ToString();
-                else
-                    spintotalEstimate.Text = "0";
+                //reset gia tri o tinh
+                this.AutoRefreshData();
                 roomMulitiSelect.ClearSelection();
             }
         }
@@ -239,17 +244,24 @@ namespace HotelManager
                 roomSelectsDataTable = DataTableCustomize.AutoNumberedTable(roomSelectsDataTable);
                 grdListRoom.DataSource = roomSelectsDataTable;
                 //reset gia tri o tinh
-                spinTotalRoom.Text = roomSelectsDataTable.Rows.Count.ToString();
-                if (grdCol1NumberOfPeople.SummaryItem.SummaryValue != null)
-                    spinTotalPeople.Text = grdCol1NumberOfPeople.SummaryItem.SummaryValue.ToString();
-                else
-                    spinTotalPeople.Text = "0";
-                if (grdCol1Monetized.SummaryItem.SummaryValue != null)
-                    spintotalEstimate.Text = grdCol1Monetized.SummaryItem.SummaryValue.ToString();
-                else
-                    spintotalEstimate.Text = "0";
+                this.AutoRefreshData();
                 roomSelectsMulitiSelect.ClearSelection();
             }
+        }
+
+        //Cập nhật dữ liệu các ô spinEdit
+        private void AutoRefreshData()
+        {
+            //reset gia tri o tinh
+            spinTotalRoom.Text = roomSelectsDataTable.Rows.Count.ToString();
+            if (grdCol1NumberOfPeople.SummaryItem.SummaryValue != null)
+                spinTotalPeople.Text = grdCol1NumberOfPeople.SummaryItem.SummaryValue.ToString();
+            else
+                spinTotalPeople.Text = "0";
+            if (grdCol1Monetized.SummaryItem.SummaryValue != null)
+                spintotalEstimate.Text = grdCol1Monetized.SummaryItem.SummaryValue.ToString();
+            else
+                spintotalEstimate.Text = "0";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -303,6 +315,285 @@ namespace HotelManager
                     return true;
             }
             return false;
+        }
+
+        private void updateEnableButtonAndResetValueOfControl(ref SimpleButton _btnControl)
+        {
+            switch (_btnControl.Name)
+            {
+                case "btnAdd":
+                    {
+                        roomMulitiSelect.ClearSelection();
+                        //
+                        btnAdd.Visible = false;
+                        btnCancel.Visible = true;
+                        //
+                        btnSave.Enabled = true;
+                        btnUpdate.Enabled = false;
+                        //
+                        lkCustomer.EditValue = null;
+                        dateStart.DateTime = DateTime.Now;
+                        dateEnd.DateTime = DateTime.Now;
+                        //
+                        lkCustomer.Properties.ReadOnly = false;
+                        dateStart.Properties.ReadOnly = false;
+                        dateEnd.Properties.ReadOnly = false;
+                        chkCmbRoomTypeName.Properties.ReadOnly = false;
+                        btnSearch.Enabled = true;
+                        btnAddCustomer.Enabled = false;
+                        //
+                        //Cập nhật lại dữ liệu cho các grid view
+                        roomSelectsDataTable.Clear();
+                        grdListRoom.DataSource = roomSelectsDataTable;
+                        grdvListRoom.OptionsSelection.EnableAppearanceFocusedRow = true;
+                        grdvListRoom.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = true;
+                        chkCmbRoomTypeName.CheckAll();
+                        btnSearch_Click(null, null);
+                        grdvSearchRoomResult.OptionsSelection.EnableAppearanceFocusedRow = true;
+                        grdvSearchRoomResult.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = true;
+                        //
+                        AutoRefreshData();
+                        roomMulitiSelect.ClearSelection();
+                        roomSelectsMulitiSelect.ClearSelection();
+                        //
+                        //
+                        m_IsAdd = true;
+                        break;
+                    }
+                case "btnCancel":
+                    {
+                        //
+                        m_IsAdd = false;
+                        //
+                        btnAdd.Visible = true;
+                        btnCancel.Visible = false;
+                        btnCancelOfUpdate.Visible = false;
+                        btnUpdate.Visible = true;
+                        btnUpdate.Enabled = true;
+                        btnAdd.Enabled = true;
+                        btnSave.Enabled = false;
+                        //
+                        lkCustomer.EditValue = null;
+                        dateStart.DateTime = DateTime.Now;
+                        dateEnd.DateTime = DateTime.Now;
+                        //
+                        lkCustomer.Properties.ReadOnly = true;
+                        dateStart.Properties.ReadOnly = true;
+                        dateEnd.Properties.ReadOnly = true;
+                        chkCmbRoomTypeName.Properties.ReadOnly = true;
+                        btnSearch.Enabled = false;
+                        btnAddCustomer.Enabled = true;
+                        //Cập nhật lại dữ liệu cho các grid view
+                        roomSelectsDataTable.Clear();
+                        grdListRoom.DataSource = roomSelectsDataTable;
+                        grdvListRoom.OptionsSelection.EnableAppearanceFocusedRow = false;
+                        grdvListRoom.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = false;
+                        roomResultDataTableClone.Clear();
+                        grdSearchRoomResult.DataSource = roomResultDataTableClone;
+                        grdvSearchRoomResult.OptionsSelection.EnableAppearanceFocusedRow = false;
+                        grdvSearchRoomResult.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = false;
+                        //
+                        AutoRefreshData();
+                        roomMulitiSelect.ClearSelection();
+                        roomSelectsMulitiSelect.ClearSelection();
+                        //
+                        break;
+                    }
+                case "btnCancelOfUpdate":
+                    {
+                        //
+                        btnAdd.Visible = true;
+                        btnCancel.Visible = false;
+                        btnCancelOfUpdate.Visible = false;
+                        btnUpdate.Visible = true;
+                        //
+                        btnUpdate.Enabled = true;
+                        btnAdd.Enabled = true;
+                        btnSave.Enabled = false;
+                        //
+                        lkCustomer.Properties.ReadOnly = true;
+                        dateStart.Properties.ReadOnly = true;
+                        dateEnd.Properties.ReadOnly = true;
+                        chkCmbRoomTypeName.Properties.ReadOnly = true;
+                        btnSearch.Enabled = false;
+                        btnAddCustomer.Enabled = true;
+                        //
+                        grdvListRoom.OptionsSelection.EnableAppearanceFocusedRow = false;
+                        grdvListRoom.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = false;
+                        grdvSearchRoomResult.OptionsSelection.EnableAppearanceFocusedRow = false;
+                        grdvSearchRoomResult.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = false;
+                        break;
+                    }
+                case "btnUpdate":
+                    {
+                        roomMulitiSelect.ClearSelection();
+                        m_IsAdd = false;
+                        //
+                        btnUpdate.Visible = false;
+                        btnCancelOfUpdate.Visible = true;
+                        //
+                        btnAdd.Enabled = false;
+                        btnSave.Enabled = true;
+                        //
+                        lkCustomer.Properties.ReadOnly = false;
+                        dateStart.Properties.ReadOnly = false;
+                        dateEnd.Properties.ReadOnly = false;
+                        chkCmbRoomTypeName.Properties.ReadOnly = false;
+                        btnSearch.Enabled = true;
+                        btnAddCustomer.Enabled = false;
+                        //
+                        //Cập nhật lại dữ liệu cho các grid view
+                        grdvListRoom.OptionsSelection.EnableAppearanceFocusedRow = true;
+                        grdvListRoom.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = true;
+                        grdvSearchRoomResult.OptionsSelection.EnableAppearanceFocusedRow = true;
+                        grdvSearchRoomResult.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = true;
+                        //
+                        break;
+                    }
+                case "btnSave":
+                    {
+                        m_IsAdd = false;
+                        btnAdd.Enabled = true;
+                        btnUpdate.Enabled = true;
+                        btnSave.Enabled = false;
+                        //
+                        btnUpdate.Visible = true;
+                        btnAdd.Visible = true;
+                        btnCancel.Visible = false;
+                        btnCancelOfUpdate.Visible = false;
+                        //
+                        grdvListRoom.OptionsSelection.EnableAppearanceFocusedRow = true;
+                        grdvListRoom.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = true;
+                        
+                        break;
+                    }
+            }
+        }
+
+        private DataTransferObject.DTOOrder dtoOrder;
+        private void SaveDataToDatabase()
+        {
+            if (!checkData())
+            {
+                return;
+            }
+            try
+            {
+                if (m_IsAdd)
+                {
+                    String customerID = Utils.standardNamePerson(lkCustomer.EditValue.ToString());
+                    String staffID = Utils.standardNamePerson(frmHomePage.staffLogin.StaffID);
+                    DateTime orderOfDate = DateTime.Now;
+                    int numberOfPeople = (int)spinTotalPeople.Value;
+                    int estimate = (int)spintotalEstimate.Value;
+                    int deposit = (int)spinDeposit.Value;
+                    int total = 0;
+                    string orderStatus = ORDERSTATUS.UNPAID.ToString();
+                    dtoOrder = new DTOOrder("DP00000000", 
+                                            customerID,
+                                            staffID, 
+                                            orderOfDate, 
+                                            numberOfPeople,
+                                            estimate, 
+                                            deposit, 
+                                            total, 
+                                            orderStatus);
+
+                    if (orderBUS.InsertOrder(dtoOrder))
+                    {
+                        XtraCustomMessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", true, 1);
+                    }
+                    else
+                    {
+                        XtraCustomMessageBox.Show("Thêm dữ liệu thất bại!", "Lỗi", true, 4);
+                    }
+                }
+                else
+                {
+                    String orderID = "";
+                    String customerID = lkCustomer.EditValue.ToString();
+                    String staffID = frmHomePage.staffLogin.StaffID;
+                    DateTime orderOfDate = DateTime.Now;
+                    int numberOfPeople = (int)spinTotalPeople.Value;
+                    int estimate = (int)spintotalEstimate.Value;
+                    int deposit = (int)spinDeposit.Value;
+                    int total = 0;
+                    string orderStatus = ORDERSTATUS.UNPAID.ToString();
+                    dtoOrder = new DTOOrder(orderID,
+                                            customerID,
+                                            staffID,
+                                            orderOfDate,
+                                            numberOfPeople,
+                                            estimate,
+                                            deposit,
+                                            total,
+                                            orderStatus);
+
+                    if (orderBUS.UpdateOrder(dtoOrder))
+                    {
+                        XtraCustomMessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", true, 1);
+                    }
+                    else
+                    {
+                        XtraCustomMessageBox.Show("Thêm dữ liệu thất bại!", "Lỗi", true, 4);
+                    }
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                XtraCustomMessageBox.Show(ex.ToString(), "Lỗi", true, 3);
+            }
+            finally
+            {
+                updateEnableButtonAndResetValueOfControl(ref btnSave);
+            }
+        }
+
+        private bool checkData()
+        {
+            if (CheckInformationEntered.checkDataInput(lkCustomer, Utils.errorMessage, ref dxErrorProvider) &&
+                CheckInformationEntered.checkDataInput(dateStart, Utils.errorMessage,ref this.dxErrorProvider) &&
+                CheckInformationEntered.checkDataInput(dateEnd, Utils.errorMessage, ref this.dxErrorProvider) &&
+                 CheckInformationEntered.checkDataInput(dateStart, Utils.errorMessage, ref this.dxErrorProvider))
+            {
+                return true;
+            }
+            else
+                return false;
+
+        }
+
+        public bool m_IsAdd { get; set; }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            updateEnableButtonAndResetValueOfControl(ref btnAdd);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            updateEnableButtonAndResetValueOfControl(ref btnCancel);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            updateEnableButtonAndResetValueOfControl(ref btnUpdate);
+        }
+
+        private void btnCancelOfUpdate_Click(object sender, EventArgs e)
+        {
+            updateEnableButtonAndResetValueOfControl(ref btnCancelOfUpdate);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveDataToDatabase();
+        }
+
+        private void btnChangeToView_Click(object sender, EventArgs e)
+        {
+
         }
     }   
 }

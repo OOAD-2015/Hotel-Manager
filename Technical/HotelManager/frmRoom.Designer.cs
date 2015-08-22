@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelAuthorExecute = new DevExpress.XtraEditors.PanelControl();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -71,7 +70,7 @@
             this.txtRoomNameLA = new DevExpress.XtraEditors.TextEdit();
             this.lblRoomNameLA = new DevExpress.XtraEditors.LabelControl();
             this.panelAuthorView = new DevExpress.XtraEditors.PanelControl();
-            this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
             ((System.ComponentModel.ISupportInitialize)(this.panelAuthorExecute)).BeginInit();
             this.panelAuthorExecute.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelAuthorDetail)).BeginInit();

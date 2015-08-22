@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAOCustomer.cs" />
+    <Compile Include="DAOOder.cs" />
     <Compile Include="DAORolePermission.cs" />
     <Compile Include="DAORoom.cs" />
     <Compile Include="DAORoomType.cs" />
