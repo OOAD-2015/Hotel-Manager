@@ -148,5 +148,19 @@ namespace DataAccessLayer
             }
 
         }
+
+        public DataTable GetAllRoomByDateFromTo(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetAllRoomByDateFromTo"/*Truyen vao storeprocedure*/, new object[2] { startDate, endDate });
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+        }
     }
 }

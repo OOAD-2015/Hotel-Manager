@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using DataTransferObject;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -30,6 +31,26 @@ namespace BusinessLayer
         public bool UpdateServiceMoneyOrderDetailById(String strOrderDetailId, int ServiceMoney)
         {
             return orderDetailDAO.UpdateServiceMoneyOrderDetailById(strOrderDetailId, ServiceMoney);
+        }
+
+        public DataTable GetAllOrderDetailsByOderID(string orderID)
+        {
+            return orderDetailDAO.GetAllOrderDetailsByOderID(orderID);
+        }
+
+        public bool InsertOrderDetails(DTOOrderDetail dtoOrderDetails)
+        {
+            return orderDetailDAO.InsertOrderDetails(dtoOrderDetails);
+        }
+
+        public bool UpdateOrderDetails(DTOOrderDetail dtoOrderDetails)
+        {
+            return orderDetailDAO.UpdateOrderDetails(dtoOrderDetails);
+        }
+
+        public bool DeleteOrderDetails(string orderID)
+        {
+            return orderDetailDAO.DeleteOrderDetails(orderID);
         }
     }
 }

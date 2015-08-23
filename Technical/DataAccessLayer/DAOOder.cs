@@ -74,7 +74,8 @@ namespace DataAccessLayer
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_AddNewOrderInsert"/*Truyen vao storeprocedure*/, new object[8] { dtoOrder.orderID, dtoOrder.customerID, dtoOrder.staffID, dtoOrder.orderOfDate, dtoOrder.numberOfPeople, dtoOrder.deposit, dtoOrder.total, dtoOrder.orderStatus });
+                //DataExecute.Instance.createSqlCmd("sp_AddNewOrder"/*Truyen vao storeprocedure*/, new object[9] { dtoOrder.orderID, dtoOrder.customerID, dtoOrder.staffID, dtoOrder.orderOfDate, dtoOrder.numberOfPeople, dtoOrder.estimate, dtoOrder.deposit, dtoOrder.total, dtoOrder.orderStatus });
+                DataExecute.Instance.createSqlCmd("sp_AddNewOrder", ref dtoOrder);
                 return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
             }
             catch (SqlException)
@@ -91,7 +92,35 @@ namespace DataAccessLayer
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_EditOrderUpdate"/*Truyen vao storeprocedure*/, new object[8] { dtoOrder.orderID, dtoOrder.customerID, dtoOrder.staffID, dtoOrder.orderOfDate, dtoOrder.numberOfPeople, dtoOrder.deposit, dtoOrder.total, dtoOrder.orderStatus });
+                DataExecute.Instance.createSqlCmd("sp_EditOrder"/*Truyen vao storeprocedure*/, new object[9] { dtoOrder.orderID, dtoOrder.customerID, dtoOrder.staffID, dtoOrder.orderOfDate, dtoOrder.numberOfPeople, dtoOrder.estimate, dtoOrder.deposit, dtoOrder.total, dtoOrder.orderStatus });
+                return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+        }
+
+        public string GetOrderMaxID()
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetOrderMaxID"/*Truyen vao storeprocedure*/);
+                 return DataExecute.Instance.getMaxId(DataConnection.Instance.m_cmd);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        public bool DeleteOrder(string orderID)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_DeleteOrder"/*Truyen vao storeprocedure*/, new object[1] { orderID });
                 return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
             }
             catch (SqlException)

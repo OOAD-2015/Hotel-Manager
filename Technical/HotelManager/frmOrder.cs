@@ -29,6 +29,7 @@ namespace HotelManager
         private DataTable customerDataTable;
         private BUSCustomer customerBUS;
         private BUSOrder orderBUS;
+        private BUSOrderDetail orderDetailBUS;
         private DataTable roomTypeDataTable;
         private DataTable roomResultDataTable;
         private DataTable roomResultDataTableClone;
@@ -45,6 +46,7 @@ namespace HotelManager
             orderBUS = new BUSOrder();
             //Test
             roomBUS = new BUSRoom();
+            orderDetailBUS = new BUSOrderDetail();
         }
 
         private void frmOrder_Load(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace HotelManager
 
             //
             grdColRomSno.VisibleIndex = 1;
-            roomResultDataTable = roomBUS.GetAllRoom();
+            roomResultDataTable = roomBUS.GetAllRoomByDateFromTo(dateStart.DateTime, dateEnd.DateTime);
             roomResultDataTableClone = roomResultDataTable.Clone();
             roomMulitiSelect = new GridCheckMarksSelection(grdvSearchRoomResult);
             grdSearchRoomResult.DataSource = roomResultDataTableClone;
@@ -186,7 +188,7 @@ namespace HotelManager
             newRow["RoomTypeName"] = sourceRow["RoomTypeName"];
             newRow["NumberOfBeds"] = sourceRow["NumberOfBeds"];
             newRow["StatusName"] = sourceRow["StatusName"];
-            //newRow["Price"] = sourceRow["Price"];
+            newRow["Price"] = sourceRow["Price"];
             if (isListRoomTable)
             {
                 newRow["StartDate"] = dateStart.DateTime;
@@ -267,6 +269,7 @@ namespace HotelManager
         private void btnSearch_Click(object sender, EventArgs e)
         {
             roomMulitiSelect.ClearSelection();
+            roomResultDataTable = roomBUS.GetAllRoomByDateFromTo(dateStart.DateTime, dateEnd.DateTime);
             if (roomResultDataTable == null || roomResultDataTable.Rows.Count == 0)
             {
                 XtraCustomMessageBox.Show("Không tìm thấy dữ liệu nào!", "Thông báo", true,  1);
@@ -278,13 +281,13 @@ namespace HotelManager
                 XtraCustomMessageBox.Show("Bạn chưa chọn loại phòng!", "Thông báo", true, 1);
                 return;
             }
-            string expression = "RoomTypeID IN (";
+            string expression = "RoomTypeID IN(";
             for (int i = 0; i <  roomTypeIDs.Count(); ++i)
             {
-                expression += "'" + roomTypeIDs[i] + "'";
+                expression += "'" + roomTypeIDs[i].Trim() + "'";
                 if(i < roomTypeIDs.Count() - 1)
                 {
-                    expression += ", ";
+                    expression += ",";
                 }
             }
             expression += ")";
@@ -464,7 +467,31 @@ namespace HotelManager
                         //
                         grdvListRoom.OptionsSelection.EnableAppearanceFocusedRow = true;
                         grdvListRoom.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = true;
-                        
+                        //
+                        lkCustomer.EditValue = null;
+                        dateStart.DateTime = DateTime.Now;
+                        dateEnd.DateTime = DateTime.Now;
+                        //
+                        lkCustomer.Properties.ReadOnly = true;
+                        dateStart.Properties.ReadOnly = true;
+                        dateEnd.Properties.ReadOnly = true;
+                        chkCmbRoomTypeName.Properties.ReadOnly = true;
+                        btnSearch.Enabled = false;
+                        btnAddCustomer.Enabled = true;
+                        //Cập nhật lại dữ liệu cho các grid view
+                        roomSelectsDataTable.Clear();
+                        grdListRoom.DataSource = roomSelectsDataTable;
+                        grdvListRoom.OptionsSelection.EnableAppearanceFocusedRow = false;
+                        grdvListRoom.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = false;
+                        roomResultDataTableClone.Clear();
+                        grdSearchRoomResult.DataSource = roomResultDataTableClone;
+                        grdvSearchRoomResult.OptionsSelection.EnableAppearanceFocusedRow = false;
+                        grdvSearchRoomResult.Columns["CheckMarkSelection"].OptionsColumn.AllowEdit = false;
+                        //
+                        AutoRefreshData();
+                        roomMulitiSelect.ClearSelection();
+                        roomSelectsMulitiSelect.ClearSelection();
+                        //
                         break;
                     }
             }
@@ -477,19 +504,24 @@ namespace HotelManager
             {
                 return;
             }
+            if (roomSelectsDataTable.Rows.Count <= 0)
+            {
+                XtraCustomMessageBox.Show("Bạn chưa chọn phòng!", "Thông báo", false, 4);
+                return;
+            }
             try
             {
                 if (m_IsAdd)
                 {
-                    String customerID = Utils.standardNamePerson(lkCustomer.EditValue.ToString());
-                    String staffID = Utils.standardNamePerson(frmHomePage.staffLogin.StaffID);
+                    String customerID = lkCustomer.EditValue.ToString();
+                    String staffID = "NV000001";//Utils.standardNamePerson(frmHomePage.staffLogin.StaffID);
                     DateTime orderOfDate = DateTime.Now;
                     int numberOfPeople = (int)spinTotalPeople.Value;
                     int estimate = (int)spintotalEstimate.Value;
                     int deposit = (int)spinDeposit.Value;
                     int total = 0;
-                    string orderStatus = ORDERSTATUS.UNPAID.ToString();
-                    dtoOrder = new DTOOrder("DP00000000", 
+                    int orderStatus = (int)ORDERSTATUS.UNPAID;
+                    dtoOrder = new DTOOrder("DP0000000", 
                                             customerID,
                                             staffID, 
                                             orderOfDate, 
@@ -501,6 +533,45 @@ namespace HotelManager
 
                     if (orderBUS.InsertOrder(dtoOrder))
                     {
+                        //XtraCustomMessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", true, 1);
+                        String orderMaxID = orderBUS.GetOrderMaxID();
+                        DateTime dateStartValue = dateStart.DateTime;
+                        DateTime dateEndValue = dateEnd.DateTime;
+                        String roomID = "";
+                        int estimateValue = 0;
+                        int serviceMoney = 0;
+                        foreach (DataRow row in roomSelectsDataTable.Rows)
+                        {
+                            roomID = row["RoomID"].ToString();
+                            try
+                            {
+                                estimateValue = int.Parse(row["Monetized"].ToString().Trim());
+                            }
+                            catch (Exception)
+                            {
+                                estimateValue = 0;
+                                throw;
+                            }
+                            serviceMoney = 0;
+
+                            DTOOrderDetail dtoOderDetail = new DTOOrderDetail("CDP0000000",
+                                                                                orderMaxID,
+                                                                                roomID,
+                                                                                dateStartValue,
+                                                                                dateEndValue,
+                                                                                estimateValue,
+                                                                                serviceMoney);
+                            if (!orderDetailBUS.InsertOrderDetails(dtoOderDetail))
+                            {
+                                //Khi them chi tiet that bai
+                                //Xoa du lieu hien tai
+                                orderDetailBUS.DeleteOrderDetails(orderMaxID);
+                                orderBUS.DeteleOrder(orderMaxID);
+                                XtraCustomMessageBox.Show("Thêm dữ liệu thất bại!", "Lỗi", true, 4);
+                                
+                                return;
+                            }
+                        }
                         XtraCustomMessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", true, 1);
                     }
                     else
@@ -512,13 +583,13 @@ namespace HotelManager
                 {
                     String orderID = "";
                     String customerID = lkCustomer.EditValue.ToString();
-                    String staffID = frmHomePage.staffLogin.StaffID;
+                    String staffID = "NV000001";// frmHomePage.staffLogin.StaffID;
                     DateTime orderOfDate = DateTime.Now;
                     int numberOfPeople = (int)spinTotalPeople.Value;
                     int estimate = (int)spintotalEstimate.Value;
                     int deposit = (int)spinDeposit.Value;
                     int total = 0;
-                    string orderStatus = ORDERSTATUS.UNPAID.ToString();
+                    int orderStatus = (int)ORDERSTATUS.UNPAID;
                     dtoOrder = new DTOOrder(orderID,
                                             customerID,
                                             staffID,

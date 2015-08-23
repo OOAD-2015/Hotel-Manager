@@ -58,5 +58,15 @@ namespace BusinessLayer
         {
             return orderDAO.UpdateOrder(dtoOrder);
         }
+
+        public bool DeteleOrder(string orderID)
+        {
+            return orderDAO.DeleteOrder(orderID);
+        }
+
+        public string GetOrderMaxID()
+        {
+            return orderDAO.GetOrderMaxID();
+        }
     }
 }

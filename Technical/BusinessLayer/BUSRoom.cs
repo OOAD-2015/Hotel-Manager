@@ -147,5 +147,10 @@ namespace BusinessLayer
                 throw;
             }
         }
+
+        public DataTable GetAllRoomByDateFromTo(DateTime startDate, DateTime endDate)
+        {
+            return roomDAO.GetAllRoomByDateFromTo(startDate, endDate);
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace DataTransferObject
         public int estimate;
         public int deposit;
         public int total;
-        public string orderStatus;
+        public int orderStatus;
 
         public DTOOrder()
         {
@@ -24,7 +24,7 @@ namespace DataTransferObject
         }
 
         public DTOOrder(string orderID, string customerID, string staffID, DateTime orderOfDate, 
-            int numberOfPeople, int estimate, int deposit, int total, string orderStatus)
+            int numberOfPeople, int estimate, int deposit, int total, int orderStatus)
         {
             this.orderID = orderID;
             this.customerID = customerID;

@@ -9,13 +9,13 @@ namespace DataTransferObject
     public class DTOOrderDetail
     {
         #region "Variable"
-        private string orderDetailID;
-        private string orderID;
-        private string roomID;
-        private DateTime startDate;
-        private DateTime endDate;
-        private int estimate;
-        private int servicesMoney;
+        public string orderDetailID;
+        public string orderID;
+        public string roomID;
+        public DateTime startDate;
+        public DateTime endDate;
+        public int estimate;
+        public int servicesMoney;
         #endregion
 
         #region "Properties"
