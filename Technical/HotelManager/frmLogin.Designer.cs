@@ -42,7 +42,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.EditValue = "trungpv93";
+            this.txtUsername.EditValue = "trungpv";
             this.txtUsername.Location = new System.Drawing.Point(275, 86);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);

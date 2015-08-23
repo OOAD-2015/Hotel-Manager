@@ -31,13 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panelAuthorTitle = new DevExpress.XtraEditors.PanelControl();
             this.labServices = new DevExpress.XtraEditors.LabelControl();
-            this.gvServiceDetail = new DevExpress.XtraGrid.GridControl();
-            this.grdvServiceDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ServiceID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ServiceName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Quantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Pride = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Monetized = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grpServiceDetail = new DevExpress.XtraEditors.GroupControl();
             this.lblOrderValue = new System.Windows.Forms.Label();
             this.lblOrder = new System.Windows.Forms.Label();
@@ -75,23 +68,29 @@
             this.labImportPrice = new DevExpress.XtraEditors.LabelControl();
             this.lblCommodityName = new DevExpress.XtraEditors.LabelControl();
             this.lblCommodityId = new DevExpress.XtraEditors.LabelControl();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTotalMoney = new DevExpress.XtraEditors.TextEdit();
             this.grdvListOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.OrderDetailID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RoomID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ServicesMoney = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gvRoomOrder = new DevExpress.XtraGrid.GridControl();
+            this.grdvServiceDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ServiceID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ServiceName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Quantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Pride = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Monetized = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvServiceDetail = new DevExpress.XtraGrid.GridControl();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTotalMoney = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelAuthorTitle)).BeginInit();
             this.panelAuthorTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvServiceDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdvServiceDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpServiceDetail)).BeginInit();
             this.grpServiceDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ppControlService)).BeginInit();
@@ -107,9 +106,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtServiceTypeName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtServiceName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtServiceId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalMoney.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRoomOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvServiceDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvServiceDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalMoney.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAuthorTitle
@@ -132,79 +133,6 @@
             this.labServices.Size = new System.Drawing.Size(365, 32);
             this.labServices.TabIndex = 1;
             this.labServices.Text = "DANH SÁCH SỬ DỤNG DỊCH VỤ";
-            // 
-            // gvServiceDetail
-            // 
-            this.gvServiceDetail.Location = new System.Drawing.Point(527, 170);
-            this.gvServiceDetail.MainView = this.grdvServiceDetail;
-            this.gvServiceDetail.Name = "gvServiceDetail";
-            this.gvServiceDetail.Size = new System.Drawing.Size(455, 220);
-            this.gvServiceDetail.TabIndex = 5;
-            this.gvServiceDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdvServiceDetail});
-            // 
-            // grdvServiceDetail
-            // 
-            this.grdvServiceDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ServiceID,
-            this.ServiceName,
-            this.Quantity,
-            this.Pride,
-            this.Monetized});
-            this.grdvServiceDetail.GridControl = this.gvServiceDetail;
-            this.grdvServiceDetail.Name = "grdvServiceDetail";
-            // 
-            // ServiceID
-            // 
-            this.ServiceID.Caption = "Mã dịch vụ";
-            this.ServiceID.FieldName = "ServicesID";
-            this.ServiceID.Name = "ServiceID";
-            this.ServiceID.OptionsColumn.ReadOnly = true;
-            this.ServiceID.Visible = true;
-            this.ServiceID.VisibleIndex = 0;
-            this.ServiceID.Width = 69;
-            // 
-            // ServiceName
-            // 
-            this.ServiceName.Caption = "Tên dịch vụ";
-            this.ServiceName.FieldName = "ServicesName";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.OptionsColumn.ReadOnly = true;
-            this.ServiceName.Visible = true;
-            this.ServiceName.VisibleIndex = 1;
-            this.ServiceName.Width = 105;
-            // 
-            // Quantity
-            // 
-            this.Quantity.Caption = "Số lượng";
-            this.Quantity.FieldName = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.OptionsColumn.ReadOnly = true;
-            this.Quantity.Visible = true;
-            this.Quantity.VisibleIndex = 2;
-            this.Quantity.Width = 62;
-            // 
-            // Pride
-            // 
-            this.Pride.Caption = "Đơn giá";
-            this.Pride.FieldName = "Price";
-            this.Pride.Name = "Pride";
-            this.Pride.OptionsColumn.ReadOnly = true;
-            this.Pride.Visible = true;
-            this.Pride.VisibleIndex = 3;
-            this.Pride.Width = 74;
-            // 
-            // Monetized
-            // 
-            this.Monetized.Caption = "Thành tiền";
-            this.Monetized.FieldName = "Monetized";
-            this.Monetized.Name = "Monetized";
-            this.Monetized.OptionsColumn.ReadOnly = true;
-            this.Monetized.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monetized", "SUM={0:0.##}")});
-            this.Monetized.Visible = true;
-            this.Monetized.VisibleIndex = 4;
-            this.Monetized.Width = 98;
             // 
             // grpServiceDetail
             // 
@@ -620,69 +548,6 @@
             this.lblCommodityId.TabIndex = 2;
             this.lblCommodityId.Text = "Mã dịch vụ:";
             // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(991, 288);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(35, 35);
-            this.btnSave.TabIndex = 15;
-            this.btnSave.Text = "Lưu\r\n";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(991, 235);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(35, 35);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Xóa \r\nbỏ";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnUpdate.Location = new System.Drawing.Point(991, 178);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(35, 35);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "Cập\r\nnhật";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl10.Location = new System.Drawing.Point(959, 407);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(21, 13);
-            this.labelControl10.TabIndex = 26;
-            this.labelControl10.Text = "VNĐ";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Location = new System.Drawing.Point(640, 404);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(65, 16);
-            this.labelControl5.TabIndex = 25;
-            this.labelControl5.Text = "Tổng tiền:";
-            // 
-            // txtTotalMoney
-            // 
-            this.txtTotalMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotalMoney.Location = new System.Drawing.Point(729, 403);
-            this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.txtTotalMoney.Properties.Appearance.Options.UseBackColor = true;
-            this.txtTotalMoney.Properties.ReadOnly = true;
-            this.txtTotalMoney.Size = new System.Drawing.Size(224, 20);
-            this.txtTotalMoney.TabIndex = 24;
-            // 
             // grdvListOrder
             // 
             this.grdvListOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -736,7 +601,7 @@
             // 
             // gvRoomOrder
             // 
-            this.gvRoomOrder.Location = new System.Drawing.Point(0, 171);
+            this.gvRoomOrder.Location = new System.Drawing.Point(0, 173);
             this.gvRoomOrder.MainView = this.grdvListOrder;
             this.gvRoomOrder.Name = "gvRoomOrder";
             this.gvRoomOrder.Size = new System.Drawing.Size(510, 220);
@@ -744,9 +609,140 @@
             this.gvRoomOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvListOrder});
             // 
+            // grdvServiceDetail
+            // 
+            this.grdvServiceDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ServiceID,
+            this.ServiceName,
+            this.Quantity,
+            this.Pride,
+            this.Monetized});
+            this.grdvServiceDetail.GridControl = this.gvServiceDetail;
+            this.grdvServiceDetail.Name = "grdvServiceDetail";
+            // 
+            // ServiceID
+            // 
+            this.ServiceID.Caption = "Mã dịch vụ";
+            this.ServiceID.FieldName = "ServicesID";
+            this.ServiceID.Name = "ServiceID";
+            this.ServiceID.OptionsColumn.ReadOnly = true;
+            this.ServiceID.Visible = true;
+            this.ServiceID.VisibleIndex = 0;
+            this.ServiceID.Width = 69;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.Caption = "Tên dịch vụ";
+            this.ServiceName.FieldName = "ServicesName";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.OptionsColumn.ReadOnly = true;
+            this.ServiceName.Visible = true;
+            this.ServiceName.VisibleIndex = 1;
+            this.ServiceName.Width = 105;
+            // 
+            // Quantity
+            // 
+            this.Quantity.Caption = "Số lượng";
+            this.Quantity.FieldName = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.OptionsColumn.ReadOnly = true;
+            this.Quantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "SUM={0:0.##}")});
+            this.Quantity.Visible = true;
+            this.Quantity.VisibleIndex = 2;
+            this.Quantity.Width = 62;
+            // 
+            // Pride
+            // 
+            this.Pride.Caption = "Đơn giá";
+            this.Pride.FieldName = "Price";
+            this.Pride.Name = "Pride";
+            this.Pride.OptionsColumn.ReadOnly = true;
+            this.Pride.Visible = true;
+            this.Pride.VisibleIndex = 3;
+            this.Pride.Width = 74;
+            // 
+            // Monetized
+            // 
+            this.Monetized.Caption = "Thành tiền";
+            this.Monetized.FieldName = "Monetized";
+            this.Monetized.Name = "Monetized";
+            this.Monetized.OptionsColumn.ReadOnly = true;
+            this.Monetized.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monetized", "SUM={0:0.##}")});
+            this.Monetized.Visible = true;
+            this.Monetized.VisibleIndex = 4;
+            this.Monetized.Width = 98;
+            // 
+            // gvServiceDetail
+            // 
+            this.gvServiceDetail.Location = new System.Drawing.Point(527, 173);
+            this.gvServiceDetail.MainView = this.grdvServiceDetail;
+            this.gvServiceDetail.Name = "gvServiceDetail";
+            this.gvServiceDetail.Size = new System.Drawing.Size(455, 220);
+            this.gvServiceDetail.TabIndex = 5;
+            this.gvServiceDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdvServiceDetail});
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(991, 178);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(35, 35);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "Cập\r\nnhật";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(991, 235);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(35, 35);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Xóa \r\nbỏ";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(991, 288);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(35, 35);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "Lưu\r\n";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtTotalMoney
+            // 
+            this.txtTotalMoney.Location = new System.Drawing.Point(729, 403);
+            this.txtTotalMoney.Name = "txtTotalMoney";
+            this.txtTotalMoney.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.txtTotalMoney.Properties.Appearance.Options.UseBackColor = true;
+            this.txtTotalMoney.Properties.ReadOnly = true;
+            this.txtTotalMoney.Size = new System.Drawing.Size(224, 20);
+            this.txtTotalMoney.TabIndex = 24;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Location = new System.Drawing.Point(640, 404);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(65, 16);
+            this.labelControl5.TabIndex = 25;
+            this.labelControl5.Text = "Tổng tiền:";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl10.Location = new System.Drawing.Point(959, 407);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(21, 13);
+            this.labelControl10.TabIndex = 26;
+            this.labelControl10.Text = "VNĐ";
+            // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancel.Enabled = false;
             this.btnCancel.Location = new System.Drawing.Point(991, 343);
             this.btnCancel.Name = "btnCancel";
@@ -755,11 +751,21 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(546, 397);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(76, 32);
+            this.btnPrint.TabIndex = 36;
+            this.btnPrint.Text = "In Hóa đơn";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // frmServiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 442);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl5);
@@ -781,8 +787,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelAuthorTitle)).EndInit();
             this.panelAuthorTitle.ResumeLayout(false);
             this.panelAuthorTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvServiceDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdvServiceDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpServiceDetail)).EndInit();
             this.grpServiceDetail.ResumeLayout(false);
             this.grpServiceDetail.PerformLayout();
@@ -799,9 +803,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtServiceTypeName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtServiceName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtServiceId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalMoney.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRoomOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvServiceDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvServiceDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalMoney.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -811,8 +817,6 @@
 
         private DevExpress.XtraEditors.PanelControl panelAuthorTitle;
         private DevExpress.XtraEditors.LabelControl labServices;
-        private DevExpress.XtraGrid.GridControl gvServiceDetail;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdvServiceDetail;
         private DevExpress.XtraEditors.GroupControl grpServiceDetail;
         private DevExpress.XtraEditors.LabelControl lblCountMax;
         private DevExpress.XtraEditors.SpinEdit spAmount;
@@ -831,19 +835,11 @@
         private DevExpress.XtraEditors.LabelControl labImportPrice;
         private DevExpress.XtraEditors.LabelControl lblCommodityName;
         private DevExpress.XtraEditors.LabelControl lblCommodityId;
-        private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txtTotalMoney;
         private DevExpress.XtraBars.BarManager barManagerService;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraGrid.GridControl gvRoomOrder;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdvListOrder;
         private DevExpress.XtraBars.PopupControlContainer ppControlService;
         private DevExpress.XtraGrid.GridControl grdListServicePopup;
         private DevExpress.XtraGrid.Views.Grid.GridView grdvListServicePopup;
@@ -856,17 +852,28 @@
         private DevExpress.XtraEditors.PanelControl panelComodityExecute;
         private DevExpress.XtraEditors.SimpleButton btnCancel1;
         private DevExpress.XtraEditors.SimpleButton btnChose;
-        private DevExpress.XtraGrid.Columns.GridColumn OrderDetailID;
-        private DevExpress.XtraGrid.Columns.GridColumn RoomID;
-        private DevExpress.XtraGrid.Columns.GridColumn CustomerName;
-        private DevExpress.XtraGrid.Columns.GridColumn ServicesMoney;
+        private System.Windows.Forms.Label lblOrderValue;
+        private System.Windows.Forms.Label lblOrder;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit txtTotalMoney;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraGrid.GridControl gvServiceDetail;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdvServiceDetail;
         private DevExpress.XtraGrid.Columns.GridColumn ServiceID;
         private DevExpress.XtraGrid.Columns.GridColumn ServiceName;
         private DevExpress.XtraGrid.Columns.GridColumn Quantity;
         private DevExpress.XtraGrid.Columns.GridColumn Pride;
         private DevExpress.XtraGrid.Columns.GridColumn Monetized;
-        private System.Windows.Forms.Label lblOrderValue;
-        private System.Windows.Forms.Label lblOrder;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraGrid.GridControl gvRoomOrder;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdvListOrder;
+        private DevExpress.XtraGrid.Columns.GridColumn OrderDetailID;
+        private DevExpress.XtraGrid.Columns.GridColumn RoomID;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerName;
+        private DevExpress.XtraGrid.Columns.GridColumn ServicesMoney;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }

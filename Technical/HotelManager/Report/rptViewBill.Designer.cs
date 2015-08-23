@@ -70,15 +70,9 @@
             this.xrtbAmount = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlblTotalMoneyValue = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlblTotalMoney = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrlblProceeds = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrlblProceedsValue = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrlblRefunds = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrlblRefundsValue = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlbThanks = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlSecond = new DevExpress.XtraReports.UI.XRLine();
             ((System.ComponentModel.ISupportInitialize)(this.xrtbValue)).BeginInit();
@@ -351,6 +345,7 @@
             this.xrlbAddressValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrlbAddressValue.SizeF = new System.Drawing.SizeF(449.9584F, 25.08336F);
             this.xrlbAddressValue.StylePriority.UseFont = false;
+            this.xrlbAddressValue.Text = "aaaaaaaaa";
             // 
             // xrlbCustomerNameValue
             // 
@@ -513,15 +508,9 @@
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel5,
-            this.xrLabel4,
-            this.xrLabel3,
             this.xrLabel1,
             this.xrlblTotalMoneyValue,
             this.xrlblTotalMoney,
-            this.xrlblProceeds,
-            this.xrlblProceedsValue,
-            this.xrlblRefunds,
-            this.xrlblRefundsValue,
             this.xrlbThanks,
             this.xrlSecond});
             this.ReportFooter.HeightF = 528.8333F;
@@ -530,7 +519,7 @@
             // xrLabel5
             // 
             this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(230.1469F, 190.7083F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(230.1469F, 95.83337F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel5.SizeF = new System.Drawing.SizeF(221.624F, 25.08333F);
@@ -538,34 +527,6 @@
             this.xrLabel5.StylePriority.UseTextAlignment = false;
             this.xrLabel5.Text = "Hẹn gặp lại!";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
-            // xrLabel4
-            // 
-            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel4.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(603.5417F, 47.24989F);
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(46.45837F, 25.08336F);
-            this.xrLabel4.StylePriority.UseFont = false;
-            this.xrLabel4.StylePriority.UseForeColor = false;
-            this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "vnđ";
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel3.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(603.5419F, 72.33331F);
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(46.45837F, 25.08336F);
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.StylePriority.UseForeColor = false;
-            this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "vnđ";
-            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
             // 
@@ -607,62 +568,10 @@
             this.xrlblTotalMoney.Text = "TỔNG TIỀN:";
             this.xrlblTotalMoney.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrlblProceeds
-            // 
-            this.xrlblProceeds.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlblProceeds.LocationFloat = new DevExpress.Utils.PointFloat(293.646F, 47.24989F);
-            this.xrlblProceeds.Name = "xrlblProceeds";
-            this.xrlblProceeds.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlblProceeds.SizeF = new System.Drawing.SizeF(104.1667F, 25.08331F);
-            this.xrlblProceeds.StylePriority.UseFont = false;
-            this.xrlblProceeds.StylePriority.UseTextAlignment = false;
-            this.xrlblProceeds.Text = "Tiền mặt thu:";
-            this.xrlblProceeds.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrlblProceedsValue
-            // 
-            this.xrlblProceedsValue.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrlblProceedsValue.ForeColor = System.Drawing.Color.Black;
-            this.xrlblProceedsValue.LocationFloat = new DevExpress.Utils.PointFloat(468.376F, 47.24989F);
-            this.xrlblProceedsValue.Name = "xrlblProceedsValue";
-            this.xrlblProceedsValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlblProceedsValue.SizeF = new System.Drawing.SizeF(135.1658F, 25.08331F);
-            this.xrlblProceedsValue.StylePriority.UseFont = false;
-            this.xrlblProceedsValue.StylePriority.UseForeColor = false;
-            this.xrlblProceedsValue.StylePriority.UseTextAlignment = false;
-            this.xrlblProceedsValue.Text = "0";
-            this.xrlblProceedsValue.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // xrlblRefunds
-            // 
-            this.xrlblRefunds.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlblRefunds.LocationFloat = new DevExpress.Utils.PointFloat(294.3753F, 72.33331F);
-            this.xrlblRefunds.Name = "xrlblRefunds";
-            this.xrlblRefunds.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlblRefunds.SizeF = new System.Drawing.SizeF(103.4375F, 25.08334F);
-            this.xrlblRefunds.StylePriority.UseFont = false;
-            this.xrlblRefunds.StylePriority.UseTextAlignment = false;
-            this.xrlblRefunds.Text = "Tiền trả lại:";
-            this.xrlblRefunds.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrlblRefundsValue
-            // 
-            this.xrlblRefundsValue.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrlblRefundsValue.ForeColor = System.Drawing.Color.Black;
-            this.xrlblRefundsValue.LocationFloat = new DevExpress.Utils.PointFloat(468.3762F, 72.33331F);
-            this.xrlblRefundsValue.Name = "xrlblRefundsValue";
-            this.xrlblRefundsValue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlblRefundsValue.SizeF = new System.Drawing.SizeF(135.1658F, 25.08333F);
-            this.xrlblRefundsValue.StylePriority.UseFont = false;
-            this.xrlblRefundsValue.StylePriority.UseForeColor = false;
-            this.xrlblRefundsValue.StylePriority.UseTextAlignment = false;
-            this.xrlblRefundsValue.Text = "0";
-            this.xrlblRefundsValue.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
             // xrlbThanks
             // 
             this.xrlbThanks.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrlbThanks.LocationFloat = new DevExpress.Utils.PointFloat(230.1468F, 165.625F);
+            this.xrlbThanks.LocationFloat = new DevExpress.Utils.PointFloat(230.1468F, 70.75008F);
             this.xrlbThanks.Name = "xrlbThanks";
             this.xrlbThanks.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrlbThanks.SizeF = new System.Drawing.SizeF(221.624F, 25.08333F);
@@ -673,7 +582,7 @@
             // 
             // xrlSecond
             // 
-            this.xrlSecond.LocationFloat = new DevExpress.Utils.PointFloat(89.37495F, 129.9583F);
+            this.xrlSecond.LocationFloat = new DevExpress.Utils.PointFloat(89.37495F, 35.08338F);
             this.xrlSecond.Name = "xrlSecond";
             this.xrlSecond.SizeF = new System.Drawing.SizeF(457.2917F, 23F);
             // 
@@ -722,8 +631,6 @@
         private DevExpress.XtraReports.UI.XRLabel xlblAddress;
         private DevExpress.XtraReports.UI.XRLabel xlblCompanyName;
         private DevExpress.XtraReports.UI.XRLabel xrlbTitles;
-        private DevExpress.XtraReports.UI.XRLabel xrlblRefunds;
-        private DevExpress.XtraReports.UI.XRLabel xrlblRefundsValue;
         private DevExpress.XtraReports.UI.XRLabel xrLblTaxId;
         private DevExpress.XtraReports.UI.XRLabel xrlblTaxIdValue;
         private DevExpress.XtraReports.UI.XRLabel xrLblDateCreateBill;
@@ -738,13 +645,9 @@
         private DevExpress.XtraReports.UI.XRTableCell xrtbCountValue;
         private DevExpress.XtraReports.UI.XRTableCell xrtbPriceValue;
         private DevExpress.XtraReports.UI.XRTableCell xrtbAmountValue;
-        private DevExpress.XtraReports.UI.XRLabel xrlblProceeds;
-        private DevExpress.XtraReports.UI.XRLabel xrlblProceedsValue;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRLabel xrlblTotalMoneyValue;
         private DevExpress.XtraReports.UI.XRLabel xrlblTotalMoney;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
         private DevExpress.XtraReports.UI.XRLabel xrlbThanks;
     }

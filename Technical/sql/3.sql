@@ -312,3 +312,28 @@ RETURN
 
 
 GO
+
+ALTER PROCEDURE [dbo].[sp_GetServiceDetailByID]
+(
+	@ServiceDetailID nvarchar(10)
+)
+AS
+	SELECT *
+	FROM SERVICEDETAIL AS A INNER JOIN SERVICES AS B ON A.ServicesID=B.ServicesID
+	Where A.SevicesDetailID = @ServiceDetailID
+
+GO
+
+
+
+CREATE PROCEDURE [dbo].[sp_GetCustomerByOrderID]
+(
+	@Id nvarchar(10)
+)
+AS
+	SELECT  B.CustomerID
+	FROM ORDERDETAIL AS A INNER JOIN [ORDER] AS B ON A.OrderID=B.OrderID
+	WHERE A.OrderDetailID = @Id
+
+GO
+

@@ -218,7 +218,7 @@
         a2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAAChEZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0
         cmVhbWVyAgAAAAlJbWFnZVNpemUERGF0YQQHE1N5c3RlbS5EcmF3aW5nLlNpemUDAAAAAgIAAAAF/P//
         /xNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAwAAACAAAAAgAAAACQUAAAAP
-        BQAAAJ44AAACsQUAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAARnQU1BAACxjwv8
+        BQAAAJc7AAACsQUAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRy
         oQAABS1JREFUWEfFl2tQVGUYxzcSkhJESFgSFQEFxUsgy3IzTEDFREATGBmr2WZQBEzkKgjLXfBSasvF
         6UtON2c0SbGgmbT61PQpJ2eYmqlmarqIjANd5LynIZ+e97x7bu/ugaUvPTN/vpzL7/9/nuc9O5gA4H8V
@@ -459,13 +459,26 @@
         Z0FNQQAAsY8L/GEFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAApklEQVRYR+2Tyw2DMBBE3UV6SBncUkna
         yIEGuKaKKA2ljhwQDJBZrdBafBQbS+yTnrTMWnguDo7jOE4JdD/r8esAii3whtxdhiAVVgFm2htMAi9Y
         KjAY4wq/kOcecAn5J4c9BfSlMWPInsOWAhW09jE/cA53MugCDWROSQvnu7VqJOOgC5AnvE/jyOsPklUF
-        UlJegaM0w5yaYU7NMKcynPcVOGcmhB5xEgTmMhNahwAAAABJRU5ErkJgggs=
+        UlJegaM0w5yaYU7NMKcynPcVOGcmhB5xEgTmMhNahwAAAABJRU5ErkJggvUCAACJUE5HDQoaCgAAAA1J
+        SERSAAAAIAAAACAIBgAAAHN6evQAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAC
+        l0lEQVRYR+2Wu4sTURTGo8KKIFaKhY9SyGSChaCZZ2SxEDSZbBGwsRT8B0StXMF2kYV5rI/GajGFCFqJ
+        nbKNqJOZNK6lhSxiIzbiI95z55swmZnMIztr5Q8ufN+Zc889uTfMndp/5kG2/WuK44+jg8Xenl/d3IuU
+        nYUWFAajBViOYvsrLL4MWx2KNbwOOYEagJwgr3lX4w3EmywNLRQOhGqnVzcPzGpAtoavYfni4Vx19d0h
+        hIvDJ9veDdKS7X8Pi9E488A7zJNiSPbwYTQPYV5Ltb1zsPnQBNkZGrAcxXS/QebSct4fgZxANVsrG/tg
+        ZyM77mfFcT/CVkp0V2YiW/5aocSSSPZosXBddvb3ZyU320tHRb3zG3aCqHVfibqxDjtFqcVD0ibUld5P
+        yJmIei8xT7X9y+w/9AM2H8n0vsjO6Aosp653tiBzSWsidwcoIToQnhvWxF1IDu1AZv2sRdN+UR51pfMJ
+        MoFi+W8Ux7sJG5DdQPcZZCXQO4aOGTYgq4Gm1tUhK0Gz/GOJ9bIaaKhLlyArga11tmX6v2ADso+g/H9A
+        XOyk3hcEe9k9oXsDNoAaiA6EOYJqvIAsTLxpVvP5VP3xeBceJaEEdnudguUIavcx5FzwRcsQnyC0+/tP
+        tC8ehM2kofdeQgbcGu/edgOEIPQX2E5swCZo6kZT1Iw7sBPY55pXqoG85IZm3KYzFrXeI3YBmaQbeucD
+        HqciO/6wUBOUlHhLVUThXaDE/mCwB5aj3Bsdh5wLqkmf7rD50ITwq5bpk+R5EcebumTihHk0EApipvsH
+        tjhBIW89Vmwr6kNUy+tRXLK8C+SZXibPh+l+5UnzkLZYWow3YPtPYTnUhGS7Imx1FG1gx+Dbmjb+VQPV
+        Uav9BcBgnMXCrANUAAAAAElFTkSuQmCCCw==
 </value>
   </data>
   <metadata name="xtraTabbedMdiManagerMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>352, 8</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>178</value>
   </metadata>
 </root>

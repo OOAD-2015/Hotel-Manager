@@ -56,6 +56,7 @@
             this.bbtnRevenueReport = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnSearchRoom = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnUseServices = new DevExpress.XtraBars.BarButtonItem();
             this.largeimageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.ribpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -109,10 +110,11 @@
             this.bbtnSearchStaff,
             this.bbtnRevenueReport,
             this.bbtnSearchRoom,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.bbtnUseServices});
             this.ribbon.LargeImages = this.largeimageCollection;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 27;
+            this.ribbon.MaxItemId = 28;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnInformation);
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnLogout);
@@ -318,6 +320,14 @@
             this.barButtonItem1.Id = 26;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // bbtnUseServices
+            // 
+            this.bbtnUseServices.Caption = "Sử dụng dịch vụ";
+            this.bbtnUseServices.Id = 27;
+            this.bbtnUseServices.LargeImageIndex = 13;
+            this.bbtnUseServices.Name = "bbtnUseServices";
+            this.bbtnUseServices.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnUseServices_ItemClick);
+            // 
             // largeimageCollection
             // 
             this.largeimageCollection.ImageSize = new System.Drawing.Size(32, 32);
@@ -335,6 +345,7 @@
             this.largeimageCollection.Images.SetKeyName(10, "service.png");
             this.largeimageCollection.Images.SetKeyName(11, "ic_dollar.ico");
             this.largeimageCollection.Images.SetKeyName(12, "1439841041_bed.png");
+            this.largeimageCollection.Images.SetKeyName(13, "using_services.png");
             // 
             // ribpSystem
             // 
@@ -393,6 +404,7 @@
             // 
             this.ribpgServices.ItemLinks.Add(this.bbtnServices);
             this.ribpgServices.ItemLinks.Add(this.bbtnServicesType);
+            this.ribpgServices.ItemLinks.Add(this.bbtnUseServices);
             this.ribpgServices.Name = "ribpgServices";
             this.ribpgServices.Text = "Dịch vụ";
             // 
@@ -473,6 +485,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Quản lý khách sạn";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHomePage_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHomePage_FormClosed);
             this.Load += new System.EventHandler(this.frmHomePage_Load);
@@ -531,5 +544,6 @@
         private DevExpress.XtraBars.BarButtonItem bbtnRevenueReport;
         private DevExpress.XtraBars.BarButtonItem bbtnSearchRoom;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem bbtnUseServices;
     }
 }

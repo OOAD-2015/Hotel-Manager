@@ -135,5 +135,24 @@ namespace DataAccessLayer
                 throw;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strOrderID"></param>
+        /// <returns></returns>
+        public String GetCustomerByOrderDetailId(String strOrderID)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetCustomerByOrderID"/*Truyen vao storeprocedure*/, new object[1] { strOrderID });
+                return DataExecute.Instance.getStringExecute(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+        }
     }
 }

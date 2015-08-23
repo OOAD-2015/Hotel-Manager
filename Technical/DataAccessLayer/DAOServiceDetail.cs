@@ -33,12 +33,12 @@ namespace DataAccessLayer
         /// </summary>
         /// <param name="iServiceDetailId">id của feedback</param>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public String GetServiceDetailById(String strServiceDetailId)
+        public DataTable GetServiceDetailById(String strServiceDetailId)
         {
             try
             {
                 DataExecute.Instance.createSqlCmd("sp_GetServiceDetailByID"/*Truyen vao storeprocedure*/, new object[1] { strServiceDetailId });
-                return DataExecute.Instance.getStringExecute(DataConnection.Instance.m_cmd);
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
             }
             catch (SqlException)
             {

@@ -132,5 +132,20 @@ namespace BusinessLayer
             }
 
         }
+
+
+        public String GetCustomerByOrderDetailId(String id)
+        {
+            try
+            {
+                return customerDAO.GetCustomerByOrderDetailId(id);
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+
+        }
     }
 }

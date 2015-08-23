@@ -40,7 +40,7 @@ namespace BusinessLayer
         /// </summary>
         /// <param name="iServiceDetailId">id của feedback</param>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public String GetServiceDetailById(String strServiceDetailId)
+        public DataTable GetServiceDetailById(String strServiceDetailId)
         {
             try
             {

@@ -20,8 +20,6 @@ namespace HotelManager.Report
             String strCustomerAddress,
             String strTotalQuantity,
             String strTotalMoney,
-            String strMoneyProceed,
-            String strMoneyReturn,
             string strBillId)
         {
             //
@@ -37,19 +35,16 @@ namespace HotelManager.Report
             //
             
             xrlblTotalMoneyValue.Text = strTotalMoney;
-            xrlblProceedsValue.Text = strMoneyProceed;
-            xrlblRefundsValue.Text = strMoneyReturn;
             xrLblDateCreateValue.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             xrlbDateTimePrintValue.Text = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString() +
                " " + DateTime.Now.ToShortTimeString();
             //
             //xrtbSnoValue.DataBindings.Add("Text", DataSource, "STT");
-            //xrtbCommodityIdValue.DataBindings.Add("Text", DataSource, "MaHangHoa");
-            //xrtbCommodityNameValue.DataBindings.Add("Text", DataSource, "TenHangHoa");
-            //xrtbCountValue.DataBindings.Add("Text", DataSource, "SoLuong");
-            //xrtbOutputPriceValue.DataBindings.Add("Text", DataSource, "DonGia");
-            //xrtbVATValue.DataBindings.Add("Text", DataSource, "TiLeVAT");
-            //xrtbAmountValue.DataBindings.Add("Text", DataSource, "ThanhTien");
+            xrtbRoomIdValue.DataBindings.Add("Text", DataSource, "ServicesID");
+            xrtbRoomNameValue.DataBindings.Add("Text", DataSource, "ServicesName");
+            xrtbCountValue.DataBindings.Add("Text", DataSource, "Quantity");
+            xrtbPriceValue.DataBindings.Add("Text", DataSource, "Price");
+            xrtbAmountValue.DataBindings.Add("Text", DataSource, "Monetized");
 
         }
 

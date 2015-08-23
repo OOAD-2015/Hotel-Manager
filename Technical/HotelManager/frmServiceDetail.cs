@@ -1,4 +1,5 @@
-﻿using BusinessLayer;
+﻿using BookStoreManager.Presentation.ReportForm;
+using BusinessLayer;
 using DataTransferObject;
 using DevExpress.XtraEditors;
 using HotelManager.General;
@@ -26,6 +27,7 @@ namespace HotelManager
         private BUSOrderDetail orderDetailBUS;
         private DataTable orderDetailDataTable;
         private GridCheckMarksSelection serviceDetailMultiselect;
+        private BUSCustomer customerBUS;
 
 
         Dictionary<String, Object> m_listServiceObject = new Dictionary<String, Object>();
@@ -42,6 +44,7 @@ namespace HotelManager
             orderDetailDataTable = new DataTable();
             orderDetailBUS = new BUSOrderDetail();
             serviceDetailMultiselect = new GridCheckMarksSelection(grdvServiceDetail);
+            customerBUS = new BUSCustomer();
         }
 
         private void frmServiceDetail_Load(object sender, EventArgs e)
@@ -60,6 +63,8 @@ namespace HotelManager
             //
             orderDetailDataTable = orderDetailBUS.GetAllOrderDetailFromNow();
             gvRoomOrder.DataSource = orderDetailDataTable;
+
+            txtTotalMoney.Text = grdvServiceDetail.Columns["Monetized"].SummaryItem.SummaryValue.ToString();
         }
 
         private void drbtnServiceChose_Click(object sender, EventArgs e)
@@ -343,6 +348,7 @@ namespace HotelManager
                     {
                         listServiceDetailObject.Add(new DTOServiceDetail(row.ItemArray[2].ToString(), row.ItemArray[3].ToString(), Int32.Parse(row.ItemArray[4].ToString()), Int32.Parse(row.ItemArray[5].ToString())));
                     }
+                    txtTotalMoney.Text = grdvServiceDetail.Columns["Monetized"].SummaryItem.SummaryValue.ToString();
                 }
             }
             catch (System.Exception)
@@ -418,6 +424,28 @@ namespace HotelManager
             {
                 listServiceDetailObject.Add(new DTOServiceDetail(row.ItemArray[2].ToString(), row.ItemArray[3].ToString(), Int32.Parse(row.ItemArray[4].ToString()), Int32.Parse(row.ItemArray[5].ToString())));
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+                String customerID = customerBUS.GetCustomerByOrderDetailId(lblOrderValue.Text.Trim());
+                DataTable customer = customerBUS.GetCustomerById(customerID);
+                if (customer.Rows.Count > 0)
+                {
+                    String nameCustomer = customer.Rows[0].ItemArray[2].ToString();
+                    String address = customer.Rows[0].ItemArray[5].ToString();
+                    frmViewBill billReportView = new frmViewBill(serviceDetailDataTable, nameCustomer, address, grdvServiceDetail.Columns["Quantity"].SummaryItem.SummaryValue.ToString(),
+                        txtTotalMoney.Text, "ID Hóa đơn");
+                    billReportView.ShowDialog();
+                    billReportView.ShowInTaskbar = false;
+                }
+            //}
+            //catch (System.Exception)
+            //{
+
+            //}
         }
 
 

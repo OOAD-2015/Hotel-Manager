@@ -24,18 +24,14 @@ namespace BookStoreManager.Presentation.ReportForm
         public frmViewBill(DataTable dListCommodity, string strCustomerName,
             String strCustomerAddress,
             String strTotalQuantity,
-            String strTotalMoneyCommodity,
-            String strTotalMoneyVAT,
             String strTotalMoney,
-            String strMoneyProceed,
-            String strMoneyReturn,
             string strBillId)
         {
             InitializeComponent();
 
             billReportView = new rptViewBill();
 
-            billReportView.LoadDataToReport(strCustomerName, strCustomerAddress, strTotalQuantity, strTotalMoney, strMoneyProceed, strMoneyReturn, strBillId);
+            billReportView.LoadDataToReport(strCustomerName, strCustomerAddress, strTotalQuantity, strTotalMoney, strBillId);
 
             billReportView.DataSource = dListCommodity;
             docDeliveryNoteView.PrintingSystem = billReportView.PrintingSystem;
