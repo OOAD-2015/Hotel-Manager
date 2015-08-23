@@ -43,10 +43,12 @@
   <ItemGroup>
     <Compile Include="BUSCustomer.cs" />
     <Compile Include="BUSOrder.cs" />
+    <Compile Include="BUSOrderDetail.cs" />
     <Compile Include="BUSRolePermission.cs" />
     <Compile Include="BUSRoom.cs" />
     <Compile Include="BUSRoomType.cs" />
     <Compile Include="BUSRule.cs" />
+    <Compile Include="BUSServiceDetail.cs" />
     <Compile Include="BUSServices.cs" />
     <Compile Include="BUSServicesType.cs" />
     <Compile Include="BUSStaff.cs" />

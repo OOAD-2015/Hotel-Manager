@@ -418,7 +418,7 @@ CREATE PROCEDURE [dbo].[sp_GetAllRoomType]
 AS
 	SELECT RoomTypeID, RoomTypeName, Price
 	FROM 
-
+		ROOMTYPE
 
 
 GO

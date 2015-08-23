@@ -52,6 +52,19 @@ namespace BusinessLayer
             }
 
         }
+
+        public DataTable GetDataServicesById(String strServicesId)
+        {
+            try
+            {
+                return servicesDAO.GetDataServicesById(strServicesId);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+        }
         /// <summary>
         /// Phương thức lấy Services theo id của Services
         /// </summary>
@@ -130,6 +143,20 @@ namespace BusinessLayer
 
                 throw;
             }
+        }
+
+        public bool CheckServiceIsExistInDatabase(String strServiceId)
+        {
+            DataTable temp = servicesDAO.GetDataServicesById(strServiceId);
+            if (temp != null)
+            {
+                if (temp.Rows.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
         }
     }
 }

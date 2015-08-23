@@ -46,6 +46,20 @@ namespace DataAccessLayer
             }
 
         }
+
+        public DataTable GetDataServicesById(String strServicesId)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetServicesByID"/*Truyen vao storeprocedure*/, new object[1] { strServicesId });
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+        }
         /// <summary>
         /// Phương thức lấy Services theo id của Services
         /// </summary>

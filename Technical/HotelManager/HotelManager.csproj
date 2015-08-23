@@ -169,6 +169,12 @@
     <Compile Include="frmHomePage.Designer.cs">
       <DependentUpon>frmHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListOrder.Designer.cs">
+      <DependentUpon>frmListOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,12 @@
     </Compile>
     <Compile Include="frmSearchStaff.Designer.cs">
       <DependentUpon>frmSearchStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceDetail.Designer.cs">
+      <DependentUpon>frmServiceDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="frmServices.cs">
       <SubType>Form</SubType>
@@ -310,6 +322,9 @@
     <EmbeddedResource Include="frmHomePage.resx">
       <DependentUpon>frmHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListOrder.resx">
+      <DependentUpon>frmListOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchStaff.resx">
       <DependentUpon>frmSearchStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceDetail.resx">
+      <DependentUpon>frmServiceDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmServices.resx">
       <DependentUpon>frmServices.cs</DependentUpon>

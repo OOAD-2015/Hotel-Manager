@@ -54,6 +54,8 @@
             this.bbtnSearchCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnSearchStaff = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnRevenueReport = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnSearchRoom = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.largeimageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.ribpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -72,7 +74,6 @@
             this.ribpHelp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManagerMenu = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.bbtnSearchRoom = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallimageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeimageCollection)).BeginInit();
@@ -107,10 +108,11 @@
             this.bbtnSearchCustomer,
             this.bbtnSearchStaff,
             this.bbtnRevenueReport,
-            this.bbtnSearchRoom});
+            this.bbtnSearchRoom,
+            this.barButtonItem1});
             this.ribbon.LargeImages = this.largeimageCollection;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 26;
+            this.ribbon.MaxItemId = 27;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnInformation);
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnLogout);
@@ -302,6 +304,20 @@
             this.bbtnRevenueReport.Name = "bbtnRevenueReport";
             this.bbtnRevenueReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnRevenueReport_ItemClick);
             // 
+            // bbtnSearchRoom
+            // 
+            this.bbtnSearchRoom.Caption = "Phòng";
+            this.bbtnSearchRoom.Id = 25;
+            this.bbtnSearchRoom.LargeImageIndex = 12;
+            this.bbtnSearchRoom.Name = "bbtnSearchRoom";
+            this.bbtnSearchRoom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnSearchRoom_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "test Service";
+            this.barButtonItem1.Id = 26;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // largeimageCollection
             // 
             this.largeimageCollection.ImageSize = new System.Drawing.Size(32, 32);
@@ -444,14 +460,6 @@
             this.xtraTabbedMdiManagerMenu.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManagerMenu.MdiParent = this;
             // 
-            // bbtnSearchRoom
-            // 
-            this.bbtnSearchRoom.Caption = "Phòng";
-            this.bbtnSearchRoom.Id = 25;
-            this.bbtnSearchRoom.LargeImageIndex = 12;
-            this.bbtnSearchRoom.Name = "bbtnSearchRoom";
-            this.bbtnSearchRoom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnSearchRoom_ItemClick);
-            // 
             // frmHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -522,5 +530,6 @@
         private DevExpress.XtraBars.BarButtonItem bbtnSearchStaff;
         private DevExpress.XtraBars.BarButtonItem bbtnRevenueReport;
         private DevExpress.XtraBars.BarButtonItem bbtnSearchRoom;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
