@@ -31,6 +31,7 @@ namespace HotelManager
         private frmRevenueReport revenueReportFormObject;
         private frmSearchRoom searchRoomFormObject;
         private frmServiceDetail usingServicesFormObject;
+        private frmOrder orderFormObject;
         #endregion
 
         #region "Varaibles"
@@ -291,6 +292,19 @@ namespace HotelManager
             }
             else
                 usingServicesFormObject.Activate();
+        }
+
+        private void btnOrder_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(orderFormObject))
+            {
+                orderFormObject = new frmOrder();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(orderFormObject);
+                orderFormObject.MdiParent = this;
+                orderFormObject.Show();
+            }
+            else
+                orderFormObject.Activate();
         }
     }
 }

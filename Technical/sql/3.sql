@@ -337,3 +337,66 @@ AS
 
 GO
 
+CREATE PROCEDURE [dbo].[sp_GetOrderIDByOrderDetailID]
+(
+	@Id nvarchar(10)
+)
+AS
+	SELECT  B.OrderID
+	FROM ORDERDETAIL AS A INNER JOIN [ORDER] AS B ON A.OrderID=B.OrderID
+	WHERE A.OrderDetailID = @Id
+
+GO
+
+
+---
+
+CREATE PROCEDURE [dbo].[sp_GetRevenueReportByMY]
+(
+	@M nvarchar(10),
+	@Y nvarchar(10)
+)
+AS
+	SELECT A.RoomID, 
+		(SELECT ROOM.RoomName FROM ROOM WHERE ROOM.RoomID=A.RoomID) AS RoomName,
+		SUM(DATEDIFF(dd, A.StartDate, A.EndDate)) AS QTY , 
+		(SELECT C.Price FROM ROOMTYPE AS C INNER JOIN ROOM AS B ON C.RoomTypeID=B.RoomTypeID WHERE B.RoomID=A.RoomID) AS Price,
+		(SUM(DATEDIFF(dd, A.StartDate, A.EndDate))*(SELECT C.Price FROM ROOMTYPE AS C INNER JOIN ROOM AS B ON C.RoomTypeID=B.RoomTypeID WHERE B.RoomID=A.RoomID)) AS Total
+FROM ORDERDETAIL AS A 
+WHERE MONTH(A.StartDate)=@M AND YEAR(A.StartDate)=@Y
+group by A.RoomID
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetRevenueReportByY]
+(
+	@Y nvarchar(10)
+)
+AS
+	SELECT A.RoomID, 
+		(SELECT ROOM.RoomName FROM ROOM WHERE ROOM.RoomID=A.RoomID) AS RoomName,
+		SUM(DATEDIFF(dd, A.StartDate, A.EndDate)) AS QTY , 
+		(SELECT C.Price FROM ROOMTYPE AS C INNER JOIN ROOM AS B ON C.RoomTypeID=B.RoomTypeID WHERE B.RoomID=A.RoomID) AS Price,
+		(SUM(DATEDIFF(dd, A.StartDate, A.EndDate))*(SELECT C.Price FROM ROOMTYPE AS C INNER JOIN ROOM AS B ON C.RoomTypeID=B.RoomTypeID WHERE B.RoomID=A.RoomID)) AS Total
+FROM ORDERDETAIL AS A 
+WHERE YEAR(A.StartDate)=@Y
+group by A.RoomID
+
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetRevenueReportByFromTo]
+(
+	@From date,
+	@To date
+)
+AS
+	SELECT A.RoomID, 
+		(SELECT ROOM.RoomName FROM ROOM WHERE ROOM.RoomID=A.RoomID) AS RoomName,
+		SUM(DATEDIFF(dd, A.StartDate, A.EndDate)) AS QTY , 
+		(SELECT C.Price FROM ROOMTYPE AS C INNER JOIN ROOM AS B ON C.RoomTypeID=B.RoomTypeID WHERE B.RoomID=A.RoomID) AS Price,
+		(SUM(DATEDIFF(dd, A.StartDate, A.EndDate))*(SELECT C.Price FROM ROOMTYPE AS C INNER JOIN ROOM AS B ON C.RoomTypeID=B.RoomTypeID WHERE B.RoomID=A.RoomID)) AS Total
+FROM ORDERDETAIL AS A 
+WHERE A.StartDate BETWEEN @From AND @To
+group by A.RoomID
+
+GO

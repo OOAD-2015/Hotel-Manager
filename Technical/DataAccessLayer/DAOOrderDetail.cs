@@ -48,6 +48,25 @@ namespace DataAccessLayer
 
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public String GetOrderIDByOrderDetailID(String strOrderDetailId)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetOrderIDByOrderDetailID", new object[1] { strOrderDetailId });
+                return DataExecute.Instance.getStringExecute(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -110,7 +129,46 @@ namespace DataAccessLayer
 
                 throw;
             }
-        }  
-        
+        }
+
+        public DataTable GetRevenueReportByMY(string M, string Y)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetRevenueReportByMY", new object[2] { M, Y });
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+
+        public DataTable GetRevenueReportByY(string Y)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetRevenueReportByY", new object[1] {Y });
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+
+        public DataTable GetRevenueReportByFromTo(DateTime F, DateTime T)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetRevenueReportByFromTo", new object[2] { F, T });
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+
     }
 }

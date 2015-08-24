@@ -75,6 +75,7 @@
             this.ribpHelp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManagerMenu = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnOrder = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallimageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeimageCollection)).BeginInit();
@@ -111,10 +112,11 @@
             this.bbtnRevenueReport,
             this.bbtnSearchRoom,
             this.barButtonItem1,
-            this.bbtnUseServices});
+            this.bbtnUseServices,
+            this.btnOrder});
             this.ribbon.LargeImages = this.largeimageCollection;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 28;
+            this.ribbon.MaxItemId = 29;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnInformation);
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnLogout);
@@ -346,6 +348,7 @@
             this.largeimageCollection.Images.SetKeyName(11, "ic_dollar.ico");
             this.largeimageCollection.Images.SetKeyName(12, "1439841041_bed.png");
             this.largeimageCollection.Images.SetKeyName(13, "using_services.png");
+            this.largeimageCollection.Images.SetKeyName(14, "1440400649_purchase_order.png");
             // 
             // ribpSystem
             // 
@@ -405,6 +408,7 @@
             this.ribpgServices.ItemLinks.Add(this.bbtnServices);
             this.ribpgServices.ItemLinks.Add(this.bbtnServicesType);
             this.ribpgServices.ItemLinks.Add(this.bbtnUseServices);
+            this.ribpgServices.ItemLinks.Add(this.btnOrder);
             this.ribpgServices.Name = "ribpgServices";
             this.ribpgServices.Text = "Dịch vụ";
             // 
@@ -471,6 +475,14 @@
             this.xtraTabbedMdiManagerMenu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManagerMenu.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManagerMenu.MdiParent = this;
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Caption = "Đặt phòng";
+            this.btnOrder.Id = 28;
+            this.btnOrder.LargeImageIndex = 14;
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOrder_ItemClick);
             // 
             // frmHomePage
             // 
@@ -545,5 +557,6 @@
         private DevExpress.XtraBars.BarButtonItem bbtnSearchRoom;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem bbtnUseServices;
+        private DevExpress.XtraBars.BarButtonItem btnOrder;
     }
 }

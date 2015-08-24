@@ -74,8 +74,8 @@ namespace DataAccessLayer
         {
             try
             {
-                //DataExecute.Instance.createSqlCmd("sp_AddNewOrder"/*Truyen vao storeprocedure*/, new object[9] { dtoOrder.orderID, dtoOrder.customerID, dtoOrder.staffID, dtoOrder.orderOfDate, dtoOrder.numberOfPeople, dtoOrder.estimate, dtoOrder.deposit, dtoOrder.total, dtoOrder.orderStatus });
-                DataExecute.Instance.createSqlCmd("sp_AddNewOrder", ref dtoOrder);
+                DataExecute.Instance.createSqlCmd("sp_AddNewOrder"/*Truyen vao storeprocedure*/, new object[9] { dtoOrder.orderID, dtoOrder.customerID, dtoOrder.staffID, dtoOrder.orderOfDate, dtoOrder.numberOfPeople, dtoOrder.estimate, dtoOrder.deposit, dtoOrder.total, dtoOrder.orderStatus });
+                //DataExecute.Instance.createSqlCmd("sp_AddNewOrder", ref dtoOrder);
                 return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
             }
             catch (SqlException)

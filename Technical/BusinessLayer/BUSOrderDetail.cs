@@ -33,6 +33,14 @@ namespace BusinessLayer
             return orderDetailDAO.UpdateServiceMoneyOrderDetailById(strOrderDetailId, ServiceMoney);
         }
 
+
+        public String GetOrderIDByOrderDetailID(String strOrderDetailId)
+        {
+            return orderDetailDAO.GetOrderIDByOrderDetailID(strOrderDetailId);
+        }
+        
+
+
         public DataTable GetAllOrderDetailsByOderID(string orderID)
         {
             return orderDetailDAO.GetAllOrderDetailsByOderID(orderID);
@@ -51,6 +59,21 @@ namespace BusinessLayer
         public bool DeleteOrderDetails(string orderID)
         {
             return orderDetailDAO.DeleteOrderDetails(orderID);
+        }
+
+        public DataTable GetRevenueReportByMY(string M, string Y)
+        {
+            return orderDetailDAO.GetRevenueReportByMY(M, Y);
+        }
+
+        public DataTable GetRevenueReportByY(string Y)
+        {
+            return orderDetailDAO.GetRevenueReportByY(Y);
+        }
+
+        public DataTable GetRevenueReportByFromTo(DateTime F, DateTime T)
+        {
+            return orderDetailDAO.GetRevenueReportByFromTo(F, T);
         }
     }
 }

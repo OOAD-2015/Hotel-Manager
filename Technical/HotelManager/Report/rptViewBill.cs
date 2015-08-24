@@ -40,8 +40,8 @@ namespace HotelManager.Report
                " " + DateTime.Now.ToShortTimeString();
             //
             //xrtbSnoValue.DataBindings.Add("Text", DataSource, "STT");
-            xrtbRoomIdValue.DataBindings.Add("Text", DataSource, "ServicesID");
-            xrtbRoomNameValue.DataBindings.Add("Text", DataSource, "ServicesName");
+            xrtbRoomIdValue.DataBindings.Add("Text", DataSource, "ID");
+            xrtbRoomNameValue.DataBindings.Add("Text", DataSource, "Name");
             xrtbCountValue.DataBindings.Add("Text", DataSource, "Quantity");
             xrtbPriceValue.DataBindings.Add("Text", DataSource, "Price");
             xrtbAmountValue.DataBindings.Add("Text", DataSource, "Monetized");

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using BusinessLayer;
 using DataTransferObject.Utils;
+using System.Data;
 
 namespace HotelManager.Report
 {
@@ -40,17 +41,27 @@ namespace HotelManager.Report
             //
             xrLblDatePrint.Text = "Ngày " + DateTime.Now.Day.ToString() + " tháng " + DateTime.Now.Month.ToString() + " năm " + DateTime.Now.Year.ToString();
             //
-            //xrtbSnoValue.DataBindings.Add("Text", DataSource, "STT");
-            //xrtbCommodityIdValue.DataBindings.Add("Text", DataSource, "MaHangHoa");
-            //xrtbCommodityNameValue.DataBindings.Add("Text", DataSource, "TenHangHoa");
-            //xrtbCountValue.DataBindings.Add("Text", DataSource, "SoLuong");
-            //xrtbInputPriceValue.DataBindings.Add("Text", DataSource, "GiaNhapVAT");
-            //xrtbOutPriceValue.DataBindings.Add("Text", DataSource, "DonGia");
-            //xrtbAmountValue.DataBindings.Add("Text", DataSource, "ThanhTien");
-            //xrtbProfitValue.DataBindings.Add("Text", DataSource, "Lai");
+            xrtbSnoValue.DataBindings.Add("Text", DataSource, "STT");
+            xrtbRoomIdValue.DataBindings.Add("Text", DataSource, "RoomID");
+            xrtbRoomNameValue.DataBindings.Add("Text", DataSource, "RoomName");
+            xrtbCountValue.DataBindings.Add("Text", DataSource, "QTY");
+            xrtbPriceValue.DataBindings.Add("Text", DataSource, "Price");
+            xrtbAmountValue.DataBindings.Add("Text", DataSource, "Total");
 
-            //xrLblSumValue.DataBindings.Add("Text", DataSource, "TongSoLuong");
-            //xrLblTotalValue.DataBindings.Add("Text", DataSource, "TongLai");
+            DataTable data = DataSource as DataTable;
+
+            if (data != null)
+            {
+                int Total = 0;
+                foreach(DataRow row in data.Rows){
+                    Total += int.Parse(row["Total"].ToString());
+                }
+                xrLblTotalValue.Text = Total.ToString();
+            }
+            else
+            {
+                xrLblTotalValue.Text = "0" ;
+            }
         }
     }
 }

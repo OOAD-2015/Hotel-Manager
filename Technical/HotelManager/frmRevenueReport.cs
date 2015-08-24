@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using HotelManager.Report;
 using HotelManager;
+using BusinessLayer;
 
 namespace HotelManager
 {
@@ -18,10 +19,12 @@ namespace HotelManager
     {
         private rptRevenueReport revenueReport;
         private DataTable revenueDataTable;
+        private BUSOrderDetail orderDetailBUS;
         
         public frmRevenueReport()
         {
             InitializeComponent();
+            orderDetailBUS = new BUSOrderDetail();
         }
 
         private void frmRevenueReport_Load(object sender, EventArgs e)
@@ -213,14 +216,14 @@ namespace HotelManager
                     {
                         DateTime reportDate = dateMonthYear.DateTime;
                         revenueReport = new rptRevenueReport(reportDate);
-                        revenueDataTable = null;
+                        revenueDataTable = orderDetailBUS.GetRevenueReportByMY(reportDate.Month.ToString(), reportDate.Year.ToString());
                         break;
                     }
                 case 1://theo nam
                     {
                         int thisYear = DateTime.Now.Year;
                         revenueReport = new rptRevenueReport(thisYear);
-                        revenueDataTable = null;
+                        revenueDataTable = orderDetailBUS.GetRevenueReportByY(thisYear.ToString());
                         break;
                     }
                 case 2://trong khoang
@@ -228,7 +231,7 @@ namespace HotelManager
                         DateTime reportDateFrom = dateFrom.DateTime;
                         DateTime reportDateTo = dateTo.DateTime;
                         revenueReport = new rptRevenueReport(reportDateFrom, reportDateTo);
-                        revenueDataTable = null;
+                        revenueDataTable = orderDetailBUS.GetRevenueReportByFromTo(reportDateFrom, reportDateTo);
                         break;
                     }
                 default:

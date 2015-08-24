@@ -64,7 +64,7 @@ namespace HotelManager
             orderDetailDataTable = orderDetailBUS.GetAllOrderDetailFromNow();
             gvRoomOrder.DataSource = orderDetailDataTable;
 
-            txtTotalMoney.Text = grdvServiceDetail.Columns["Monetized"].SummaryItem.SummaryValue.ToString();
+            txtTotalMoney.Text = grdvServiceDetail.Columns["Monetized"].SummaryItem.SummaryValue == null ? "0" : grdvServiceDetail.Columns["Monetized"].SummaryItem.SummaryValue.ToString();
         }
 
         private void drbtnServiceChose_Click(object sender, EventArgs e)
@@ -284,7 +284,7 @@ namespace HotelManager
             //try
             //{
             DataRow _rowValue = serviceDetailDataTable.NewRow();
-            _rowValue["ServicesID"] = txtServiceId.Text;
+            _rowValue["ServicesID"] = txtServiceId.Text.Trim();
             _rowValue["ServicesName"] = txtServiceName.Text;
             _rowValue["OrderDetailID"] = lblOrderValue.Text;
             _rowValue["Quantity"] = spQuantity.Value;
@@ -292,7 +292,7 @@ namespace HotelManager
             _rowValue["Monetized"] = Math.Round(spAmount.Value);
             if (serviceDetailDataTable.Rows.Count != 0)
             {
-                if (serviceDetailDataTable.Rows.Contains(txtServiceId.Text))
+                if (serviceDetailDataTable.Rows.Contains(txtServiceId.Text.Trim()))
                 {
                     if (XtraMessageBox.Show("Dịch vụ này đã tồn tại trong danh sách!\nBạn có muốn cập nhật thông tin hay không?",
                                             "Thông báo",
@@ -301,12 +301,12 @@ namespace HotelManager
                     {
                         for (int i = 0; i < listServiceDetailObject.Count; i++)
                         {
-                            if (listServiceDetailObject[i].ServicesID == txtServiceId.Text)
+                            if (listServiceDetailObject[i].ServicesID == txtServiceId.Text.Trim())
                             {
                                 listServiceDetailObject.Remove(listServiceDetailObject[i]);
                             }
                         }
-                        serviceDetailDataTable.Rows.Remove(serviceDetailDataTable.Rows.Find(txtServiceId.Text));
+                        serviceDetailDataTable.Rows.Remove(serviceDetailDataTable.Rows.Find(txtServiceId.Text.Trim()));
 
                     }
                     else
@@ -436,8 +436,52 @@ namespace HotelManager
                 {
                     String nameCustomer = customer.Rows[0].ItemArray[2].ToString();
                     String address = customer.Rows[0].ItemArray[5].ToString();
-                    frmViewBill billReportView = new frmViewBill(serviceDetailDataTable, nameCustomer, address, grdvServiceDetail.Columns["Quantity"].SummaryItem.SummaryValue.ToString(),
-                        txtTotalMoney.Text, "ID Hóa đơn");
+                    String orderID = orderDetailBUS.GetOrderIDByOrderDetailID(lblOrderValue.Text.Trim());
+                    //
+                    DataTable reportData = new DataTable();
+                    DataColumn newColumn = new DataColumn();
+                    newColumn.ColumnName = "ID";
+                    newColumn.DataType = System.Type.GetType("System.String");
+                    reportData.Columns.Add(newColumn);
+
+                    DataColumn newColumn1 = new DataColumn();
+                    newColumn1.ColumnName = "Name";
+                    newColumn1.DataType = System.Type.GetType("System.String");
+                    reportData.Columns.Add(newColumn1);
+
+                    DataColumn newColumn2 = new DataColumn();
+                    newColumn2.ColumnName = "Quantity";
+                    newColumn2.DataType = System.Type.GetType("System.String");
+                    reportData.Columns.Add(newColumn2);
+
+                    DataColumn newColumn3 = new DataColumn();
+                    newColumn3.ColumnName = "Price";
+                    newColumn3.DataType = System.Type.GetType("System.String");
+                    reportData.Columns.Add(newColumn3);
+
+                    DataColumn newColumn4 = new DataColumn();
+                    newColumn4.ColumnName = "Monetized";
+                    newColumn4.DataType = System.Type.GetType("System.String");
+                    reportData.Columns.Add(newColumn4);
+
+                    serviceDetailDataTable = serviceDetailBUS.GetAllServiceDetailByOrderID(lblOrderValue.Text.Trim());
+                    DataColumn[] keys = new DataColumn[1];
+                    keys[0] = serviceDetailDataTable.Columns["ServicesID"];
+                    serviceDetailDataTable.PrimaryKey = keys;
+                    gvServiceDetail.DataSource = serviceDetailDataTable;
+
+                    foreach(DataRow _row in serviceDetailDataTable.Rows){
+                        DataRow _rowValue = reportData.NewRow();
+                        _rowValue["ID"] = _row.ItemArray[3];
+                        _rowValue["Name"] = _row.ItemArray[8];
+                        _rowValue["Quantity"] = _row.ItemArray[4];
+                        _rowValue["Price"] = _row.ItemArray[10];
+                        _rowValue["Monetized"] = _row.ItemArray[5];
+                        reportData.Rows.Add(_rowValue);
+                    }
+                    //
+                    frmViewBill billReportView = new frmViewBill(reportData, nameCustomer, address, grdvServiceDetail.Columns["Quantity"].SummaryItem.SummaryValue.ToString(),
+                        txtTotalMoney.Text, orderID);
                     billReportView.ShowDialog();
                     billReportView.ShowInTaskbar = false;
                 }

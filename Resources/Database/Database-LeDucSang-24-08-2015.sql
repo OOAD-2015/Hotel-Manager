@@ -1,6 +1,6 @@
 
 
-CREATE PROCEDURE [dbo].[sp_GetOrderByID]
+ALTER PROCEDURE [dbo].[sp_GetOrderByID]
 	@OrderID char(10)
 AS
 BEGIN
@@ -11,16 +11,16 @@ BEGIN
 END
 
 GO 
-ALTER PROCEDURE [dbo].[sp_GetAllOrderByOderID]
-	@OrderID char(10)
+CREATE PROCEDURE [dbo].[sp_GetAllOrderByOderID]
+ @OrderID char(10)
 AS
 BEGIN
-	SELECT R.RoomID, R.RoomName, RT.RoomTypeName, OD.StartDate, OD.EndDate, R.NumberOfBeds, RT.Price, OD.Estimate
-	FROM [dbo].[ORDERDETAIL] AS OD
-								INNER JOIN ROOM AS R ON OD.RoomID = R.RoomID
-								INNER JOIN ROOMTYPE AS RT ON R.RoomTypeID = RT.RoomTypeID
-								INNER JOIN [STATUS] AS S ON R.StatusID = S.StatusID
-	WHERE OrderID = @OrderID
+ SELECT R.RoomID, R.RoomName, RT.RoomTypeName, OD.StartDate, OD.EndDate, R.NumberOfBeds, RT.Price, OD.Estimate, DATEDIFF(dd, OD.StartDate, OD.EndDate) AS Quantity,(DATEDIFF(dd, OD.StartDate, OD.EndDate) * RT.Price) AS Monetized
+ FROM [dbo].[ORDERDETAIL] AS OD
+        INNER JOIN ROOM AS R ON OD.RoomID = R.RoomID
+        INNER JOIN ROOMTYPE AS RT ON R.RoomTypeID = RT.RoomTypeID
+        INNER JOIN [STATUS] AS S ON R.StatusID = S.StatusID
+ WHERE OrderID = @OrderID
 END
 
 -- select* from orderdetail
