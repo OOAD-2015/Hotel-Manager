@@ -146,6 +146,7 @@
             this.btnPreview.Size = new System.Drawing.Size(75, 31);
             this.btnPreview.TabIndex = 16;
             this.btnPreview.Text = "In phiếu";
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnChangeToView
             // 
@@ -155,6 +156,7 @@
             this.btnChangeToView.Size = new System.Drawing.Size(161, 31);
             this.btnChangeToView.TabIndex = 10;
             this.btnChangeToView.Text = "Thanh toán";
+            this.btnChangeToView.Click += new System.EventHandler(this.btnChangeToView_Click);
             // 
             // pnlOrderView
             // 

@@ -28,7 +28,7 @@ namespace HotelManager
         private DataTable orderDetailDataTable;
         private GridCheckMarksSelection serviceDetailMultiselect;
         private BUSCustomer customerBUS;
-
+        private BUSOrder orderBUS;
 
         Dictionary<String, Object> m_listServiceObject = new Dictionary<String, Object>();
         #endregion
@@ -45,6 +45,7 @@ namespace HotelManager
             orderDetailBUS = new BUSOrderDetail();
             serviceDetailMultiselect = new GridCheckMarksSelection(grdvServiceDetail);
             customerBUS = new BUSCustomer();
+            orderBUS = new BUSOrder();
         }
 
         private void frmServiceDetail_Load(object sender, EventArgs e)
@@ -395,6 +396,7 @@ namespace HotelManager
                 }
 
                 orderDetailBUS.UpdateServiceMoneyOrderDetailById(lblOrderValue.Text.Trim(), Total);
+                orderBUS.UpdateTotalOrderById(orderDetailBUS.GetOrderIDByOrderDetailID(lblOrderValue.Text.Trim()).Trim());
                 orderDetailDataTable = orderDetailBUS.GetAllOrderDetailFromNow();
                 gvRoomOrder.DataSource = orderDetailDataTable;
                 //Cập nhật controls của form

@@ -36,7 +36,6 @@
             this.bbtnConnectData = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnCustomerCategory = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnProductCategory = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnRoomTypeCategory = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnRoomCategory = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnAreaCategory = new DevExpress.XtraBars.BarButtonItem();
             this.barSiInfo = new DevExpress.XtraBars.BarStaticItem();
@@ -57,12 +56,11 @@
             this.bbtnSearchRoom = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnUseServices = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOrder = new DevExpress.XtraBars.BarButtonItem();
             this.largeimageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.ribpSystem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpgRule = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribpAction = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribgCategory = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpManager = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribpgCustomer = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribpgServices = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -75,7 +73,13 @@
             this.ribpHelp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManagerMenu = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btnOrder = new DevExpress.XtraBars.BarButtonItem();
+            this.ribpgRooms = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbtnRoomTypeCategory = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnRoomType = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnRooms = new DevExpress.XtraBars.BarButtonItem();
+            this.ribpgOrder = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnListOrder = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smallimageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.largeimageCollection)).BeginInit();
@@ -92,7 +96,6 @@
             this.bbtnConnectData,
             this.bbtnCustomerCategory,
             this.bbtnProductCategory,
-            this.bbtnRoomTypeCategory,
             this.bbtnRoomCategory,
             this.bbtnAreaCategory,
             this.barSiInfo,
@@ -113,16 +116,18 @@
             this.bbtnSearchRoom,
             this.barButtonItem1,
             this.bbtnUseServices,
-            this.btnOrder});
+            this.btnOrder,
+            this.bbtnRoomType,
+            this.bbtnRooms,
+            this.btnListOrder});
             this.ribbon.LargeImages = this.largeimageCollection;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 29;
+            this.ribbon.MaxItemId = 32;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnInformation);
             this.ribbon.PageHeaderItemLinks.Add(this.bbtnLogout);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribpSystem,
-            this.ribpAction,
             this.ribpManager,
             this.ribpStaff,
             this.ribbonPage1,
@@ -171,13 +176,6 @@
             this.bbtnProductCategory.Caption = "Danh mục mặt hàng";
             this.bbtnProductCategory.Id = 4;
             this.bbtnProductCategory.Name = "bbtnProductCategory";
-            // 
-            // bbtnRoomTypeCategory
-            // 
-            this.bbtnRoomTypeCategory.Caption = "Danh mục loại phòng";
-            this.bbtnRoomTypeCategory.Id = 5;
-            this.bbtnRoomTypeCategory.Name = "bbtnRoomTypeCategory";
-            this.bbtnRoomTypeCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnRoomTypeCategory_ItemClick);
             // 
             // bbtnRoomCategory
             // 
@@ -330,6 +328,14 @@
             this.bbtnUseServices.Name = "bbtnUseServices";
             this.bbtnUseServices.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnUseServices_ItemClick);
             // 
+            // btnOrder
+            // 
+            this.btnOrder.Caption = "Đặt phòng";
+            this.btnOrder.Id = 28;
+            this.btnOrder.LargeImageIndex = 14;
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOrder_ItemClick);
+            // 
             // largeimageCollection
             // 
             this.largeimageCollection.ImageSize = new System.Drawing.Size(32, 32);
@@ -349,6 +355,8 @@
             this.largeimageCollection.Images.SetKeyName(12, "1439841041_bed.png");
             this.largeimageCollection.Images.SetKeyName(13, "using_services.png");
             this.largeimageCollection.Images.SetKeyName(14, "1440400649_purchase_order.png");
+            this.largeimageCollection.Images.SetKeyName(15, "roomtype.png");
+            this.largeimageCollection.Images.SetKeyName(16, "1440444493_13.Clipboard.png");
             // 
             // ribpSystem
             // 
@@ -371,28 +379,13 @@
             this.ribpgRule.Name = "ribpgRule";
             this.ribpgRule.Text = "Quy định";
             // 
-            // ribpAction
-            // 
-            this.ribpAction.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribgCategory});
-            this.ribpAction.Name = "ribpAction";
-            this.ribpAction.Text = "Hoạt động";
-            // 
-            // ribgCategory
-            // 
-            this.ribgCategory.ItemLinks.Add(this.bbtnCustomerCategory);
-            this.ribgCategory.ItemLinks.Add(this.bbtnProductCategory);
-            this.ribgCategory.ItemLinks.Add(this.bbtnRoomTypeCategory, true);
-            this.ribgCategory.ItemLinks.Add(this.bbtnRoomCategory);
-            this.ribgCategory.ItemLinks.Add(this.bbtnAreaCategory);
-            this.ribgCategory.Name = "ribgCategory";
-            this.ribgCategory.Text = "Nhóm danh mục";
-            // 
             // ribpManager
             // 
             this.ribpManager.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribpgCustomer,
+            this.ribpgRooms,
             this.ribpgServices,
+            this.ribpgOrder,
             this.ribpgOther});
             this.ribpManager.Name = "ribpManager";
             this.ribpManager.Text = "Quản trị";
@@ -407,8 +400,6 @@
             // 
             this.ribpgServices.ItemLinks.Add(this.bbtnServices);
             this.ribpgServices.ItemLinks.Add(this.bbtnServicesType);
-            this.ribpgServices.ItemLinks.Add(this.bbtnUseServices);
-            this.ribpgServices.ItemLinks.Add(this.btnOrder);
             this.ribpgServices.Name = "ribpgServices";
             this.ribpgServices.Text = "Dịch vụ";
             // 
@@ -476,13 +467,56 @@
             this.xtraTabbedMdiManagerMenu.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabbedMdiManagerMenu.MdiParent = this;
             // 
-            // btnOrder
+            // ribpgRooms
             // 
-            this.btnOrder.Caption = "Đặt phòng";
-            this.btnOrder.Id = 28;
-            this.btnOrder.LargeImageIndex = 14;
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOrder_ItemClick);
+            this.ribpgRooms.ItemLinks.Add(this.bbtnRoomType);
+            this.ribpgRooms.ItemLinks.Add(this.bbtnRooms);
+            this.ribpgRooms.Name = "ribpgRooms";
+            this.ribpgRooms.Text = "Phòng";
+            // 
+            // bbtnRoomTypeCategory
+            // 
+            this.bbtnRoomTypeCategory.Caption = "Danh mục loại phòng";
+            this.bbtnRoomTypeCategory.Id = 5;
+            this.bbtnRoomTypeCategory.Name = "bbtnRoomTypeCategory";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Danh mục loại phòng";
+            this.barButtonItem2.Id = 5;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // bbtnRoomType
+            // 
+            this.bbtnRoomType.Caption = "Loại phòng";
+            this.bbtnRoomType.Id = 29;
+            this.bbtnRoomType.LargeImageIndex = 15;
+            this.bbtnRoomType.Name = "bbtnRoomType";
+            this.bbtnRoomType.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnRoomType_ItemClick);
+            // 
+            // bbtnRooms
+            // 
+            this.bbtnRooms.Caption = "Phòng";
+            this.bbtnRooms.Id = 30;
+            this.bbtnRooms.LargeImageIndex = 12;
+            this.bbtnRooms.Name = "bbtnRooms";
+            this.bbtnRooms.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnRooms_ItemClick);
+            // 
+            // ribpgOrder
+            // 
+            this.ribpgOrder.ItemLinks.Add(this.btnListOrder);
+            this.ribpgOrder.ItemLinks.Add(this.btnOrder);
+            this.ribpgOrder.ItemLinks.Add(this.bbtnUseServices);
+            this.ribpgOrder.Name = "ribpgOrder";
+            this.ribpgOrder.Text = "Quy trình";
+            // 
+            // btnListOrder
+            // 
+            this.btnListOrder.Caption = "Danh sách đặt phòng";
+            this.btnListOrder.Id = 31;
+            this.btnListOrder.LargeImageIndex = 16;
+            this.btnListOrder.Name = "btnListOrder";
+            this.btnListOrder.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnListOrder_ItemClick);
             // 
             // frmHomePage
             // 
@@ -520,16 +554,13 @@
         private DevExpress.Utils.ImageCollection smallimageCollection;
         private DevExpress.XtraBars.BarButtonItem bbtnConnectData;
         private DevExpress.Utils.ImageCollection largeimageCollection;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribpAction;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribpManager;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribpStaff;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribpHelp;
         private DevExpress.XtraBars.BarButtonItem bbtnCustomerCategory;
         private DevExpress.XtraBars.BarButtonItem bbtnProductCategory;
-        private DevExpress.XtraBars.BarButtonItem bbtnRoomTypeCategory;
         private DevExpress.XtraBars.BarButtonItem bbtnRoomCategory;
         private DevExpress.XtraBars.BarButtonItem bbtnAreaCategory;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribgCategory;
         private DevExpress.XtraBars.BarStaticItem barSiInfo;
         private DevExpress.XtraBars.BarStaticItem barhiStatus;
         private DevExpress.XtraBars.BarHeaderItem barHiDateLogin;
@@ -558,5 +589,12 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem bbtnUseServices;
         private DevExpress.XtraBars.BarButtonItem btnOrder;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribpgRooms;
+        private DevExpress.XtraBars.BarButtonItem bbtnRoomTypeCategory;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem bbtnRoomType;
+        private DevExpress.XtraBars.BarButtonItem bbtnRooms;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribpgOrder;
+        private DevExpress.XtraBars.BarButtonItem btnListOrder;
     }
 }

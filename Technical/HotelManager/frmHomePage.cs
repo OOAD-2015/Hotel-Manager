@@ -32,6 +32,7 @@ namespace HotelManager
         private frmSearchRoom searchRoomFormObject;
         private frmServiceDetail usingServicesFormObject;
         private frmOrder orderFormObject;
+        private frmOrderSearch orderListFormObject;
         #endregion
 
         #region "Varaibles"
@@ -305,6 +306,46 @@ namespace HotelManager
             }
             else
                 orderFormObject.Activate();
+        }
+
+        private void bbtnRooms_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(roomFormObject))
+            {
+                roomFormObject = new frmRoom();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(roomFormObject);
+                roomFormObject.MdiParent = this;
+                roomFormObject.Show();
+            }
+            else
+                roomFormObject.Activate();
+        }
+
+        private void bbtnRoomType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(roomTypeFormObject))
+            {
+                roomTypeFormObject = new frmRoomType();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(roomTypeFormObject);
+                roomTypeFormObject.MdiParent = this;
+                roomTypeFormObject.Show();
+            }
+            else
+                roomTypeFormObject.Activate();
+        }
+
+        private void btnListOrder_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!xtraTabbedMdiManagerMenu.FloatForms.Contains(orderListFormObject))
+            {
+                orderListFormObject = new frmOrderSearch();
+                xtraTabbedMdiManagerMenu.FloatForms.Add(orderListFormObject);
+                orderListFormObject.MdiParent = this;
+                orderListFormObject.Show();
+            }
+            else
+                orderListFormObject.Activate();
+            
         }
     }
 }

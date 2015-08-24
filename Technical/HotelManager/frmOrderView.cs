@@ -126,5 +126,12 @@ namespace HotelManager
 
         }
 
+        private void btnChangeToView_Click(object sender, EventArgs e)
+        {
+            frmReceiptView bill = new frmReceiptView(orderID);
+            bill.ShowDialog();
+            bill.ShowInTaskbar = false;
+        }
+
     }
 }

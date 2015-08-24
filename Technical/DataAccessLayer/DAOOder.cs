@@ -130,6 +130,22 @@ namespace DataAccessLayer
             }
         }
 
+
+        public bool UpdateTotalOrderById(string orderID)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_UpdateTotalOrderById"/*Truyen vao storeprocedure*/, new object[1] { orderID});
+                return DataExecute.Instance.updateData(DataConnection.Instance.m_cmd) > 0;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+        }
+
+
         public DataTable GetAllOrderByNumberID(string _customerID, string _IDNumber)
         {
             try

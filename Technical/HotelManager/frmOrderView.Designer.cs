@@ -143,6 +143,7 @@
             this.btnChangeToView.Size = new System.Drawing.Size(161, 31);
             this.btnChangeToView.TabIndex = 10;
             this.btnChangeToView.Text = "Thanh toán";
+            this.btnChangeToView.Click += new System.EventHandler(this.btnChangeToView_Click);
             // 
             // pnlOrderView
             // 

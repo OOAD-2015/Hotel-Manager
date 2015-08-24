@@ -400,3 +400,18 @@ WHERE A.StartDate BETWEEN @From AND @To
 group by A.RoomID
 
 GO
+
+
+CREATE PROCEDURE [dbo].[sp_UpdateTotalOrderById]
+(
+	@OrderID nvarchar(10)
+)
+
+AS
+	UPDATE [ORDER] SET Total = (SELECT sum(ServicesMoney) TotalService FROM ORDERDETAIL WHERE OrderID=@OrderID)+Estimate
+	WHERE OrderID = @OrderID
+
+RETURN
+
+GO
+

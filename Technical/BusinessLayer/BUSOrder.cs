@@ -69,6 +69,12 @@ namespace BusinessLayer
             return orderDAO.GetOrderMaxID();
         }
 
+
+        public bool UpdateTotalOrderById(string orderID)
+        {
+            return orderDAO.UpdateTotalOrderById(orderID);
+        }
+
         public DataTable GetAllOrderByNumberID(string _customerID, string _IDNumber)
         {
             return orderDAO.GetAllOrderByNumberID(_customerID, _IDNumber);
