@@ -26,7 +26,7 @@ namespace BusinessLayer
         /// </summary>
         /// <param name="strOrderID">id của feedback</param>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public String GetOrderById(String strOrderID)
+        public DataTable GetOrderById(String strOrderID)
         {
             return orderDAO.GetOrderById(strOrderID);
 

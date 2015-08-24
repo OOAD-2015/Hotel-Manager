@@ -34,12 +34,12 @@ namespace DataAccessLayer
         /// </summary>
         /// <param name="strOrderID">id của feedback</param>
         /// <returns>true: lấy thành công, false: lấy thất bại</returns>
-        public String GetOrderById(String strOrderID)
+        public DataTable GetOrderById(String strOrderID)
         {
             try
             {
                 DataExecute.Instance.createSqlCmd("sp_GetOrderByID"/*Truyen vao storeprocedure*/, new object[1] { strOrderID });
-                return DataExecute.Instance.getStringExecute(DataConnection.Instance.m_cmd);
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
             }
             catch (SqlException)
             {

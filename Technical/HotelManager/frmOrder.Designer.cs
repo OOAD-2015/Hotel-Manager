@@ -245,6 +245,7 @@
             // btnChangeToView
             // 
             this.btnChangeToView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChangeToView.Enabled = false;
             this.btnChangeToView.Location = new System.Drawing.Point(1003, 6);
             this.btnChangeToView.Name = "btnChangeToView";
             this.btnChangeToView.Size = new System.Drawing.Size(161, 31);
@@ -487,6 +488,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spinDeposit.Size = new System.Drawing.Size(123, 20);
             this.spinDeposit.TabIndex = 24;
+            this.spinDeposit.EditValueChanged += new System.EventHandler(this.spinDeposit_EditValueChanged);
             // 
             // labDeposit
             // 

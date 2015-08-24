@@ -194,18 +194,22 @@ ALTER PROCEDURE [dbo].[sp_GetAllRoomByDateFromTo]
  @DateTo date
 )
 AS
- SELECT * FROM ROOM AS A INNER JOIN ROOMTYPE AS B ON A.RoomTypeID=B.RoomTypeID WHERE 
+ SELECT * 
+ FROM ROOM AS A INNER JOIN ROOMTYPE AS B ON A.RoomTypeID=B.RoomTypeID 
+				INNER JOIN [STATUS] AS S ON A.StatusID = S.StatusID
+ WHERE 
   (SELECT COUNT(*) FROM ORDERDETAIL AS C 
   WHERE  
    CONVERT (date, C.EndDate) >= CONVERT (date, GETDATE()) 
    AND RoomID=A.RoomID
    AND ((CONVERT (date, @DateFrom) <= CONVERT (date, C.EndDate) AND CONVERT (date, @DateTo) >= CONVERT (date, C.EndDate))
-   OR(CONVERT (date, @DateTo) >= CONVERT (date, C.StartDate) AND CONVERT (date, @DateTo) <= CONVERT (date, C.EndDate)))
-   OR(CONVERT (date, @DateFrom) >= CONVERT (date, C.StartDate) AND CONVERT (date, @DateTo) <= CONVERT (date, C.EndDate))) = 0
+   OR(CONVERT (date, @DateTo) >= CONVERT (date, C.StartDate) AND CONVERT (date, @DateTo) <= CONVERT (date, C.EndDate))
+   OR(CONVERT (date, @DateFrom) >= CONVERT (date, C.StartDate) AND CONVERT (date, @DateTo) <= CONVERT (date, C.EndDate))
+   OR(CONVERT (date, @DateFrom) <= CONVERT (date, C.StartDate) AND CONVERT (date, @DateTo) >= CONVERT (date, C.EndDate)))) = 0
 
 GO
 
-EXEC sp_GetAllRoomByDateFromTo '2015-08-25', '2015-08-26';
+EXEC sp_GetAllRoomByDateFromTo '2015-08-30', '2015-08-30';
 
 
 

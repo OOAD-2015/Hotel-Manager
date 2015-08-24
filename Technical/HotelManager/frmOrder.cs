@@ -194,7 +194,26 @@ namespace HotelManager
                 newRow["StartDate"] = dateStart.DateTime;
                 newRow["EndDate"] = dateEnd.DateTime;
                 double dateDiff = (dateEnd.DateTime - dateStart.DateTime).Days;
-                newRow["Monetized"] = ((dateDiff == 0) ? 1 : dateDiff + 1) * 1000;
+                object price = newRow["Price"];
+                try
+                {
+                    if (price != null && price.ToString().Trim() != "")
+                    {
+                        newRow["Monetized"] = ((dateDiff == 0) ? 1 : dateDiff + 1) * int.Parse(price.ToString().Trim());
+                    }
+                    else
+                    {
+                        newRow["Monetized"] = 0;
+                    }
+                }
+                catch (Exception)
+                {
+                    newRow["Monetized"] = 0;
+                    XtraCustomMessageBox.Show("Thông báo", "Bạn chưa thiết lập giá phòng!", true, 4);
+                    throw;
+                }
+                
+                
             }
             return newRow;
         }
@@ -344,6 +363,7 @@ namespace HotelManager
                         chkCmbRoomTypeName.Properties.ReadOnly = false;
                         btnSearch.Enabled = true;
                         btnAddCustomer.Enabled = false;
+                        btnChangeToView.Enabled = false;
                         //
                         //Cập nhật lại dữ liệu cho các grid view
                         roomSelectsDataTable.Clear();
@@ -572,6 +592,8 @@ namespace HotelManager
                                 return;
                             }
                         }
+                        //Update button view
+                        btnChangeToView.Enabled = true;
                         XtraCustomMessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", true, 1);
                     }
                     else
@@ -664,7 +686,17 @@ namespace HotelManager
 
         private void btnChangeToView_Click(object sender, EventArgs e)
         {
+            String orderMaxID = orderBUS.GetOrderMaxID();
+            new frmOrderView(orderMaxID).ShowDialog();
+        }
 
+        private void spinDeposit_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spinDeposit.Value > spintotalEstimate.Value)
+            {
+                XtraCustomMessageBox.Show("Số tiền đặt cọc không thể lơn hơn số tiền ước tính!", "Thông báo", true, 4);
+                spinDeposit.Value = spintotalEstimate.Value;
+            }
         }
     }   
 }

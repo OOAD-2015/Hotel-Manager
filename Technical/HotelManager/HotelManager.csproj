@@ -187,6 +187,18 @@
     <Compile Include="frmOrder.Designer.cs">
       <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrderSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderSearch.Designer.cs">
+      <DependentUpon>frmOrderSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderView.Designer.cs">
+      <DependentUpon>frmOrderView.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRevenueReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderSearch.resx">
+      <DependentUpon>frmOrderSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderView.resx">
+      <DependentUpon>frmOrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRevenueReport.resx">
       <DependentUpon>frmRevenueReport.cs</DependentUpon>

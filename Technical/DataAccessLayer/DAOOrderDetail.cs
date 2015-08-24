@@ -56,7 +56,7 @@ namespace DataAccessLayer
         {
             try
             {
-                DataExecute.Instance.createSqlCmd("sp_GetAllOrderByOderID");
+                DataExecute.Instance.createSqlCmd("sp_GetAllOrderByOderID", new object[1] { orderID });
                 return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
             }
             catch (SqlException)
