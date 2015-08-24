@@ -49,6 +49,7 @@ namespace HotelManager
 
         private void frmServiceDetail_Load(object sender, EventArgs e)
         {
+            ServiceID.VisibleIndex = 1;
             //
             serviceDetailDataTable = serviceDetailBUS.GetAllServiceDetail();
             serviceDetailDataTable.Clear();

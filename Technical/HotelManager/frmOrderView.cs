@@ -38,6 +38,9 @@ namespace HotelManager
 
         private void frmOrderView_Load(object sender, EventArgs e)
         {
+            //
+
+            //
             this.orderTable = orderBUS.GetOrderById(this.orderID);
             if (orderTable != null && orderTable.Rows.Count > 0)
             {

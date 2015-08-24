@@ -610,7 +610,7 @@ namespace HotelManager
                     int numberOfPeople = (int)spinTotalPeople.Value;
                     int estimate = (int)spintotalEstimate.Value;
                     int deposit = (int)spinDeposit.Value;
-                    int total = 0;
+                    int total = estimate;
                     int orderStatus = (int)ORDERSTATUS.UNPAID;
                     dtoOrder = new DTOOrder(orderID,
                                             customerID,

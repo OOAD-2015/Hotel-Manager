@@ -129,5 +129,19 @@ namespace DataAccessLayer
                 throw;
             }
         }
+
+        public DataTable GetAllOrderByNumberID(string _customerID, string _IDNumber)
+        {
+            try
+            {
+                DataExecute.Instance.createSqlCmd("sp_GetAllOrderByNumberID", new object[2] { _customerID, _IDNumber });
+                return DataExecute.Instance.getData(DataConnection.Instance.m_cmd);
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+        
     }
 }
